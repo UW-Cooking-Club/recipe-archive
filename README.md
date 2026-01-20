@@ -1,16 +1,75 @@
-# React + Vite
+# Setup
+> This project uses npm which is dependent on Node.js
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+``` bash
+node -v
+```
+It should return something like v22.14.0. If you get `unknown command` error, follow [this site](https://nodejs.org/en/download) to download Node and npm
 
-Currently, two official plugins are available:
+``` bash
+npm -v
+```
+Once again, it should return the version.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Go to where you want the GitHub project to live and clone the repo
+``` bash 
+git clone https://github.com/UW-Cooking-Club/recipe-archive.git
+```
 
-## React Compiler
+Install project dependencies
+``` bash
+cd recipe-archive
+npm install
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Run the local development server with 
+``` bash
+npm run dev
+```
 
-## Expanding the ESLint configuration
+The site should now be running locally, most likely on port 5173: http://localhost:5173/
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# Repo Structure
+
+```text
+RECIPE-ARCHIVE/
+├── node_modules/          # Installed dependencies (auto-generated)
+├── public/                # Static assets served directly 
+├── src/
+│   ├── assets/            # Images, icons, and static assets
+│   ├── components/        # Reusable React components
+│   ├── App.jsx            # Root React component
+│   ├── index.css          # Global styles (Tailwind entry point)
+│   └── main.jsx           # Application entry point
+└── index.html             # HTML template for Vite
+```
+
+# File Imports In Your Code
+This repo should attempt to minimize barrel files ([see why](https://dev.to/tassiofront/barrel-files-and-why-you-should-stop-using-them-now-bc4)). This means we should not add files that redirect to other files (ie. an index.js file that simply exports other .jsx files in that folder).
+
+> There are path aliases in vite.config.js: </br>
+> **@components, @assets**
+
+So instead of:
+``` javascript
+import componentOne from 'src/components/componentOne'
+```
+
+Just type:
+``` javascript
+import componentOne from '@components/componentOne'
+```
+
+# Non-Asset Icons
+
+This repo is using [react-icons](https://react-icons.github.io/react-icons/) for all non-custom assets. Use these wherever possible instead of importing extra assets!
+
+``` javascript
+import { FaStar } from 'react-icons/fa';
+
+export default MyComponent = () => (
+  <div>
+    <FaStar />
+  </div>
+)
+```
