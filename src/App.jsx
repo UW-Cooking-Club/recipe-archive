@@ -1,15 +1,18 @@
-import { FaStar } from 'react-icons/fa'
+import { FaStar } from "react-icons/fa";
 
 function App() {
-
   return (
     <>
       <div>
         <FaStar />
+        <FaStar />
+        <FaStar />
+        <FaStar />
+        <FaStar />
         <p className="text-blue-200">Hello World!!</p>
-      </div>  
+      </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
