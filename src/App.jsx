@@ -3,6 +3,7 @@ import Navbar from "@components/Navbar";
 import Footer from "@components/Footer";
 import Home from "./pages/Home";
 import Recipes from "./pages/Recipes";
+import Events from "./pages/Events";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/recipes" element={<Recipes />} />
+            <Route path="/events" element={<Events />} />
           </Routes>
         </main>
         <Footer />
