@@ -1,8 +1,13 @@
-@import 'tailwindcss';
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #219f90;
+  --color-cream: #fcfbf1;
+  --color-dark: #323232;
+  --color-gray-dark: #2f2f2f;
+}
 
 :root {
-  color-scheme: light dark;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
