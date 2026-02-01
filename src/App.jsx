@@ -1,17 +1,13 @@
-import { FaStar } from "react-icons/fa";
+import Navbar from "@components/Navbar";
+import Footer from "@components/Footer";
 
 function App() {
   return (
-    <>
-      <div>
-        <FaStar />
-        <FaStar />
-        <FaStar />
-        <FaStar />
-        <FaStar />
-        <p className="text-blue-200">Hello World!!</p>
-      </div>
-    </>
+    <div className="min-h-screen flex flex-col">
+      <Navbar />
+      <main className="flex-1">{/* Page content goes here */}</main>
+      <Footer />
+    </div>
   );
 }
 
