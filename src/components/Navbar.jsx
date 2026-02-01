@@ -1,21 +1,22 @@
+import { Link } from "react-router-dom";
 import logo from "@assets/Logo1.png";
 
 function Navbar() {
   return (
     <nav className="bg-primary flex items-center justify-between px-8 py-3">
-      <a href="/">
+      <Link to="/">
         <img src={logo} alt="UW Cooking Club" className="h-16" />
-      </a>
+      </Link>
       <div className="flex items-center gap-8 font-body text-white">
-        <a href="/recipes" className="hover:opacity-80">
+        <Link to="/recipes" className="hover:opacity-80">
           Recipes
-        </a>
-        <a href="/events" className="hover:opacity-80">
+        </Link>
+        <Link to="/events" className="hover:opacity-80">
           Events
-        </a>
-        <a href="/about" className="hover:opacity-80">
+        </Link>
+        <Link to="/about" className="hover:opacity-80">
           About Us
-        </a>
+        </Link>
       </div>
     </nav>
   );
