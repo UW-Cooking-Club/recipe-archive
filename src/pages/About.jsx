@@ -6,7 +6,7 @@ const member = (id, name, role) => ({
   id,
   name,
   role,
-  image: `https://placehold.co/200x200/e2e8f0/475569?text=${name.replace(/ /g, "+")}`,
+  image: "https://placehold.co/200x200/e2e8f0/475569?text=Photo",
 });
 
 const teamData = [
