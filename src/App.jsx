@@ -3,6 +3,7 @@ import Navbar from "@components/Navbar";
 import Footer from "@components/Footer";
 import Home from "./pages/Home";
 import Recipes from "./pages/Recipes";
+import RecipeDetail from "./pages/RecipeDetail";
 import Events from "./pages/Events";
 import About from "./pages/About";
 
@@ -15,6 +16,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/recipes" element={<Recipes />} />
+            <Route path="/recipes/:slug" element={<RecipeDetail />} />
             <Route path="/events" element={<Events />} />
             <Route path="/about" element={<About />} />
           </Routes>
