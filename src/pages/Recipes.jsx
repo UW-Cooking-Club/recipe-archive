@@ -79,11 +79,13 @@ function Recipes() {
   };
 
   const filteredRecipes = useMemo(() => {
-    return recipes.filter((recipe) => {
-      const matchesSearch = recipe.name.toLowerCase().includes(search.toLowerCase());
-      const matchesEvent = selectedEvents.length === 0 || selectedEvents.includes(recipe.eventId);
-      return matchesSearch && matchesEvent;
-    });
+    return recipes
+      .filter((recipe) => {
+        const matchesSearch = recipe.name.toLowerCase().includes(search.toLowerCase());
+        const matchesEvent = selectedEvents.length === 0 || selectedEvents.includes(recipe.eventId);
+        return matchesSearch && matchesEvent;
+      })
+      .sort((a, b) => a.name.localeCompare(b.name));
   }, [search, selectedEvents]);
 
   return (
