@@ -61,13 +61,16 @@ function EventDetail() {
   return (
     <div className="bg-cream min-h-screen">
       <div className="max-w-3xl mx-auto px-6 md:px-8 py-8">
-        {/* Header: back arrow + title */}
-        <div className="flex items-start gap-4 mb-6">
-          <Link to="/events" className="text-gray-dark hover:text-primary mt-2 shrink-0">
-            <FaChevronLeft className="text-xl" />
-          </Link>
-          <h1 className="font-heading text-4xl md:text-5xl text-gray-dark leading-tight">{event.name}</h1>
-        </div>
+        {/* Back button */}
+        <Link
+          to="/events"
+          className="inline-flex items-center gap-2 font-body text-sm text-gray-dark hover:text-primary transition-colors mb-4"
+        >
+          <FaChevronLeft className="text-xs" />
+          Back to Events
+        </Link>
+
+        <h1 className="font-heading text-4xl md:text-5xl text-gray-dark leading-tight mb-6">{event.name}</h1>
 
         {/* Cover photo */}
         {event.coverImage && (
@@ -156,7 +159,20 @@ function EventDetail() {
         {/* Class Photos */}
         {event.photos.length > 0 && (
           <div className="mb-8">
-            <h2 className="font-heading text-lg text-gray-dark text-center underline mb-6">Class Photos</h2>
+            <h2 className="font-heading text-lg text-gray-dark text-center mb-6">
+              {event.googlePhotos ? (
+                <a
+                  href={event.googlePhotos}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline hover:text-primary transition-colors"
+                >
+                  Class Photos
+                </a>
+              ) : (
+                <span className="underline">Class Photos</span>
+              )}
+            </h2>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
               {event.photos.map((photo, i) => (
                 <img

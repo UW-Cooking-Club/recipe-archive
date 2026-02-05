@@ -30,25 +30,29 @@ function RecipeDetail() {
   return (
     <div className="bg-cream min-h-screen">
       <div className="max-w-3xl mx-auto px-6 md:px-8 py-8">
-        {/* Header: back arrow + title */}
-        <div className="flex items-start gap-4 mb-1">
-          <Link to="/recipes" className="text-gray-dark hover:text-primary mt-2 shrink-0">
-            <FaChevronLeft className="text-xl" />
-          </Link>
-          <div>
-            <h1 className="font-heading text-4xl md:text-5xl text-gray-dark leading-tight">
-              {recipe.name}
-              {recipe.subtitle && (
-                <span className="block text-2xl md:text-3xl text-gray-dark/70 font-heading">{recipe.subtitle}</span>
-              )}
-            </h1>
-          </div>
-        </div>
+        {/* Back button */}
+        <Link
+          to="/recipes"
+          className="inline-flex items-center gap-2 font-body text-sm text-gray-dark hover:text-primary transition-colors mb-4"
+        >
+          <FaChevronLeft className="text-xs" />
+          Back to Recipes
+        </Link>
+
+        <h1 className="font-heading text-4xl md:text-5xl text-gray-dark leading-tight">
+          {recipe.name}
+          {recipe.subtitle && (
+            <span className="block text-2xl md:text-3xl text-gray-dark/70 font-heading">{recipe.subtitle}</span>
+          )}
+        </h1>
 
         {/* From: Event link */}
         {event && (
-          <p className="font-body text-sm text-gray-dark ml-9 mb-6">
-            From: <span className="text-primary font-medium">{event.name}</span>
+          <p className="font-body text-sm text-gray-dark mb-6">
+            From:{" "}
+            <Link to={`/events/${event.slug}`} className="text-primary font-medium hover:underline">
+              {event.name}
+            </Link>
           </p>
         )}
 

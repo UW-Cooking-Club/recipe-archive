@@ -41,6 +41,8 @@ export const events = [
     status: "past",
     coverImage: koreanCover,
     photos: [korean1, korean2, korean3, korean4, korean5, korean6, korean7, korean8, korean9],
+    googlePhotos:
+      "https://photos.google.com/share/AF1QipOijdXD5J7mtaQd6rjJpIRyrHU_lge01jt_5s0ZBpGzP-skPVGHTZd3OQQMhTpCYg?key=eWFadzU1RWdIMVBHejZOcGJyOVVVZHdHTjJLYUp3",
   },
   {
     id: "wontons-dumplings-class-oct-2025",
@@ -53,6 +55,8 @@ export const events = [
     status: "past",
     coverImage: wanddCover,
     photos: [wd1, wd2, wd3, wd4, wd5, wd6, wd7, wd8, wd9],
+    googlePhotos:
+      "https://photos.google.com/share/AF1QipOHb3EFyR4jl4asC1CYH_9q_-QxYmaLEqYDWapDZhQG53KPCvcXCH5t_ujjMapcBQ?key=ZGNpNDVpbHNJMmtaSzhWcEtsUElCY216UktPd0p3",
   },
   {
     id: "thai-food-class-nov-2025",
@@ -65,5 +69,7 @@ export const events = [
     status: "past",
     coverImage: thaiCover,
     photos: [thai1, thai2, thai3, thai4, thai5, thai6],
+    googlePhotos:
+      "https://photos.google.com/share/AF1QipM1zslHvkd4f-7ZlzsrAgtYruWKIU1PgdvVvcR4jt4A_ycBtDNA_fVFksdG9Xcixw?key=SVJ4MUVrNUVXdXVEbGFaZVRmMVc2UUg0YnE1bnBB",
   },
 ];

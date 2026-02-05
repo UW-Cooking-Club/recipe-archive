@@ -6,7 +6,9 @@ import { events } from "../data/events";
 
 function Events() {
   const upcomingEvents = events.filter((e) => e.status === "upcoming");
-  const pastEvents = events.filter((e) => e.status === "past");
+  const pastEvents = events
+    .filter((e) => e.status === "past")
+    .sort((a, b) => new Date(b.date) - new Date(a.date));
 
   return (
     <>
