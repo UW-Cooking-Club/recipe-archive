@@ -33,7 +33,7 @@ function WhoAreWe() {
               rel="noopener noreferrer"
               className="text-white hover:opacity-80"
             >
-              <span className="font-bold">Instagram</span>
+              <span className="font-bold">Instagram </span>
             </a>
             to keep up with our events and become apart of the community!
           </p>
