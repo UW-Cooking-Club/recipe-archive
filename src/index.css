@@ -1,8 +1,21 @@
-@import 'tailwindcss';
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #219f90;
+  --color-cream: #fcfbf1;
+  --color-dark: #323232;
+  --color-gray-dark: #2f2f2f;
+  --color-yellow: #fcd24f;
+  --color-sage: #84a69d;
+  --color-dark-green: #231f20;
+  --color-coral: #fc5658;
+
+  --font-heading: "Barlow Condensed", sans-serif;
+  --font-body: "Montserrat", sans-serif;
+  --font-fun: "Fredoka", sans-serif;
+}
 
 :root {
-  color-scheme: light dark;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
