@@ -8,11 +8,34 @@ function WhoAreWe() {
         <div className="p-8 text-white">
           <h2 className="font-heading text-3xl mb-4">Who Are We?</h2>
           <p className="font-body text-sm leading-relaxed">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-            laboris nisi ut aliquip ex ea commodo.
+            The Cooking Club serves up cooking classes, workshops, bake sales, potlucks, and other food-related
+            adventures. We cover the full spectrum of foods from fancy pasta classes to quick and dirty tips to help you
+            manage the necessary evil known as ‘cooking during midterms’. When we’re not in the kitchen or hosting our
+            famous classes, we occasionally venture out to the real world to visit coffee roasters, picnic areas,
+            strawberry fields, or bonfire pits. If we’re not doing any of the above, our members are usually busy trying
+            to craft an amazing burger or a cupcake to help fuel the culinary debauchery!
+          </p>
+          <br />
+          <p className="font-body text-sm leading-relaxed">
+            Join our{" "}
+            <a
+              href="https://discord.gg/Gacu9hZ6sy"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white hover:opacity-80"
+            >
+              <span className="font-bold">Discord server </span>
+            </a>
+            and follow our{" "}
+            <a
+              href="https://www.instagram.com/uwcookingclub/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white hover:opacity-80"
+            >
+              <span className="font-bold">Instagram</span>
+            </a>
+            to keep up with our events and become apart of the community!
           </p>
         </div>
       </div>

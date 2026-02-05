@@ -58,23 +58,6 @@ function RecipeDetail() {
           <div className="flex-1">
             <h3 className="font-heading text-lg text-gray-dark mb-2">Description</h3>
             <p className="font-body text-sm text-gray-dark leading-relaxed">{recipe.description}</p>
-            {recipe.source?.name && (
-              <p className="font-body text-xs text-gray-dark/60 mt-3">
-                Recipe by:{" "}
-                {recipe.source.url ? (
-                  <a
-                    href={recipe.source.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-primary hover:underline"
-                  >
-                    {recipe.source.name}
-                  </a>
-                ) : (
-                  <span className="text-primary">{recipe.source.name}</span>
-                )}
-              </p>
-            )}
           </div>
         </div>
 

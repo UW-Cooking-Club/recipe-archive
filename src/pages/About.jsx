@@ -131,16 +131,7 @@ function About() {
               ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
               incididunt ut labore et dolore magna aliqua.
             </p>
-            <div className="flex items-center gap-2 mt-4">
-              <a href="#" className="text-white underline font-body text-sm">
-                Link
-              </a>
-              <a href="#" className="text-white hover:opacity-80">
-                <FaDiscord className="text-xl" />
-              </a>
-            </div>
           </div>
-          <div className="w-full md:w-48 h-48 bg-gray-300" />
         </div>
       </section>
 

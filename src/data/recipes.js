@@ -22,7 +22,6 @@ export const recipes = [
     difficulty: 2,
     tags: ["korean", "soup", "spicy"],
     eventId: "korean-food-class-sept-2025",
-    source: null,
     equipment: ["Large pot", "Knife", "Cutting board"],
     ingredients: [
       "150g sour kimchi (inc. juice)",
@@ -64,7 +63,6 @@ export const recipes = [
     difficulty: 1,
     tags: ["korean", "side dish", "vegetarian"],
     eventId: "korean-food-class-sept-2025",
-    source: null,
     equipment: ["Nonstick pan", "Mixing bowl", "Spatula"],
     ingredients: [
       "4 eggs, whole",
@@ -97,7 +95,6 @@ export const recipes = [
     difficulty: 1,
     tags: ["korean", "side dish", "vegetarian", "vegan"],
     eventId: "korean-food-class-sept-2025",
-    source: null,
     equipment: ["Nonstick pan", "Peeler", "Knife"],
     ingredients: [
       "200g potato, Yukon gold",
@@ -127,7 +124,6 @@ export const recipes = [
     difficulty: 2,
     tags: ["korean", "drink", "dessert"],
     eventId: "korean-food-class-sept-2025",
-    source: null,
     equipment: ["2 pots", "Fine mesh strainer", "Cheesecloth"],
     ingredients: [
       "30g cinnamon sticks",
@@ -160,7 +156,6 @@ export const recipes = [
     difficulty: 3,
     tags: ["chinese", "dumplings", "pork", "shrimp"],
     eventId: "wontons-dumplings-class-oct-2025",
-    source: null,
     equipment: ["Large mixing bowl", "Knife", "Cutting board", "Nonstick pan", "Lid"],
     ingredients: [
       {
@@ -191,8 +186,8 @@ export const recipes = [
       "Place a dumpling wrapper in the palm of your hand. Spoon 1 teaspoon of the filling into the center of the wrapper.",
       "Fold the dumpling into a semi-circle, pleat and pinch one side to the opposite side to make a classic shaped dumpling. Continue until all filling is used.",
       "For the skirt: mix together neutral oil, water, flour, cornstarch, and a pinch of salt in a bowl.",
-      "Pan fry dumplings in 1 tbsp of oil for 2–3 minutes over medium-high heat until golden brown.",
-      "Add about 1 cup of the skirt mixture (enough to come 1/4 way up the dumpling) and cover. Steam for 5–6 minutes until the water evaporates.",
+      "Pan fry dumplings in 1 tbsp of oil for 2-3 minutes over medium-high heat until golden brown.",
+      "Add about 1 cup of the skirt mixture (enough to come 1/4 way up the dumpling) and cover. Steam for 5-6 minutes until the water evaporates.",
       "Remove the lid — the skirt will form and become golden brown. Watch carefully to ensure it doesn't burn. Serve and enjoy!",
     ],
   },
@@ -210,7 +205,6 @@ export const recipes = [
     difficulty: 3,
     tags: ["chinese", "dumplings", "pork", "shrimp"],
     eventId: "wontons-dumplings-class-oct-2025",
-    source: null,
     equipment: ["Large mixing bowl", "Knife", "Cutting board", "Pot"],
     ingredients: [
       "90g ground pork",
@@ -253,15 +247,11 @@ export const recipes = [
     difficulty: 4,
     tags: ["thai", "noodles", "shrimp"],
     eventId: "thai-food-class-nov-2025",
-    source: {
-      name: "Pailin Chongchitnant",
-      url: null,
-    },
     equipment: ["Wok", "Small pot", "Spatula", "Fine mesh strainer"],
     ingredients: [
       {
         group: "Pad Thai Sauce",
-        items: ["3–4 tbsp tamarind paste", "1/4 cup palm sugar, chopped (or light brown sugar)", "3 tbsp fish sauce"],
+        items: ["3-4 tbsp tamarind paste", "1/4 cup palm sugar, chopped (or light brown sugar)", "3 tbsp fish sauce"],
       },
       {
         group: "Pad Thai",
@@ -309,10 +299,6 @@ export const recipes = [
     difficulty: 1,
     tags: ["thai", "salad", "spicy", "gluten-free"],
     eventId: "thai-food-class-nov-2025",
-    source: {
-      name: "Marzia",
-      url: null,
-    },
     equipment: ["Y-peeler", "Mandolin", "Medium bowl"],
     ingredients: [
       "2 tbsp fish sauce",
@@ -329,7 +315,7 @@ export const recipes = [
       "Thinly slice the onions (a mandolin works great). Julienne the carrots and mangoes using a y-peeler so all pieces are the same size.",
       "In a medium bowl, combine fish sauce, lime juice, 2 tbsp brown sugar, grated garlic, and chopped Thai chilies. Mix until sugar dissolves.",
       "Add the sliced red onions, shredded mangoes, julienned carrots, and cilantro.",
-      "Toss to combine. Taste and adjust — you should be able to taste salty, sweet, tangy, and spicy. Add more sugar or lime juice as needed.",
+      "Toss to combine. Taste and adjust, you should be able to taste salty, sweet, tangy, and spicy. Add more sugar or lime juice as needed.",
     ],
   },
   {
@@ -346,10 +332,6 @@ export const recipes = [
     difficulty: 1,
     tags: ["thai", "drink"],
     eventId: "thai-food-class-nov-2025",
-    source: {
-      name: "Pailin Chongchitnant",
-      url: null,
-    },
     equipment: ["Pot", "Fine mesh strainer", "Glasses"],
     ingredients: [
       {
@@ -362,12 +344,12 @@ export const recipes = [
           "3/4 cup Thai tea base",
           "1 1/2 tbsp sweetened condensed milk",
           "Ice to fill glass",
-          "2–3 tbsp evaporated milk",
+          "2-3 tbsp evaporated milk",
         ],
       },
       {
         group: "American Style (per glass)",
-        items: ["3/4 cup Thai tea base", "1 tbsp sugar (to taste)", "Ice to fill glass", "3–4 tbsp half and half"],
+        items: ["3/4 cup Thai tea base", "1 tbsp sugar (to taste)", "Ice to fill glass", "3-4 tbsp half and half"],
       },
     ],
     instructions: [
