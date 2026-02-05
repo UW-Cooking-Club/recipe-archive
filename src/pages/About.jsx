@@ -1,4 +1,3 @@
-import { FaDiscord } from "react-icons/fa";
 import PageHero from "@components/PageHero";
 import TeamSection from "@components/about/TeamSection";
 

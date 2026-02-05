@@ -35,7 +35,7 @@ function WhoAreWe() {
             >
               <span className="font-bold">Instagram </span>
             </a>
-            to keep up with our events and become apart of the community!
+            to keep up with our events and become a part of the community!
           </p>
         </div>
       </div>
