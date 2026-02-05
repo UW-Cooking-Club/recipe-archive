@@ -15,6 +15,7 @@ import Home from "./pages/Home";
 import Recipes from "./pages/Recipes";
 import RecipeDetail from "./pages/RecipeDetail";
 import Events from "./pages/Events";
+import EventDetail from "./pages/EventDetail";
 import About from "./pages/About";
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
             <Route path="/recipes" element={<Recipes />} />
             <Route path="/recipes/:slug" element={<RecipeDetail />} />
             <Route path="/events" element={<Events />} />
+            <Route path="/events/:slug" element={<EventDetail />} />
             <Route path="/about" element={<About />} />
           </Routes>
         </main>
