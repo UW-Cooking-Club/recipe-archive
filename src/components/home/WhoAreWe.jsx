@@ -1,4 +1,4 @@
-import whoAreWeImg from "@assets/WhoAreWe_Photo.png";
+import whoAreWeImg from "@assets/WhoAreWe_Photo.webp";
 
 function WhoAreWe() {
   return (

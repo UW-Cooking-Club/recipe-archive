@@ -1,5 +1,5 @@
-import heroImg from "@assets/Cooking_Hero.png";
-import uwccLogo from "@assets/UWCC_Black_nobg_Logo.png";
+import heroImg from "@assets/Cooking_Hero.webp";
+import uwccLogo from "@assets/UWCC_Black_nobg_Logo.webp";
 
 function Hero() {
   return (

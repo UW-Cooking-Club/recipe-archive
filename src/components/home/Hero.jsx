@@ -1,5 +1,5 @@
 import PageHero from "@components/PageHero";
-import uwccLogo from "@assets/UWCC_Black_nobg_Logo.png";
+import uwccLogo from "@assets/UWCC_Black_nobg_Logo.webp";
 
 function Hero() {
   return (

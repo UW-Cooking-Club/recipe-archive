@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import ig1 from "@assets/instagram/IG1.jpg";
-import ig2 from "@assets/instagram/IG2.jpg";
-import ig3 from "@assets/instagram/IG3.jpg";
-import ig4 from "@assets/instagram/IG4.jpg";
-import ig5 from "@assets/instagram/IG5.jpg";
-import ig6 from "@assets/instagram/IG6.jpg";
+import ig1 from "@assets/instagram/IG1.webp";
+import ig2 from "@assets/instagram/IG2.webp";
+import ig3 from "@assets/instagram/IG3.webp";
+import ig4 from "@assets/instagram/IG4.webp";
+import ig5 from "@assets/instagram/IG5.webp";
+import ig6 from "@assets/instagram/IG6.webp";
 
 const posts = [
   { image: ig1, url: "https://www.instagram.com/p/DUWjU8ECVID" },

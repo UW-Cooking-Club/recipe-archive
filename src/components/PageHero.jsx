@@ -1,4 +1,4 @@
-import heroImg from "@assets/Cooking_Hero.png";
+import heroImg from "@assets/Cooking_Hero.webp";
 
 function PageHero({ title, children }) {
   return (
