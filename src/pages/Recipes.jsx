@@ -52,9 +52,8 @@ function Recipes() {
 
   const toggleEvent = (eventId) => {
     if (selectedEvents.includes(eventId)) {
-      // Deselecting event — also deselect any term that fully contained it
+      // Deselecting event — also deselect any term that contained it
       setSelectedEvents((prev) => prev.filter((id) => id !== eventId));
-      // Find which tags this event belongs to and deselect them
       const tagsToRemove = selectedTags.filter((tag) => {
         const eventIdsForTag = tagToEventIds[tag] || [];
         return eventIdsForTag.includes(eventId);
@@ -64,7 +63,18 @@ function Recipes() {
       }
     } else {
       // Selecting event
-      setSelectedEvents((prev) => [...prev, eventId]);
+      const newSelectedEvents = [...selectedEvents, eventId];
+      setSelectedEvents(newSelectedEvents);
+
+      // Check if any term now has all its events selected — if so, select that term
+      const tagsToAdd = allTags.filter((tag) => {
+        if (selectedTags.includes(tag)) return false; // Already selected
+        const eventIdsForTag = tagToEventIds[tag] || [];
+        return eventIdsForTag.every((id) => newSelectedEvents.includes(id));
+      });
+      if (tagsToAdd.length > 0) {
+        setSelectedTags((prev) => [...prev, ...tagsToAdd]);
+      }
     }
   };
 

@@ -18,6 +18,8 @@ import crabDipImg from "@assets/recipes/ArtificialCrabDip.webp";
 import meatSkewersImg from "@assets/recipes/LuffyMeatSkewers.webp";
 import seafoodPastaImg from "@assets/recipes/SanjiSeafood.webp";
 import tangerineTartsImg from "@assets/recipes/NamiTangerineTarts.webp";
+import sausageCavatelliImg from "@assets/recipes/SausageFennelCavatelli.webp";
+import potatoGnocchiImg from "@assets/recipes/PotatoGnocchi+BrownButter.webp";
 
 export const recipes = [
   // ─── Korean Food Class (Sept 20, 2025) ───
@@ -900,6 +902,120 @@ export const recipes = [
       "Make the filling: beat eggs and sugar until blended. Stir in juice, citrus peel, vanilla, and cream.",
       "Pour filling into the par-baked crust. Bake for 25 minutes until just set.",
       "Let cool completely. Arrange tangerine slices in a spiral on top, dust with confectioners' sugar, and add mint leaves if desired.",
+    ],
+  },
+
+  // ─── Pasta Lovers Class (Nov 29, 2025) ───
+  {
+    id: 21,
+    slug: "sausage-fennel-cavatelli",
+    name: "Sausage and Fennel Cavatelli",
+    subtitle: "Creamy Italian Sausage Pasta",
+    description:
+      "Hearty cavatelli pasta tossed with crumbled Italian sausage, fennel seeds, white wine, and a touch of cream. Finished with bitter greens and Parmesan — a satisfying, stick-to-your-ribs meal.",
+    image: sausageCavatelliImg,
+    servings: 2,
+    prepTime: "10 min",
+    cookTime: "20 min",
+    totalTime: "30 min",
+    difficulty: 2,
+    tags: ["Fall 2025"],
+    eventId: "pasta-lovers-class-nov-2025",
+    equipment: ["Large pot", "Large skillet", "Wooden spoon"],
+    ingredients: [
+      {
+        group: "Pasta & Sauce",
+        items: [
+          "200g cavatelli pasta (or orecchiette)",
+          "2 mild or hot Italian sausages, casings removed",
+          "1.5 tsp fennel seeds",
+          "1 tbsp Italian seasoning",
+          "1 tsp red chili flakes (or 1-2 jalapeños, diced and deseeded)",
+          "3-4 cloves garlic, minced",
+          "50-100ml dry white wine",
+          "100ml chicken stock",
+          "50-100ml cream",
+          "1-2 handfuls spinach, kale, or rapini",
+          "1-2 tbsp butter",
+          "Parmesan, freshly grated",
+          "Salt and pepper to taste",
+          "Lemon zest (optional)",
+        ],
+      },
+      {
+        group: "Fried Breadcrumb Topping (Optional)",
+        items: [
+          "2 tbsp panko breadcrumbs",
+          "2 tbsp Italian breadcrumbs",
+          "Lemon zest",
+          "2 tbsp Parmesan, grated",
+          "2 tbsp extra virgin olive oil",
+        ],
+      },
+    ],
+    instructions: [
+      "Bring a large pot of well-salted water to a boil for the pasta.",
+      "Heat a large skillet over medium-high heat. Add the sausage (casings removed) and cook, breaking it up, until browned and a fond forms on the pan.",
+      "Add the pasta to the boiling water and cook until it floats (2-5 minutes for fresh pasta, or according to package for dried).",
+      "Season the sausage with fennel seeds, Italian seasoning, and chili flakes. Add the greens and cook until wilted.",
+      "Add the garlic and cook for 30 seconds — don't let it burn.",
+      "Deglaze with white wine, scraping up the browned bits. Cook until the wine is almost evaporated (au sec).",
+      "Add the chicken stock and cream. Let it reduce slightly, being careful not to split the cream.",
+      "Add the cooked pasta and a splash of pasta water. Toss to coat and emulsify the sauce.",
+      "Finish with butter and Parmesan, tossing until silky. Season with salt, pepper, and lemon zest if using.",
+      "For the topping: fry breadcrumbs in olive oil with lemon zest and Parmesan until golden. Sprinkle over the pasta before serving.",
+    ],
+  },
+  {
+    id: 22,
+    slug: "potato-gnocchi-brown-butter",
+    name: "Potato Gnocchi",
+    subtitle: "with Brown Butter, Crispy Prosciutto & Sage",
+    description:
+      "Light, pillowy homemade potato gnocchi pan-fried until golden, then drizzled with nutty brown butter, crispy sage leaves, and salty prosciutto. Simple ingredients, incredible results.",
+    image: potatoGnocchiImg,
+    servings: 4,
+    prepTime: "30 min",
+    cookTime: "20 min",
+    totalTime: "50 min",
+    difficulty: 3,
+    tags: ["Fall 2025"],
+    eventId: "pasta-lovers-class-nov-2025",
+    equipment: ["Large pot", "Potato ricer or grater", "Frying pan", "Baking sheet"],
+    ingredients: [
+      {
+        group: "Gnocchi",
+        items: [
+          "1 kg Russet potatoes (2 medium-large)",
+          "150-200g 00 or all-purpose flour (start low)",
+          "1 egg yolk",
+          "1 tsp salt",
+        ],
+      },
+      {
+        group: "Brown Butter Sauce",
+        items: [
+          "100g good quality butter",
+          "1 tbsp olive oil",
+          "20-25 fresh sage leaves",
+          "2-3 thin slices prosciutto, torn",
+          "1-2 tbsp powdered milk (optional, for extra nutty flavor)",
+          "Parmesan, freshly grated",
+          "Lemon zest (optional)",
+        ],
+      },
+    ],
+    instructions: [
+      "Cook potatoes (bake or microwave preferred over boiling — less moisture = lighter gnocchi) until completely soft.",
+      "While still hot, peel and rice the potatoes (or push through a sieve). Spread on a baking sheet and let steam escape.",
+      "Make a well in the potatoes. Add the egg yolk and salt. Add flour gradually (15-20% of potato weight).",
+      "Mix and knead as gently as possible until it just forms a soft dough (2-3 minutes). Overworked dough = gummy gnocchi. Add more flour 1 tbsp at a time if too sticky.",
+      "Rest covered for 5-10 minutes. Cut into portions, roll into ropes, and cut into 1-inch pieces. Roll on a fork or gnocchi board for ridges.",
+      "Boil gnocchi in well-salted water. They're done when they float — give them another 30 seconds, then remove with a spider strainer.",
+      "Heat olive oil and a knob of butter in a frying pan over medium-high heat. Pan-fry the gnocchi for 5-6 minutes, turning often, until golden and crisp.",
+      "In a separate pan, melt the butter over medium heat. Swirl continuously as it foams and the milk solids brown (3-4 minutes). It should smell nutty.",
+      "When browned, add the sage leaves, prosciutto, and milk powder (if using). Swirl until sage is crispy.",
+      "Spoon the brown butter over the crispy gnocchi. Finish with grated Parmesan and lemon zest if desired.",
     ],
   },
 ];
