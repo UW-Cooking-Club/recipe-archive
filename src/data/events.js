@@ -28,7 +28,30 @@ import thai4 from "@assets/events/thai-food-class/Thai4.jpg";
 import thai5 from "@assets/events/thai-food-class/Thai5.jpg";
 import thai6 from "@assets/events/thai-food-class/Thai6.jpg";
 
+import upcoming1 from "@assets/events/upcoming/Upcoming1.png";
+import upcoming2 from "@assets/events/upcoming/Upcoming2.png";
+import upcoming3 from "@assets/events/upcoming/Upcoming3.png";
+import upcoming4 from "@assets/events/upcoming/Upcoming4.png";
+
 export const events = [
+  {
+    id: "taste-of-love-feb-2026",
+    slug: "taste-of-love",
+    name: "Taste of Love",
+    date: "2026-02-07",
+    description:
+      "Hey Warriors 📣 When people are telling me love is in the air… But all I can smell is food 🤔🥘\n\nWith Valentines around the corner, celebrate your love for food with our Taste of Love cooking class 😋 ❤️ ! This February 7th, you'll be learning and enjoying a delicious meal of some soy garlic honey salmon with asparagus and potatoes, chili chocolate mousse and a pineapple mojito mocktail! Whether you are a seasoned chef or new to the kitchen, everyone is welcomed to come and have a blast with fellow food lovers 🔥\n\nTickets are 25.00 per person! Spots are limited! If you have any questions or dietary restrictions, shoot us a dm :)\n\nReminders: Tie up long hair and wear closed-toed shoes. Bring a reusable container for any leftovers you want to bring your meals home!",
+    collab: null,
+    taughtBy: null,
+    status: "upcoming",
+    coverImage: upcoming1,
+    photos: [upcoming1, upcoming2, upcoming3, upcoming4],
+    googlePhotos: null,
+    ticketsUrl: "https://wusa.ca/event/taste-of-love/?utm_source=ig&utm_medium=social&utm_content=link_in_bio",
+    price: "$25.00",
+    location: "19-105 Lexington Rd, Waterloo ON N2J 4R7 — Culinary Studio",
+    times: ["11:00AM - 1:30PM", "2:30PM - 5:00PM", "6:00PM - 8:30PM"],
+  },
   {
     id: "korean-food-class-sept-2025",
     slug: "korean-food-class",
