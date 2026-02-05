@@ -9,7 +9,7 @@ function Recipes() {
   const [search, setSearch] = useState("");
   const [showFilters, setShowFilters] = useState(false);
   const [selectedTags, setSelectedTags] = useState([]);
-  const [selectedEvent, setSelectedEvent] = useState(null);
+  const [selectedEvents, setSelectedEvents] = useState([]);
 
   const allTags = useMemo(() => {
     const tagSet = new Set();
@@ -17,18 +17,64 @@ function Recipes() {
     return Array.from(tagSet).sort();
   }, []);
 
+  // Map each term tag to its event IDs (via recipes)
+  const tagToEventIds = useMemo(() => {
+    const map = {};
+    allTags.forEach((tag) => {
+      const eventIds = new Set();
+      recipes.forEach((r) => {
+        if (r.tags.includes(tag)) eventIds.add(r.eventId);
+      });
+      map[tag] = Array.from(eventIds);
+    });
+    return map;
+  }, [allTags]);
+
+  // Only show past events that have recipes
+  const eventsWithRecipes = useMemo(() => {
+    const idsWithRecipes = new Set(recipes.map((r) => r.eventId));
+    return events.filter((e) => idsWithRecipes.has(e.id));
+  }, []);
+
+  const toggleTag = (tag) => {
+    const eventIdsForTag = tagToEventIds[tag] || [];
+
+    if (selectedTags.includes(tag)) {
+      // Deselecting term — remove the term and its events
+      setSelectedTags((prev) => prev.filter((t) => t !== tag));
+      setSelectedEvents((prev) => prev.filter((id) => !eventIdsForTag.includes(id)));
+    } else {
+      // Selecting term — add the term and all its events
+      setSelectedTags((prev) => [...prev, tag]);
+      setSelectedEvents((prev) => [...new Set([...prev, ...eventIdsForTag])]);
+    }
+  };
+
+  const toggleEvent = (eventId) => {
+    if (selectedEvents.includes(eventId)) {
+      // Deselecting event — also deselect any term that fully contained it
+      setSelectedEvents((prev) => prev.filter((id) => id !== eventId));
+      // Find which tags this event belongs to and deselect them
+      const tagsToRemove = selectedTags.filter((tag) => {
+        const eventIdsForTag = tagToEventIds[tag] || [];
+        return eventIdsForTag.includes(eventId);
+      });
+      if (tagsToRemove.length > 0) {
+        setSelectedTags((prev) => prev.filter((t) => !tagsToRemove.includes(t)));
+      }
+    } else {
+      // Selecting event
+      setSelectedEvents((prev) => [...prev, eventId]);
+    }
+  };
+
   const filteredRecipes = useMemo(() => {
     return recipes.filter((recipe) => {
       const matchesSearch = recipe.name.toLowerCase().includes(search.toLowerCase());
-      const matchesTags = selectedTags.length === 0 || selectedTags.some((tag) => recipe.tags.includes(tag));
-      const matchesEvent = !selectedEvent || recipe.eventId === selectedEvent;
-      return matchesSearch && matchesTags && matchesEvent;
+      const matchesEvent = selectedEvents.length === 0 || selectedEvents.includes(recipe.eventId);
+      return matchesSearch && matchesEvent;
     });
-  }, [search, selectedTags, selectedEvent]);
-
-  const toggleTag = (tag) => {
-    setSelectedTags((prev) => (prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag]));
-  };
+  }, [search, selectedEvents]);
 
   return (
     <>
@@ -57,27 +103,7 @@ function Recipes() {
         {/* Filters */}
         {showFilters && (
           <div className="max-w-4xl mx-auto mb-6 p-4 bg-white rounded-lg space-y-4">
-            {/* Event filter */}
-            <div>
-              <h3 className="font-heading text-sm text-gray-dark mb-2">Event</h3>
-              <div className="flex flex-wrap gap-2">
-                {events.map((event) => (
-                  <button
-                    key={event.id}
-                    onClick={() => setSelectedEvent(selectedEvent === event.id ? null : event.id)}
-                    className={`px-3 py-1 rounded-full font-body text-sm transition-colors ${
-                      selectedEvent === event.id
-                        ? "bg-yellow text-gray-dark"
-                        : "bg-gray-200 text-gray-dark hover:bg-gray-300"
-                    }`}
-                  >
-                    {event.name}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Tag filter */}
+            {/* Term filter */}
             <div>
               <h3 className="font-heading text-sm text-gray-dark mb-2">Term</h3>
               <div className="flex flex-wrap gap-2">
@@ -97,11 +123,31 @@ function Recipes() {
               </div>
             </div>
 
-            {(selectedTags.length > 0 || selectedEvent) && (
+            {/* Event filter */}
+            <div>
+              <h3 className="font-heading text-sm text-gray-dark mb-2">Event</h3>
+              <div className="flex flex-wrap gap-2">
+                {eventsWithRecipes.map((event) => (
+                  <button
+                    key={event.id}
+                    onClick={() => toggleEvent(event.id)}
+                    className={`px-3 py-1 rounded-full font-body text-sm transition-colors ${
+                      selectedEvents.includes(event.id)
+                        ? "bg-yellow text-gray-dark"
+                        : "bg-gray-200 text-gray-dark hover:bg-gray-300"
+                    }`}
+                  >
+                    {event.name}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {(selectedTags.length > 0 || selectedEvents.length > 0) && (
               <button
                 onClick={() => {
                   setSelectedTags([]);
-                  setSelectedEvent(null);
+                  setSelectedEvents([]);
                 }}
                 className="text-sm font-body text-primary hover:underline"
               >
