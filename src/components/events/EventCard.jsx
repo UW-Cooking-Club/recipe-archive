@@ -18,6 +18,7 @@ function EventCard({ event }) {
             src={event.coverImage}
             alt={event.name}
             className="w-full h-48 object-cover group-hover:scale-105 transition-transform"
+            loading="lazy"
           />
         ) : (
           <div className="w-full h-48 bg-gray-300" />

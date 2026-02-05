@@ -117,6 +117,7 @@ function EventDetail() {
                           src={recipe.image}
                           alt={recipe.name}
                           className="w-full md:w-52 h-36 object-cover rounded"
+                          loading="lazy"
                         />
                       </div>
                       <div className="flex flex-col justify-center font-body text-sm text-gray-dark space-y-1">
@@ -164,6 +165,7 @@ function EventDetail() {
                   alt={`${event.name} photo ${i + 1}`}
                   className="w-full h-40 object-cover rounded cursor-pointer hover:opacity-80 transition-opacity"
                   onClick={() => setLightboxIndex(i)}
+                  loading="lazy"
                 />
               ))}
             </div>
@@ -173,10 +175,7 @@ function EventDetail() {
 
       {/* Lightbox Modal */}
       {lightboxIndex !== null && (
-        <div
-          className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center"
-          onClick={closeLightbox}
-        >
+        <div className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center" onClick={closeLightbox}>
           {/* Close button */}
           <button
             className="absolute top-4 right-4 text-white text-2xl hover:opacity-70 transition-opacity"
@@ -190,7 +189,10 @@ function EventDetail() {
           {event.photos.length > 1 && (
             <button
               className="absolute left-4 text-white text-3xl hover:opacity-70 transition-opacity"
-              onClick={(e) => { e.stopPropagation(); goPrev(); }}
+              onClick={(e) => {
+                e.stopPropagation();
+                goPrev();
+              }}
               aria-label="Previous photo"
             >
               <FaChevronLeft />
@@ -209,7 +211,10 @@ function EventDetail() {
           {event.photos.length > 1 && (
             <button
               className="absolute right-4 text-white text-3xl hover:opacity-70 transition-opacity"
-              onClick={(e) => { e.stopPropagation(); goNext(); }}
+              onClick={(e) => {
+                e.stopPropagation();
+                goNext();
+              }}
               aria-label="Next photo"
             >
               <FaChevronRight />

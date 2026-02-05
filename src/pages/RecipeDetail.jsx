@@ -54,7 +54,12 @@ function RecipeDetail() {
 
         {/* Photo + Description row */}
         <div className="flex flex-col md:flex-row gap-6 mb-6 bg-white border border-gray-200 rounded-lg p-4">
-          <img src={recipe.image} alt={recipe.name} className="w-full md:w-56 h-48 md:h-auto object-cover rounded" />
+          <img
+            src={recipe.image}
+            alt={recipe.name}
+            className="w-full md:w-56 h-48 md:h-auto object-cover rounded"
+            loading="lazy"
+          />
           <div className="flex-1">
             <h3 className="font-heading text-lg text-gray-dark mb-2">Description</h3>
             <p className="font-body text-sm text-gray-dark leading-relaxed">{recipe.description}</p>

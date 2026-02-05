@@ -58,6 +58,7 @@ function Events() {
                   src={event.coverImage}
                   alt={event.name}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform"
+                  loading="lazy"
                 />
               ) : (
                 <div className="w-full h-full bg-gray-500" />
