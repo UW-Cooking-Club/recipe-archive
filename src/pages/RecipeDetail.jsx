@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import { FaClock, FaUtensils, FaArrowLeft } from "react-icons/fa";
+import { FaChevronLeft, FaStar, FaRegStar } from "react-icons/fa";
 import { recipes } from "../data/recipes";
 import { events } from "../data/events";
 
@@ -22,81 +22,124 @@ function RecipeDetail() {
 
   const event = events.find((e) => e.id === recipe.eventId);
 
-  // Check if ingredients are grouped (array of objects with group/items)
   const hasGroupedIngredients =
     recipe.ingredients.length > 0 && typeof recipe.ingredients[0] === "object" && recipe.ingredients[0].group;
 
+  const stars = Array.from({ length: 5 }, (_, i) => i < recipe.difficulty);
+
   return (
-    <div className="bg-cream">
-      {/* Hero Image */}
-      <div className="relative h-[350px] md:h-[400px]">
-        <img src={recipe.image} alt={recipe.name} className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-dark/50 flex items-end">
-          <div className="w-full px-8 py-6 md:px-16 md:py-10">
-            <h1 className="font-heading text-4xl md:text-5xl text-white mb-1">{recipe.name}</h1>
-            {recipe.subtitle && <p className="font-body text-white/80 text-lg mb-2">{recipe.subtitle}</p>}
-            <p className="font-body text-white/90 text-sm md:text-base max-w-2xl">{recipe.description}</p>
-          </div>
-        </div>
-      </div>
-
-      <div className="max-w-4xl mx-auto px-6 md:px-8">
-        {/* Back link */}
-        <div className="pt-6">
-          <Link to="/recipes" className="inline-flex items-center gap-2 font-body text-sm text-primary hover:underline">
-            <FaArrowLeft className="text-xs" /> Back to Recipe Archive
+    <div className="bg-cream min-h-screen">
+      <div className="max-w-3xl mx-auto px-6 md:px-8 py-8">
+        {/* Header: back arrow + title */}
+        <div className="flex items-start gap-4 mb-1">
+          <Link to="/recipes" className="text-gray-dark hover:text-primary mt-2 shrink-0">
+            <FaChevronLeft className="text-xl" />
           </Link>
-        </div>
-
-        {/* Meta row */}
-        <div className="flex flex-wrap gap-6 items-center bg-white rounded-lg px-6 py-4 mt-4">
-          <div className="flex items-center gap-2">
-            <FaUtensils className="text-primary text-sm" />
-            <span className="font-body text-gray-dark text-sm">{recipe.servings}</span>
+          <div>
+            <h1 className="font-heading text-4xl md:text-5xl text-gray-dark leading-tight">
+              {recipe.name}
+              {recipe.subtitle && (
+                <span className="block text-2xl md:text-3xl text-gray-dark/70 font-heading">{recipe.subtitle}</span>
+              )}
+            </h1>
           </div>
-          {recipe.prepTime && (
-            <div className="flex items-center gap-2">
-              <FaClock className="text-primary text-sm" />
-              <span className="font-body text-gray-dark text-sm">Prep: {recipe.prepTime}</span>
-            </div>
-          )}
-          {recipe.cookTime && (
-            <div className="flex items-center gap-2">
-              <FaClock className="text-primary text-sm" />
-              <span className="font-body text-gray-dark text-sm">Cook: {recipe.cookTime}</span>
-            </div>
-          )}
-          {event && (
-            <div className="flex items-center gap-2 ml-auto">
-              <span className="font-body text-gray-dark text-sm">
-                From: <span className="text-primary font-medium">{event.name}</span>
-              </span>
-            </div>
-          )}
         </div>
 
-        {/* Tags */}
-        <div className="mt-4 flex flex-wrap gap-2">
-          {recipe.tags.map((tag) => (
-            <span key={tag} className="px-3 py-1 bg-sage/30 text-gray-dark font-body text-xs rounded-full capitalize">
-              {tag}
-            </span>
-          ))}
+        {/* From: Event link */}
+        {event && (
+          <p className="font-body text-sm text-gray-dark ml-9 mb-6">
+            From: <span className="text-primary font-medium">{event.name}</span>
+          </p>
+        )}
+
+        {/* Photo + Description row */}
+        <div className="flex flex-col md:flex-row gap-6 mb-6 bg-white border border-gray-200 rounded-lg p-4">
+          <img src={recipe.image} alt={recipe.name} className="w-full md:w-56 h-48 md:h-auto object-cover rounded" />
+          <div className="flex-1">
+            <h3 className="font-heading text-lg text-gray-dark mb-2">Description</h3>
+            <p className="font-body text-sm text-gray-dark leading-relaxed">{recipe.description}</p>
+            {recipe.source?.name && (
+              <p className="font-body text-xs text-gray-dark/60 mt-3">
+                Recipe by:{" "}
+                {recipe.source.url ? (
+                  <a
+                    href={recipe.source.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary hover:underline"
+                  >
+                    {recipe.source.name}
+                  </a>
+                ) : (
+                  <span className="text-primary">{recipe.source.name}</span>
+                )}
+              </p>
+            )}
+          </div>
         </div>
 
-        {/* Ingredients & Instructions */}
-        <div className="grid md:grid-cols-2 gap-6 mt-8 pb-12">
+        {/* Difficulty */}
+        <div className="flex items-center gap-2 mb-4">
+          <span className="font-heading text-sm text-gray-dark">Difficulty Level: {recipe.difficulty}/5</span>
+          <div className="flex gap-0.5">
+            {stars.map((filled, i) =>
+              filled ? (
+                <FaStar key={i} className="text-yellow text-sm" />
+              ) : (
+                <FaRegStar key={i} className="text-yellow text-sm" />
+              )
+            )}
+          </div>
+        </div>
+
+        {/* Time & Serving row */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+          <div className="text-center">
+            <p className="font-heading text-xs text-gray-dark underline">Prep Time</p>
+            <p className="font-body text-sm text-gray-dark">{recipe.prepTime || "—"}</p>
+          </div>
+          <div className="text-center">
+            <p className="font-heading text-xs text-gray-dark underline">Cooking Time</p>
+            <p className="font-body text-sm text-gray-dark">{recipe.cookTime || "—"}</p>
+          </div>
+          <div className="text-center">
+            <p className="font-heading text-xs text-gray-dark underline">Total Time</p>
+            <p className="font-body text-sm text-gray-dark">{recipe.totalTime || "—"}</p>
+          </div>
+          <div className="text-center">
+            <p className="font-heading text-xs text-gray-dark underline">Serving Size</p>
+            <p className="font-body text-sm text-gray-dark">{recipe.servings}</p>
+          </div>
+        </div>
+
+        {/* Equipment + Ingredients row */}
+        <div className="grid md:grid-cols-2 gap-4 mb-6">
+          {/* Equipment */}
+          {recipe.equipment && recipe.equipment.length > 0 && (
+            <div className="border border-gray-300 rounded-lg p-5">
+              <h2 className="font-heading text-lg text-gray-dark underline mb-3">Equipment</h2>
+              <ul className="space-y-1.5">
+                {recipe.equipment.map((item, i) => (
+                  <li key={i} className="font-body text-sm text-gray-dark flex items-start">
+                    <span className="mr-2">•</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
           {/* Ingredients */}
-          <div className="bg-white rounded-lg p-6">
-            <h2 className="font-heading text-2xl text-primary mb-4">Ingredients</h2>
+          <div className="border border-gray-300 rounded-lg p-5">
+            <h2 className="font-heading text-lg text-gray-dark underline mb-3">Ingredients</h2>
             {hasGroupedIngredients ? (
               recipe.ingredients.map((group, gi) => (
                 <div key={gi} className={gi > 0 ? "mt-4" : ""}>
-                  <h3 className="font-heading text-lg text-gray-dark mb-2">{group.group}</h3>
+                  <h3 className="font-heading text-sm text-primary mb-1">{group.group}</h3>
                   <ul className="space-y-1.5">
                     {group.items.map((item, i) => (
-                      <li key={i} className="font-body text-gray-dark text-sm flex items-start">
-                        <span className="text-primary mr-2 mt-0.5">•</span>
+                      <li key={i} className="font-body text-sm text-gray-dark flex items-start">
+                        <span className="mr-2">•</span>
                         <span>{item}</span>
                       </li>
                     ))}
@@ -106,49 +149,28 @@ function RecipeDetail() {
             ) : (
               <ul className="space-y-1.5">
                 {recipe.ingredients.map((item, i) => (
-                  <li key={i} className="font-body text-gray-dark text-sm flex items-start">
-                    <span className="text-primary mr-2 mt-0.5">•</span>
+                  <li key={i} className="font-body text-sm text-gray-dark flex items-start">
+                    <span className="mr-2">•</span>
                     <span>{item}</span>
                   </li>
                 ))}
               </ul>
             )}
           </div>
-
-          {/* Instructions */}
-          <div className="bg-white rounded-lg p-6">
-            <h2 className="font-heading text-2xl text-primary mb-4">Instructions</h2>
-            <ol className="space-y-4">
-              {recipe.instructions.map((step, i) => (
-                <li key={i} className="font-body text-gray-dark text-sm flex items-start gap-3">
-                  <span className="font-heading text-lg text-primary shrink-0 leading-5">{i + 1}.</span>
-                  <span>{step}</span>
-                </li>
-              ))}
-            </ol>
-          </div>
         </div>
 
-        {/* Source attribution */}
-        {recipe.source?.name && (
-          <div className="pb-8 -mt-4">
-            <p className="font-body text-gray-dark text-xs">
-              Recipe by:{" "}
-              {recipe.source.url ? (
-                <a
-                  href={recipe.source.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-primary hover:underline"
-                >
-                  {recipe.source.name}
-                </a>
-              ) : (
-                <span className="text-primary">{recipe.source.name}</span>
-              )}
-            </p>
-          </div>
-        )}
+        {/* Procedure */}
+        <div className="border border-gray-300 rounded-lg p-6 mb-8">
+          <h2 className="font-heading text-xl text-gray-dark text-center underline mb-6">Procedure</h2>
+          <ol className="space-y-5">
+            {recipe.instructions.map((step, i) => (
+              <li key={i} className="font-body text-sm text-gray-dark flex items-start gap-3">
+                <span className="font-heading text-base text-gray-dark shrink-0">{i + 1}.</span>
+                <span className="leading-relaxed">{step}</span>
+              </li>
+            ))}
+          </ol>
+        </div>
       </div>
     </div>
   );
