@@ -152,18 +152,18 @@ function EventDetail() {
 
         <hr className="border-gray-300 mb-6" />
 
-        {/* Class Photos (skip first — it's the cover image) */}
-        {event.photos.length > 1 && (
+        {/* Class Photos */}
+        {event.photos.length > 0 && (
           <div className="mb-8">
             <h2 className="font-heading text-lg text-gray-dark text-center underline mb-6">Class Photos</h2>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-              {event.photos.slice(1).map((photo, i) => (
+              {event.photos.map((photo, i) => (
                 <img
                   key={i}
                   src={photo}
-                  alt={`${event.name} photo ${i + 2}`}
+                  alt={`${event.name} photo ${i + 1}`}
                   className="w-full h-40 object-cover rounded cursor-pointer hover:opacity-80 transition-opacity"
-                  onClick={() => setLightboxIndex(i + 1)}
+                  onClick={() => setLightboxIndex(i)}
                 />
               ))}
             </div>
