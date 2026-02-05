@@ -1,9 +1,12 @@
+import armyStewImg from "@assets/recipes/ArmyStew.jpg";
+import eggRollImg from "@assets/recipes/EggRolls.jpg";
+import stirFriedPotatoImg from "@assets/recipes/StirFriedPotato.jpg";
+import cinnamonPunchImg from "@assets/recipes/CinnamonPunch.png";
+import dumplingsImg from "@assets/recipes/Dumplings.jpg";
+import wontonsImg from "@assets/recipes/Wontons.jpg";
 import padThaiImg from "@assets/recipes/PadThai.jpg";
 import mangoSaladImg from "@assets/recipes/ThaiMangoSalad.jpg";
 import thaiTeaImg from "@assets/recipes/ThaiTea.webp";
-
-const placeholder = (text, bg = "219f90") =>
-  `https://placehold.co/800x600/${bg}/ffffff?text=${encodeURIComponent(text)}`;
 
 export const recipes = [
   // ─── Korean Food Class (Sept 20, 2025) ───
@@ -14,13 +17,13 @@ export const recipes = [
     subtitle: "부대찌개 (Budae-jjigae)",
     description:
       "A hearty Korean stew loaded with kimchi, spam, sausage, tofu, ramen noodles, and more — the ultimate comfort food.",
-    image: placeholder("Army Stew"),
+    image: armyStewImg,
     servings: 2,
     prepTime: "15 min",
     cookTime: "20 min",
     totalTime: "35 min",
     difficulty: 2,
-    tags: ["korean", "soup", "spicy"],
+    tags: ["Fall 2025"],
     eventId: "korean-food-class-sept-2025",
     equipment: ["Large pot", "Knife", "Cutting board"],
     ingredients: [
@@ -55,13 +58,13 @@ export const recipes = [
     name: "Egg Roll",
     subtitle: "계란말이 (Geyran-mari)",
     description: "A simple and savory Korean rolled omelette with scallions and carrots — a staple side dish.",
-    image: placeholder("Egg Roll", "fcd24f"),
+    image: eggRollImg,
     servings: 2,
     prepTime: "5 min",
     cookTime: "10 min",
     totalTime: "15 min",
     difficulty: 1,
-    tags: ["korean", "side dish", "vegetarian"],
+    tags: ["Fall 2025"],
     eventId: "korean-food-class-sept-2025",
     equipment: ["Nonstick pan", "Mixing bowl", "Spatula"],
     ingredients: [
@@ -87,13 +90,13 @@ export const recipes = [
     name: "Stir Fried Potato",
     subtitle: "감자볶음 (Gamja-bokkeum)",
     description: "Crispy julienned potatoes and carrots seasoned simply — a classic Korean banchan.",
-    image: placeholder("Stir Fried Potato", "84a69d"),
+    image: stirFriedPotatoImg,
     servings: 2,
     prepTime: "10 min",
     cookTime: "10 min",
     totalTime: "20 min",
     difficulty: 1,
-    tags: ["korean", "side dish", "vegetarian", "vegan"],
+    tags: ["Fall 2025"],
     eventId: "korean-food-class-sept-2025",
     equipment: ["Nonstick pan", "Peeler", "Knife"],
     ingredients: [
@@ -116,13 +119,13 @@ export const recipes = [
     name: "Cinnamon Punch",
     subtitle: "수정과 (Sujeongkwa)",
     description: "A traditional Korean cinnamon and ginger punch, served chilled with dried dates and pine nuts.",
-    image: placeholder("Cinnamon Punch", "fc5658"),
+    image: cinnamonPunchImg,
     servings: 2,
     prepTime: "10 min",
     cookTime: "30 min",
     totalTime: "40 min",
     difficulty: 2,
-    tags: ["korean", "drink", "dessert"],
+    tags: ["Fall 2025"],
     eventId: "korean-food-class-sept-2025",
     equipment: ["2 pots", "Fine mesh strainer", "Cheesecloth"],
     ingredients: [
@@ -148,13 +151,13 @@ export const recipes = [
     name: "Dumplings",
     subtitle: "With Crispy Skirt",
     description: "Handmade pork and shrimp dumplings with a golden, crispy lace skirt.",
-    image: placeholder("Dumplings"),
+    image: dumplingsImg,
     servings: 20,
     prepTime: "30 min",
     cookTime: "10 min",
     totalTime: "40 min",
     difficulty: 3,
-    tags: ["chinese", "dumplings", "pork", "shrimp"],
+    tags: ["Fall 2025"],
     eventId: "wontons-dumplings-class-oct-2025",
     equipment: ["Large mixing bowl", "Knife", "Cutting board", "Nonstick pan", "Lid"],
     ingredients: [
@@ -197,13 +200,13 @@ export const recipes = [
     name: "Wontons",
     subtitle: null,
     description: "Classic pork and shrimp wontons, boiled until they float and served with your favourite sauce.",
-    image: placeholder("Wontons", "fcd24f"),
+    image: wontonsImg,
     servings: 20,
     prepTime: "30 min",
     cookTime: "5 min",
     totalTime: "35 min",
     difficulty: 3,
-    tags: ["chinese", "dumplings", "pork", "shrimp"],
+    tags: ["Fall 2025"],
     eventId: "wontons-dumplings-class-oct-2025",
     equipment: ["Large mixing bowl", "Knife", "Cutting board", "Pot"],
     ingredients: [
@@ -245,7 +248,7 @@ export const recipes = [
     cookTime: "15 min",
     totalTime: "45 min",
     difficulty: 4,
-    tags: ["thai", "noodles", "shrimp"],
+    tags: ["Fall 2025"],
     eventId: "thai-food-class-nov-2025",
     equipment: ["Wok", "Small pot", "Spatula", "Fine mesh strainer"],
     ingredients: [
@@ -297,7 +300,7 @@ export const recipes = [
     cookTime: null,
     totalTime: "15 min",
     difficulty: 1,
-    tags: ["thai", "salad", "spicy", "gluten-free"],
+    tags: ["Fall 2025"],
     eventId: "thai-food-class-nov-2025",
     equipment: ["Y-peeler", "Mandolin", "Medium bowl"],
     ingredients: [
@@ -330,7 +333,7 @@ export const recipes = [
     cookTime: "10 min",
     totalTime: "45 min",
     difficulty: 1,
-    tags: ["thai", "drink"],
+    tags: ["Fall 2025"],
     eventId: "thai-food-class-nov-2025",
     equipment: ["Pot", "Fine mesh strainer", "Glasses"],
     ingredients: [

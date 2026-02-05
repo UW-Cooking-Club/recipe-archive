@@ -79,7 +79,7 @@ function Recipes() {
 
             {/* Tag filter */}
             <div>
-              <h3 className="font-heading text-sm text-gray-dark mb-2">Category</h3>
+              <h3 className="font-heading text-sm text-gray-dark mb-2">Term</h3>
               <div className="flex flex-wrap gap-2">
                 {allTags.map((tag) => (
                   <button
