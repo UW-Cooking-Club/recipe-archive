@@ -115,16 +115,16 @@ import lafb4 from "@assets/events/love-at-first-bite/Lafb4.webp";
 import lafb5 from "@assets/events/love-at-first-bite/Lafb5.webp";
 import lafb6 from "@assets/events/love-at-first-bite/Lafb6.webp";
 
-import iranCover from "@assets/events/flavours_of_iran/Iran_Cover.webp";
-import iran1 from "@assets/events/flavours_of_iran/Iran1.webp";
-import iran2 from "@assets/events/flavours_of_iran/Iran2.webp";
-import iran3 from "@assets/events/flavours_of_iran/Iran3.webp";
-import iran4 from "@assets/events/flavours_of_iran/Iran4.webp";
-import iran5 from "@assets/events/flavours_of_iran/Iran5.webp";
-import iran6 from "@assets/events/flavours_of_iran/Iran6.webp";
-import iran7 from "@assets/events/flavours_of_iran/Iran7.webp";
-import iran8 from "@assets/events/flavours_of_iran/Iran8.webp";
-import iran9 from "@assets/events/flavours_of_iran/Iran9.webp";
+import iranCover from "@assets/events/flavours-of-iran/Iran_Cover.webp";
+import iran1 from "@assets/events/flavours-of-iran/Iran1.webp";
+import iran2 from "@assets/events/flavours-of-iran/Iran2.webp";
+import iran3 from "@assets/events/flavours-of-iran/Iran3.webp";
+import iran4 from "@assets/events/flavours-of-iran/Iran4.webp";
+import iran5 from "@assets/events/flavours-of-iran/Iran5.webp";
+import iran6 from "@assets/events/flavours-of-iran/Iran6.webp";
+import iran7 from "@assets/events/flavours-of-iran/Iran7.webp";
+import iran8 from "@assets/events/flavours-of-iran/Iran8.webp";
+import iran9 from "@assets/events/flavours-of-iran/Iran9.webp";
 
 import wicsCover from "@assets/events/uwcc-wics/UWCCxWICS_Cover.webp";
 import wics1 from "@assets/events/uwcc-wics/UWCCxWICS1.webp";
@@ -188,27 +188,27 @@ import peruvian4 from "@assets/events/peruvian/Peruvian4.webp";
 import peruvian5 from "@assets/events/peruvian/Peruvian5.webp";
 import peruvian6 from "@assets/events/peruvian/Peruvian6.webp";
 
-import tcmsrCover from "@assets/events/tc&msr/TC&MSR_Cover.webp";
-import tcmsr1 from "@assets/events/tc&msr/TC&MSR1.webp";
-import tcmsr2 from "@assets/events/tc&msr/TC&MSR2.webp";
-import tcmsr3 from "@assets/events/tc&msr/TC&MSR3.webp";
-import tcmsr4 from "@assets/events/tc&msr/TC&MSR4.webp";
-import tcmsr5 from "@assets/events/tc&msr/TC&MSR5.webp";
-import tcmsr6 from "@assets/events/tc&msr/TC&MSR6.webp";
-import tcmsr7 from "@assets/events/tc&msr/TC&MSR7.webp";
-import tcmsr8 from "@assets/events/tc&msr/TC&MSR8.webp";
-import tcmsr9 from "@assets/events/tc&msr/TC&MSR9.webp";
+import tcmsrCover from "@assets/events/tc-msr/TC-MSR_Cover.webp";
+import tcmsr1 from "@assets/events/tc-msr/TC-MSR1.webp";
+import tcmsr2 from "@assets/events/tc-msr/TC-MSR2.webp";
+import tcmsr3 from "@assets/events/tc-msr/TC-MSR3.webp";
+import tcmsr4 from "@assets/events/tc-msr/TC-MSR4.webp";
+import tcmsr5 from "@assets/events/tc-msr/TC-MSR5.webp";
+import tcmsr6 from "@assets/events/tc-msr/TC-MSR6.webp";
+import tcmsr7 from "@assets/events/tc-msr/TC-MSR7.webp";
+import tcmsr8 from "@assets/events/tc-msr/TC-MSR8.webp";
+import tcmsr9 from "@assets/events/tc-msr/TC-MSR9.webp";
 
-import picnicsCover from "@assets/events/picnics&pies/Picnics&Pies_Cover.webp";
-import picnics1 from "@assets/events/picnics&pies/Picnics&Pies1.webp";
-import picnics2 from "@assets/events/picnics&pies/Picnics&Pies2.webp";
-import picnics3 from "@assets/events/picnics&pies/Picnics&Pies3.webp";
-import picnics4 from "@assets/events/picnics&pies/Picnics&Pies4.webp";
-import picnics5 from "@assets/events/picnics&pies/Picnics&Pies5.webp";
-import picnics6 from "@assets/events/picnics&pies/Picnics&Pies6.webp";
-import picnics7 from "@assets/events/picnics&pies/Picnics&Pies7.webp";
-import picnics8 from "@assets/events/picnics&pies/Picnics&Pies8.webp";
-import picnics9 from "@assets/events/picnics&pies/Picnics&Pies9.webp";
+import picnicsCover from "@assets/events/picnics-pies/Picnics-Pies_Cover.webp";
+import picnics1 from "@assets/events/picnics-pies/Picnics-Pies1.webp";
+import picnics2 from "@assets/events/picnics-pies/Picnics-Pies2.webp";
+import picnics3 from "@assets/events/picnics-pies/Picnics-Pies3.webp";
+import picnics4 from "@assets/events/picnics-pies/Picnics-Pies4.webp";
+import picnics5 from "@assets/events/picnics-pies/Picnics-Pies5.webp";
+import picnics6 from "@assets/events/picnics-pies/Picnics-Pies6.webp";
+import picnics7 from "@assets/events/picnics-pies/Picnics-Pies7.webp";
+import picnics8 from "@assets/events/picnics-pies/Picnics-Pies8.webp";
+import picnics9 from "@assets/events/picnics-pies/Picnics-Pies9.webp";
 
 export const events = [
   // ─── Spring 2024 ───
@@ -505,7 +505,7 @@ export const events = [
     name: "Taste of Love",
     date: "2026-02-07",
     description:
-      "Hey Warriors 📣 When people are telling me love is in the air… But all I can smell is food 🤔🥘\n\nWith Valentines around the corner, celebrate your love for food with our Taste of Love cooking class 😋 ❤️ ! This February 7th, you'll be learning and enjoying a delicious meal of some soy garlic honey salmon with asparagus and potatoes, chili chocolate mousse and a pineapple mojito mocktail! Whether you are a seasoned chef or new to the kitchen, everyone is welcomed to come and have a blast with fellow food lovers 🔥\n\nTickets are 25.00 per person! Spots are limited! If you have any questions or dietary restrictions, shoot us a dm :)\n\nReminders: Tie up long hair and wear closed-toed shoes. Bring a reusable container for any leftovers you want to bring your meals home!",
+      "Hey Warriors 📣 When people are telling me love is in the air… But all I can smell is food 🤔🥘\n\nWith Valentine's around the corner, celebrate your love for food with our Taste of Love cooking class 😋 ❤️ ! This February 7th, you'll be learning and enjoying a delicious meal of some soy garlic honey salmon with asparagus and potatoes, chili chocolate mousse and a pineapple mojito mocktail! Whether you are a seasoned chef or new to the kitchen, everyone is welcomed to come and have a blast with fellow food lovers 🔥\n\nTickets are 25.00 per person! Spots are limited! If you have any questions or dietary restrictions, shoot us a dm :)\n\nReminders: Tie up long hair and wear closed-toed shoes. Bring a reusable container for any leftovers you want to bring your meals home!",
     collab: null,
     taughtBy: null,
     status: "upcoming",
