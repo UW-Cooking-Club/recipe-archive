@@ -123,7 +123,7 @@ function Events() {
       <section className="bg-dark py-6 px-8">
         <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-4">
           {pastEvents.map((event) => (
-            <Link key={event.id} to={`/events/${event.slug}`} className="group relative overflow-hidden rounded h-40">
+            <Link key={event.id} to={`/events/${event.slug}`} className="group relative overflow-hidden rounded h-72">
               {event.coverImage ? (
                 <img
                   src={event.coverImage}
@@ -136,8 +136,8 @@ function Events() {
               )}
               <div className="absolute inset-0 bg-dark/40 group-hover:bg-dark/60 transition-colors flex items-end p-3">
                 <div>
-                  <h3 className="font-heading text-base text-white">{event.name}</h3>
-                  <p className="font-body text-xs text-gray-300">
+                  <h3 className="font-heading text-lg text-white">{event.name}</h3>
+                  <p className="font-body text-sm text-gray-300">
                     {new Date(event.date + "T00:00:00").toLocaleDateString("en-US", {
                       month: "short",
                       day: "numeric",
