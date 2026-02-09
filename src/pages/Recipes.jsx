@@ -1,4 +1,5 @@
-import { useState, useMemo } from "react";
+import { useMemo, useCallback } from "react";
+import { useSearchParams } from "react-router-dom";
 import { FaSearch, FaBars } from "react-icons/fa";
 import PageHero from "@components/PageHero";
 import RecipeCard from "@components/recipes/RecipeCard";
@@ -6,10 +7,38 @@ import { recipes } from "../data/recipes";
 import { events } from "../data/events";
 
 function Recipes() {
-  const [search, setSearch] = useState("");
-  const [showFilters, setShowFilters] = useState(false);
-  const [selectedTags, setSelectedTags] = useState([]);
-  const [selectedEvents, setSelectedEvents] = useState([]);
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const search = searchParams.get("q") || "";
+  const showFilters = searchParams.get("filters") === "1";
+  const selectedTags = useMemo(() => {
+    const raw = searchParams.get("tags");
+    return raw ? raw.split(",") : [];
+  }, [searchParams]);
+  const selectedEvents = useMemo(() => {
+    const raw = searchParams.get("events");
+    return raw ? raw.split(",") : [];
+  }, [searchParams]);
+
+  const updateParams = useCallback(
+    (updates) => {
+      setSearchParams(
+        (prev) => {
+          const next = new URLSearchParams(prev);
+          Object.entries(updates).forEach(([key, value]) => {
+            if (value === null || value === "" || (Array.isArray(value) && value.length === 0)) {
+              next.delete(key);
+            } else {
+              next.set(key, Array.isArray(value) ? value.join(",") : value);
+            }
+          });
+          return next;
+        },
+        { replace: true }
+      );
+    },
+    [setSearchParams]
+  );
 
   const allTags = useMemo(() => {
     const tagSet = new Set();
@@ -41,40 +70,39 @@ function Recipes() {
 
     if (selectedTags.includes(tag)) {
       // Deselecting term — remove the term and its events
-      setSelectedTags((prev) => prev.filter((t) => t !== tag));
-      setSelectedEvents((prev) => prev.filter((id) => !eventIdsForTag.includes(id)));
+      const newTags = selectedTags.filter((t) => t !== tag);
+      const newEvents = selectedEvents.filter((id) => !eventIdsForTag.includes(id));
+      updateParams({ tags: newTags, events: newEvents });
     } else {
       // Selecting term — add the term and all its events
-      setSelectedTags((prev) => [...prev, tag]);
-      setSelectedEvents((prev) => [...new Set([...prev, ...eventIdsForTag])]);
+      const newTags = [...selectedTags, tag];
+      const newEvents = [...new Set([...selectedEvents, ...eventIdsForTag])];
+      updateParams({ tags: newTags, events: newEvents });
     }
   };
 
   const toggleEvent = (eventId) => {
     if (selectedEvents.includes(eventId)) {
       // Deselecting event — also deselect any term that contained it
-      setSelectedEvents((prev) => prev.filter((id) => id !== eventId));
+      const newEvents = selectedEvents.filter((id) => id !== eventId);
       const tagsToRemove = selectedTags.filter((tag) => {
         const eventIdsForTag = tagToEventIds[tag] || [];
         return eventIdsForTag.includes(eventId);
       });
-      if (tagsToRemove.length > 0) {
-        setSelectedTags((prev) => prev.filter((t) => !tagsToRemove.includes(t)));
-      }
+      const newTags = tagsToRemove.length > 0 ? selectedTags.filter((t) => !tagsToRemove.includes(t)) : selectedTags;
+      updateParams({ tags: newTags, events: newEvents });
     } else {
       // Selecting event
-      const newSelectedEvents = [...selectedEvents, eventId];
-      setSelectedEvents(newSelectedEvents);
+      const newEvents = [...selectedEvents, eventId];
 
       // Check if any term now has all its events selected — if so, select that term
       const tagsToAdd = allTags.filter((tag) => {
-        if (selectedTags.includes(tag)) return false; // Already selected
+        if (selectedTags.includes(tag)) return false;
         const eventIdsForTag = tagToEventIds[tag] || [];
-        return eventIdsForTag.every((id) => newSelectedEvents.includes(id));
+        return eventIdsForTag.every((id) => newEvents.includes(id));
       });
-      if (tagsToAdd.length > 0) {
-        setSelectedTags((prev) => [...prev, ...tagsToAdd]);
-      }
+      const newTags = tagsToAdd.length > 0 ? [...selectedTags, ...tagsToAdd] : selectedTags;
+      updateParams({ tags: newTags, events: newEvents });
     }
   };
 
@@ -99,12 +127,12 @@ function Recipes() {
           <input
             type="text"
             value={search}
-            onChange={(e) => setSearch(e.target.value)}
+            onChange={(e) => updateParams({ q: e.target.value })}
             placeholder="Search recipes..."
             className="flex-1 bg-transparent px-4 py-3 font-body text-sm outline-none"
           />
           <button
-            onClick={() => setShowFilters(!showFilters)}
+            onClick={() => updateParams({ filters: showFilters ? null : "1" })}
             className={`px-4 py-3 transition-colors ${showFilters ? "text-primary" : "text-gray-600"}`}
             aria-label="Filter"
           >
@@ -157,10 +185,7 @@ function Recipes() {
 
             {(selectedTags.length > 0 || selectedEvents.length > 0) && (
               <button
-                onClick={() => {
-                  setSelectedTags([]);
-                  setSelectedEvents([]);
-                }}
+                onClick={() => updateParams({ tags: [], events: [] })}
                 className="text-sm font-body text-primary hover:underline"
               >
                 Clear all filters
