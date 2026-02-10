@@ -67,7 +67,7 @@ function Recipes() {
     return map;
   }, [allTags]);
 
-  // Only show past events that have recipes, newest first
+  // Only show events that have recipes, newest first
   const eventsWithRecipes = useMemo(() => {
     const idsWithRecipes = new Set(recipes.flatMap((r) => getEventIds(r)));
     return events.filter((e) => idsWithRecipes.has(e.id)).sort((a, b) => new Date(b.date) - new Date(a.date));

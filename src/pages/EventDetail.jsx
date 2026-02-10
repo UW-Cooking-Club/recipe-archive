@@ -113,7 +113,7 @@ function EventDetail() {
                   <Link
                     key={recipe.id}
                     to={`/recipes/${recipe.slug}`}
-                    state={{ from: "event", eventName: event.name }}
+                    state={{ from: "event", eventName: event.name, eventSlug: event.slug }}
                     className="block hover:bg-white/50 rounded-lg transition-colors"
                   >
                     <div className="flex flex-col md:flex-row gap-4 p-2">

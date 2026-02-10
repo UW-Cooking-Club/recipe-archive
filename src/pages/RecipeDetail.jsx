@@ -1,13 +1,13 @@
-import { useParams, Link, useNavigate, useLocation } from "react-router-dom";
+import { useParams, Link, useLocation } from "react-router-dom";
 import { FaChevronLeft, FaStar, FaRegStar } from "react-icons/fa";
 import { recipes } from "../data/recipes";
 import { events } from "../data/events";
 
 function RecipeDetail() {
   const { slug } = useParams();
-  const navigate = useNavigate();
   const location = useLocation();
-  const backLabel = location.state?.from === "event" ? `Back to ${location.state.eventName}` : "Back to Recipes";
+  const fromEvent = location.state?.from === "event";
+  const backLabel = fromEvent ? `Back to ${location.state.eventName}` : "Back to Recipes";
   const recipe = recipes.find((r) => r.slug === slug);
 
   if (!recipe) {
@@ -35,13 +35,13 @@ function RecipeDetail() {
     <div className="bg-cream min-h-screen">
       <div className="max-w-3xl mx-auto px-6 md:px-8 py-8">
         {/* Back button */}
-        <button
-          onClick={() => navigate(-1)}
+        <Link
+          to={fromEvent && location.state?.eventSlug ? `/events/${location.state.eventSlug}` : "/recipes"}
           className="inline-flex items-center gap-2 font-body text-sm text-gray-dark hover:text-primary transition-colors mb-4"
         >
           <FaChevronLeft className="text-xs" />
           {backLabel}
-        </button>
+        </Link>
 
         <h1 className="font-heading text-4xl md:text-5xl text-gray-dark leading-tight">
           {recipe.name}
