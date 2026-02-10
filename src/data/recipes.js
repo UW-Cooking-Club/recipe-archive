@@ -54,6 +54,17 @@ import mulledWineImg from "@assets/recipes/Non-AlcoholicMulledWine.webp";
 import bajaFishTacosImg from "@assets/recipes/BajaFishTacos.webp";
 import elotesImg from "@assets/recipes/Elotes.webp";
 import churrosImg from "@assets/recipes/Churros.webp";
+import squashRisottoImg from "@assets/recipes/SquashRisotto.webp";
+import figProsciuttoImg from "@assets/recipes/FigProsciuttoBites.webp";
+import chocolateMousseImg from "@assets/recipes/ChocolateMousse.webp";
+import cevicheImg from "@assets/recipes/Ceviche.webp";
+import chupeImg from "@assets/recipes/ChupeDeCamarone.webp";
+import lomoSaltadoImg from "@assets/recipes/LomoSaltado.webp";
+import thaiRedCurryImg from "@assets/recipes/ThaiRedCurry.webp";
+import mangoStickyRiceImg from "@assets/recipes/MangoStickyRice.webp";
+import strawberryPieImg from "@assets/recipes/StrawberryRhubarbMuffinTinPie.webp";
+import lemonHoneyTeaImg from "@assets/recipes/LemonHoneyIcedTea.webp";
+import crostiniImg from "@assets/recipes/RoastedTomatoCrostini.webp";
 
 export const recipes = [
   // ─── Korean Food Class (Sept 20, 2025) ───
@@ -380,8 +391,8 @@ export const recipes = [
     cookTime: "10 min",
     totalTime: "45 min",
     difficulty: 1,
-    tags: ["Fall 2025"],
-    eventId: "thai-food-class-nov-2025",
+    tags: ["Fall 2025", "Spring 2024"],
+    eventId: ["thai-food-class-nov-2025", "thai-curry-mango-sticky-rice-class-jun-2024"],
     equipment: ["Pot", "Fine mesh strainer", "Glasses"],
     ingredients: [
       {
@@ -1569,22 +1580,11 @@ export const recipes = [
       },
       {
         group: "Garlic Yogurt",
-        items: [
-          "1/4 cup Greek yogurt",
-          "1-2 garlic cloves, grated",
-          "1 tsp lemon zest",
-          "Salt, to taste",
-        ],
+        items: ["1/4 cup Greek yogurt", "1-2 garlic cloves, grated", "1 tsp lemon zest", "Salt, to taste"],
       },
       {
         group: "Carrots",
-        items: [
-          "3-5 carrots (200g)",
-          "Cumin",
-          "Oil",
-          "Lemon juice",
-          "Salt and pepper",
-        ],
+        items: ["3-5 carrots (200g)", "Cumin", "Oil", "Lemon juice", "Salt and pepper"],
       },
     ],
     instructions: [
@@ -2026,11 +2026,7 @@ export const recipes = [
       },
       {
         group: "Toppings",
-        items: [
-          "Sliced green onions",
-          "Fresh cilantro leaves",
-          "Sesame seeds",
-        ],
+        items: ["Sliced green onions", "Fresh cilantro leaves", "Sesame seeds"],
       },
     ],
     instructions: [
@@ -2065,27 +2061,15 @@ export const recipes = [
     ingredients: [
       {
         group: "Milk Tea",
-        items: [
-          "4L water",
-          "12 bags black tea",
-          "500g condensed milk",
-          "Sugar, to taste",
-        ],
+        items: ["4L water", "12 bags black tea", "500g condensed milk", "Sugar, to taste"],
       },
       {
         group: "Tapioca Pearls",
-        items: [
-          "1 cup tapioca pearls",
-          "10 cups water",
-          "Brown sugar, to taste",
-        ],
+        items: ["1 cup tapioca pearls", "10 cups water", "Brown sugar, to taste"],
       },
       {
         group: "Brown Sugar Syrup",
-        items: [
-          "1 cup brown sugar",
-          "1 cup water",
-        ],
+        items: ["1 cup brown sugar", "1 cup water"],
       },
     ],
     instructions: [
@@ -2118,12 +2102,7 @@ export const recipes = [
     ingredients: [
       {
         group: "Syrup",
-        items: [
-          "3 cups sugar",
-          "2 cups water",
-          "Juice of half a lemon",
-          "1 tsp orange blossom water",
-        ],
+        items: ["3 cups sugar", "2 cups water", "Juice of half a lemon", "1 tsp orange blossom water"],
       },
       {
         group: "Knafeh",
@@ -2375,11 +2354,7 @@ export const recipes = [
     ingredients: [
       {
         group: "Graham Cracker Crust",
-        items: [
-          "1/3 cup graham cracker crumbs",
-          "3 tsp sugar",
-          "4 tsp unsalted butter, melted",
-        ],
+        items: ["1/3 cup graham cracker crumbs", "3 tsp sugar", "4 tsp unsalted butter, melted"],
       },
       {
         group: "Cheesecake Filling",
@@ -2589,12 +2564,7 @@ export const recipes = [
       },
       {
         group: "Cilantro Lime Crema",
-        items: [
-          "1 cup sour cream",
-          "2 limes (zest and juice)",
-          "3 sprigs cilantro, finely minced",
-          "1 tsp salt",
-        ],
+        items: ["1 cup sour cream", "2 limes (zest and juice)", "3 sprigs cilantro, finely minced", "1 tsp salt"],
       },
       {
         group: "Assembly",
@@ -2687,10 +2657,7 @@ export const recipes = [
       },
       {
         group: "Cinnamon Sugar Coating",
-        items: [
-          "1/2 cup (100g) granulated sugar",
-          "3/4 tsp ground cinnamon",
-        ],
+        items: ["1/2 cup (100g) granulated sugar", "3/4 tsp ground cinnamon"],
       },
     ],
     instructions: [
@@ -2705,6 +2672,517 @@ export const recipes = [
       "Fry until golden brown, about 2 minutes per side.",
       "Transfer to paper towels to drain briefly, then immediately roll in the cinnamon sugar coating.",
       "Repeat with the remaining dough. Serve warm, optionally with chocolate ganache or caramel sauce for dipping.",
+    ],
+  },
+
+  // ─── Jason's Class (Jul 6, 2024) ───
+  {
+    id: 57,
+    slug: "butternut-squash-risotto",
+    name: "Butternut Squash Risotto",
+    subtitle: "with Seared Scallops & Fried Sage",
+    description:
+      "Creamy arborio rice risotto loaded with roasted butternut squash and finished with Parmigiano-Reggiano, white wine, and butter. Topped with pan-seared scallops and crispy fried sage for an elegant, restaurant-worthy dish.",
+    image: squashRisottoImg,
+    servings: 2,
+    prepTime: "15 min",
+    cookTime: "1 hr 10 min",
+    totalTime: "1 hr 25 min",
+    difficulty: 4,
+    tags: ["Spring 2024"],
+    eventId: "jasons-class-jul-2024",
+    equipment: ["Dutch oven or large saucepan", "Rimmed baking sheet", "Medium skillet", "Wooden spoon"],
+    ingredients: [
+      {
+        group: "Risotto",
+        items: [
+          "150g arborio rice",
+          "1 small onion or 2 shallots, finely diced",
+          "4-5 cloves garlic, minced (can confit for a milder flavour)",
+          "1L (4 cups) chicken or vegetable stock, divided",
+          "150ml dry white wine (or 1/4 white wine vinegar + water)",
+          "Parmigiano-Reggiano, freshly grated",
+          "1-2 tbsp butter",
+          "2 tbsp extra virgin olive oil",
+          "Pinch of dried sage",
+          "Lemon zest",
+          "Salt and pepper, to taste",
+        ],
+      },
+      {
+        group: "Roasted Butternut Squash",
+        items: ["1/2 butternut squash, peeled and cut into 1/2-inch cubes", "1-2 tbsp olive oil", "Salt and pepper"],
+      },
+      {
+        group: "Seared Scallops",
+        items: ["2-4 large scallops", "1 tbsp high smoke-point oil", "Salt and pepper"],
+      },
+      {
+        group: "Fried Sage",
+        items: ["1 tbsp olive oil", "16-20 fresh sage leaves", "Pinch of salt"],
+      },
+      {
+        group: "Optional",
+        items: ["Arugula and basil oil, for garnish"],
+      },
+    ],
+    instructions: [
+      "Preheat oven to 375°F. Toss the cubed butternut squash with olive oil, salt, and pepper on a lined baking sheet. Spread in a single layer and roast for 40-55 minutes until fork-tender and caramelized on the edges, tossing halfway through.",
+      "While the squash roasts, fry the sage: heat 1 tbsp olive oil in a small skillet over medium heat. Add the sage leaves and fry until dark green and crispy (but not brown). Transfer to a paper towel, sprinkle lightly with salt, and set aside.",
+      "Start the risotto: heat 2 tbsp olive oil in a Dutch oven over medium heat. Add the shallots and a pinch of salt. Cook until softened and translucent, about 5 minutes. Add the garlic and cook until fragrant, 1-2 minutes.",
+      "Add the arborio rice and stir to coat in the oil. Toast for about 1 minute until the edges turn slightly translucent.",
+      "Pour in the white wine and stir until it's almost fully absorbed.",
+      "Begin adding the stock one ladle at a time, stirring frequently. Wait until each addition is mostly absorbed before adding the next. This process takes about 18-20 minutes.",
+      "When the rice is tender but still has a slight bite (al dente), remove from heat. Stir in the butter and a generous amount of grated Parmigiano-Reggiano. Season with salt, pepper, and a pinch of sage. Add lemon zest to taste.",
+      "Fold in the roasted butternut squash.",
+      "For the scallops: pat dry with paper towels and season with salt and pepper. Heat oil in a skillet over high heat until smoking. Sear the scallops for 1.5-2 minutes per side until they have a deep golden crust. Don't move them while they sear.",
+      "Divide the risotto into bowls. Top with seared scallops, crispy fried sage, and optional arugula with basil oil. Serve immediately.",
+    ],
+  },
+  {
+    id: 58,
+    slug: "prosciutto-wrapped-figs",
+    name: "Prosciutto Wrapped Figs",
+    subtitle: "with Goat Cheese, Honey & Thyme",
+    description:
+      "An elegant, effortless appetizer — ripe figs stuffed with crumbled goat cheese and fresh thyme, wrapped in salty prosciutto, and drizzled with honey. Ready in 10 minutes.",
+    image: figProsciuttoImg,
+    servings: 16,
+    prepTime: "10 min",
+    cookTime: "0 min",
+    totalTime: "10 min",
+    difficulty: 1,
+    tags: ["Spring 2024"],
+    eventId: "jasons-class-jul-2024",
+    equipment: ["Serving platter", "Knife"],
+    ingredients: [
+      "8 fresh figs, trimmed and halved",
+      "1-2 oz goat cheese (optional)",
+      "1-2 tsp fresh thyme leaves",
+      "2 tbsp honey",
+      "8 slices Prosciutto di Parma, halved lengthwise",
+    ],
+    instructions: [
+      "Trim the figs and cut each one in half lengthwise.",
+      "Crumble a small amount of goat cheese on top of each fig half.",
+      "Sprinkle with fresh thyme leaves and drizzle with about half the honey.",
+      "Wrap each fig half with a strip of prosciutto.",
+      "Arrange on a serving platter, drizzle with the remaining honey, and serve. Can be made up to 3 hours ahead — cover and refrigerate, then bring to room temperature before serving.",
+    ],
+  },
+  {
+    id: 59,
+    slug: "chocolate-mousse",
+    name: "Chocolate Mousse",
+    subtitle: "Classic French Style",
+    description:
+      "Light, airy, and intensely chocolatey — a classic French chocolate mousse made the proper way with dark chocolate, whipped egg whites, and cream. Rich and elegant, yet surprisingly straightforward to make.",
+    image: chocolateMousseImg,
+    servings: 4,
+    prepTime: "20 min + 6 hrs chilling",
+    cookTime: "0 min",
+    totalTime: "20 min + 6 hrs",
+    difficulty: 3,
+    tags: ["Spring 2024"],
+    eventId: "jasons-class-jul-2024",
+    equipment: ["Mixing bowls", "Electric hand mixer", "Rubber spatula", "Microwave-safe bowl", "Serving glasses"],
+    ingredients: [
+      "3 eggs (about 55g each), separated",
+      "125g (4.5 oz) dark cooking chocolate, 70% cocoa (bittersweet)",
+      "10g (0.3 oz) unsalted butter",
+      "1/2 cup heavy cream (full fat, 35%+)",
+      "3 tbsp caster sugar (superfine white sugar)",
+      "Whipped cream and chocolate shavings, for decoration",
+    ],
+    instructions: [
+      "Separate the eggs while cold — whites into a large bowl, yolks into a small bowl. Set the whites aside to come to room temperature while you prep.",
+      "Whisk the yolks until uniform in colour. Set aside.",
+      "Break the chocolate into pieces and place in a microwave-safe bowl with the butter. Melt in 30-second bursts, stirring between each, until smooth and runny. Set aside to cool slightly — it should still be warm and pourable (around 40°C/104°F).",
+      "Whip the cream to stiff peaks, being careful not to over-whip. Set aside.",
+      'Add the sugar to the egg whites. Beat until firm peaks form — you want a little "elf hat" floppage at the tip of the peak, not stiff and rigid.',
+      "Working at a steady pace (so the whites and cream don't warm up too much): fold the egg yolks into the whipped cream with a spatula — about 8 folds max. Some streaks are fine.",
+      "Check the chocolate is still warm and runny (reheat in 5-second bursts if needed). Pour the chocolate into the cream-yolk mixture and fold through — about 8 folds. Some streaks are okay.",
+      "Add 1/4 of the beaten egg whites into the chocolate mixture. Fold until incorporated, smearing the spatula across the surface to blend any white lumps — aim for about 10 folds.",
+      "Pour the chocolate mixture into the remaining egg whites. Fold gently until no white patches remain — aim for about 12 folds max. Don't overmix or you'll lose the airiness.",
+      "Divide into 4 small glasses or ramekins. Refrigerate for at least 6 hours, preferably overnight.",
+      "To serve, top with a dollop of whipped cream and chocolate shavings.",
+    ],
+  },
+
+  // ─── Peruvian Class (Jul 20, 2024) ───
+  {
+    id: 60,
+    slug: "ceviche",
+    name: "Ceviche",
+    subtitle: "Lime-Cured Fish with Pineapple Salsa",
+    description:
+      "Fresh white fish cured in lime juice and tossed with red onion, cilantro, tomatoes, cucumber, and chilli. A bright, refreshing Peruvian classic — no cooking required, just patience while the lime does the work.",
+    image: cevicheImg,
+    servings: 5,
+    prepTime: "15 min + 45 min marinating",
+    cookTime: "0 min",
+    totalTime: "1 hr",
+    difficulty: 2,
+    tags: ["Spring 2024"],
+    eventId: "peruvian-class-jul-2024",
+    equipment: ["Large mixing bowl", "Knife", "Cutting board"],
+    ingredients: [
+      "1 lb fresh firm white fish (sea bass, mahi mahi, snapper, or halibut), diced into 1/2-inch cubes",
+      "1/2 red onion, thinly sliced with the grain",
+      "3/4 cup fresh lime juice (4-6 limes)",
+      "1-2 garlic cloves, very finely minced",
+      "1 fresh serrano or jalapeño pepper, seeded and finely chopped (adjust to taste)",
+      "1 cup cherry tomatoes, halved or diced",
+      "1 cup cucumber, diced",
+      "1/4-1/2 cup fresh cilantro, chopped",
+      "1 tbsp olive oil (optional)",
+      "1 semi-firm avocado, diced (optional)",
+      "1-1 1/2 tsp kosher salt, to taste",
+      "1/4 tsp black pepper",
+      "Tortilla chips, for serving",
+    ],
+    instructions: [
+      "Thinly slice the red onion with the grain. Toss in a large bowl with the salt, pepper, and lime juice, coating well.",
+      "Add the diced fish, minced garlic, and chopped chilli pepper. Gently mix to combine, making sure all the fish is submerged in lime juice.",
+      "Add the tomatoes, cucumber, cilantro, and olive oil. Give it a gentle stir.",
+      'Cover and marinate in the refrigerator for 45-60 minutes. The longer you marinate, the firmer and more "cooked" the fish becomes.',
+      "Before serving, taste and adjust the salt and heat — add more salt or chillies if needed.",
+      "If adding avocado, gently fold it in right before serving (you may need a pinch more salt).",
+      "Serve in a big bowl with tortilla chips, or as lettuce cups, mini tostadas, or in small appetizer glasses.",
+    ],
+  },
+  {
+    id: 61,
+    slug: "chupe-de-camarones",
+    name: "Chupe de Camarones",
+    subtitle: "Peruvian Shrimp Chowder",
+    description:
+      "A thick, creamy Peruvian shrimp chowder built on a homemade shrimp stock from the heads and shells. Loaded with corn, potatoes, peas, and tender shrimp in a rich, subtly spiced broth.",
+    image: chupeImg,
+    servings: 6,
+    prepTime: "10 min",
+    cookTime: "40 min",
+    totalTime: "50 min",
+    difficulty: 3,
+    tags: ["Spring 2024"],
+    eventId: "peruvian-class-jul-2024",
+    equipment: ["Large pot", "Medium pot", "Fine mesh strainer", "Knife"],
+    ingredients: [
+      "500g shrimp, peeled (heads and shells reserved)",
+      "5 cups water, divided",
+      "1/3 cup flour",
+      "1/3 cup butter",
+      "1/2 yellow onion, diced",
+      "1 red bell pepper, diced",
+      "2 cloves garlic, minced",
+      "1 tbsp tomato paste",
+      "1 ear of corn, cut into 2-inch segments",
+      "1 medium potato, diced",
+      "1/2 cup green peas",
+      "1 cup heavy cream",
+      "1 tsp dried oregano",
+      "Salt and powdered cayenne, to taste",
+    ],
+    instructions: [
+      "Make the shrimp stock: combine the shrimp heads and shells with 2 cups of water and 1/2 tsp salt in a pot. Bring to a boil and simmer over medium heat for 15 minutes. Strain and discard the shells. Set stock aside.",
+      "In a large pot, melt the butter over medium heat. Add the onion, bell pepper, and garlic. Cook until the onions are slightly translucent.",
+      "Add the tomato paste and cook for 1-2 minutes, stirring to roast it slightly.",
+      "Sprinkle in the flour and stir for another minute to cook out the raw flour taste.",
+      "Stir in the remaining 3 cups of water, shrimp stock, and dried oregano. Bring to a boil.",
+      "Add the corn, potatoes, and peas. Reduce heat and simmer for 15 minutes or until the potatoes are tender.",
+      "Add the peeled shrimp and the heavy cream. Bring back to a gentle boil and simmer for 2 more minutes until the shrimp are pink and cooked through.",
+      "Season with salt and powdered cayenne to taste. Serve hot.",
+    ],
+  },
+  {
+    id: 62,
+    slug: "lomo-saltado",
+    name: "Lomo Saltado",
+    subtitle: "Peruvian Stir-Fried Beef",
+    description:
+      "A beloved Peruvian stir-fry — soy and vinegar-marinated sirloin strips seared at high heat with red onion, tomato, and ají amarillo chilli, tossed with crispy fries, and served over white rice. A flavour explosion in every bite.",
+    image: lomoSaltadoImg,
+    servings: 4,
+    prepTime: "30 min",
+    cookTime: "10 min",
+    totalTime: "40 min",
+    difficulty: 3,
+    tags: ["Spring 2024"],
+    eventId: "peruvian-class-jul-2024",
+    equipment: ["Wok or deep frying pan", "Mixing bowl", "Knife", "Cutting board"],
+    ingredients: [
+      "18 oz (500g) sirloin steak, cut into strips",
+      "1 red onion, cut into chunky slices",
+      "2 tomatoes, each cut into 8 wedges",
+      "1 ají amarillo chilli pepper, sliced finely (seeds and veins removed)",
+      "1 tsp fresh garlic paste or minced garlic",
+      "2 tbsp olive oil",
+      "11 oz (300g) thick-cut potato fries (or frozen fries)",
+      "1/2 cup beef stock",
+      "4 tbsp soy sauce",
+      "4 tbsp plain vinegar",
+      "1 tsp ground cumin",
+      "1 tsp freshly crushed black pepper",
+      "1/4 tsp ground oregano",
+      "Salt, to taste",
+      "Handful of fresh cilantro leaves",
+      "White rice, cooked, for serving",
+    ],
+    instructions: [
+      "Fry the potato slices in vegetable oil until golden and crispy. Set aside on paper towels.",
+      "Cut the sirloin into strips. Marinate in the cumin, salt, vinegar, 1 tbsp olive oil, black pepper, and soy sauce for at least 10 minutes.",
+      "Heat 1 tbsp olive oil in a wok over very high heat until smoking. Strain the steak strips from the marinade (reserve the marinade) and sear for 4-5 minutes until browned. Work in batches if needed — don't overcrowd the wok.",
+      "Add the red onion, ají amarillo chilli, and garlic paste. Stir-fry for about 1 minute, tossing continuously.",
+      "Pour in the beef stock and any reserved marinade. Let it bubble for 30 seconds.",
+      "Add the tomato wedges and toss for just 30 seconds — you want them warmed but still holding their shape.",
+      "Add the ground oregano and fried potatoes. Toss everything together for another 10 seconds to combine.",
+      "Serve immediately over white rice, garnished with fresh cilantro leaves.",
+    ],
+  },
+
+  // ─── Thai Curry & Mango Sticky Rice Class (Jun 8, 2024) ───
+  {
+    id: 63,
+    slug: "thai-red-curry",
+    name: "Thai Red Curry",
+    subtitle: "with Chicken & Kabocha Squash",
+    description:
+      "A classic Thai red curry — chicken simmered in a rich coconut milk and red curry paste sauce with tender kabocha squash and fresh Thai basil. Creamy, aromatic, and completely customizable to your spice level.",
+    image: thaiRedCurryImg,
+    servings: 4,
+    prepTime: "15 min",
+    cookTime: "25 min",
+    totalTime: "40 min",
+    difficulty: 2,
+    tags: ["Spring 2024"],
+    eventId: "thai-curry-mango-sticky-rice-class-jun-2024",
+    equipment: ["Wok or large saucepan", "Knife", "Cutting board"],
+    ingredients: [
+      {
+        group: "Curry",
+        items: [
+          "1 1/2 cups coconut milk",
+          "3 1/2-5 tbsp red curry paste (store-bought, adjust to spice tolerance)",
+          "1 lb boneless skinless chicken thigh, cut into 1.5-inch cubes",
+          "1 cup chicken stock (unsalted or low sodium)",
+          "2 tbsp fish sauce",
+          "2-3 tbsp palm sugar, finely chopped (or brown sugar)",
+          "2 cups kabocha squash, cut into bite-sized pieces (skin on is fine)",
+          "1 cup Thai basil leaves",
+          "1/4 red bell pepper, julienned (optional, for colour)",
+          "Jasmine rice, for serving",
+        ],
+      },
+      {
+        group: "Homemade Red Curry Paste (Optional)",
+        items: [
+          "0.4 oz mild dried chillies (guajillo or puya), seeds removed",
+          "0.2 oz spicy dried chillies (arbol), seeds removed",
+          "1 tsp coarse sea salt",
+          "1/4 tsp white peppercorns",
+          "1/4 cup chopped shallots",
+          "3 tbsp chopped garlic",
+          "3 tbsp finely chopped lemongrass (bottom half only)",
+          "1 tbsp finely chopped galangal",
+          "2 cilantro roots (or 6 cilantro stems)",
+          "1 tsp chopped makrut lime zest",
+          "1 tsp fermented shrimp paste (gapi)",
+        ],
+      },
+    ],
+    instructions: [
+      "Prep the kabocha squash: halve, scoop out seeds, and cut into 1/2-inch thick bite-sized pieces. The skin can be left on.",
+      "Bring 1/2 cup of the coconut milk to a boil in a wok or large saucepan over medium-high heat.",
+      "Add the curry paste and stir to break up any lumps. Cook and reduce until the mixture is very thick and the coconut oil starts separating from the paste. If no oil separates, that's okay — just proceed.",
+      "Add the chicken and toss to coat in the paste.",
+      "Pour in the remaining coconut milk and the chicken stock. Season with 1 tbsp of the fish sauce and the palm sugar.",
+      "Simmer for about 8 minutes until the chicken is cooked through.",
+      "Add the kabocha squash and simmer for 6-8 more minutes until it can be easily pierced with a fork. Be careful not to overcook — it'll turn to mush.",
+      "Remove from heat. Taste and adjust with the remaining fish sauce as needed (different curry paste brands have different salt levels).",
+      "Stir in the Thai basil and red bell pepper. Serve immediately with jasmine rice.",
+      "For homemade curry paste: grind the dried chillies in a coffee grinder until fine. Pound the lemongrass, galangal, cilantro roots, lime zest, peppercorns, and salt in a mortar and pestle until fine. Add the ground chillies, then garlic and shallots, pounding until smooth. Finally add the shrimp paste and pound to combine.",
+    ],
+  },
+  {
+    id: 64,
+    slug: "mango-sticky-rice",
+    name: "Mango Sticky Rice",
+    subtitle: "Thai Coconut Dessert",
+    description:
+      "Sweet, gooey sticky rice soaked in a luscious coconut sauce and served with slices of ripe mango — the most beloved Thai dessert. Simple ingredients, incredible results. Don't forget to soak the rice!",
+    image: mangoStickyRiceImg,
+    servings: 5,
+    prepTime: "10 min + 1 hr soak",
+    cookTime: "30 min",
+    totalTime: "1 hr 40 min",
+    difficulty: 2,
+    tags: ["Spring 2024"],
+    eventId: "thai-curry-mango-sticky-rice-class-jun-2024",
+    equipment: ["Steamer", "Heatproof bowl", "Saucepan", "Fine mesh strainer"],
+    ingredients: [
+      "1 cup uncooked sticky rice (glutinous rice)",
+      "1 can (13.5 oz / 400g) full-fat coconut milk",
+      "1/4 cup sugar",
+      "1/2 tsp salt",
+      "2 tsp cornstarch (optional, for a thicker sauce)",
+      "3 ripe mangoes, peeled and sliced",
+      "Toasted sesame seeds, for garnish (optional)",
+    ],
+    instructions: [
+      "Rinse the sticky rice with water, gently stirring by hand. Drain and repeat once more. Cover with cold water and soak for at least 1 hour (or up to overnight in the fridge). Rinse and drain again before cooking.",
+      "Transfer the soaked rice to a heatproof bowl. Set the bowl on a steaming rack inside a steamer with about 2 inches of water (don't add water to the rice itself). Cover and steam over medium-high heat.",
+      "Once steam starts escaping, reduce to medium heat. Steam for 20-25 minutes until the rice is cooked through with no hard bits in the middle. Remove from heat and keep covered.",
+      "While the rice steams, make the coconut sauce: combine the coconut milk, sugar, and salt in a saucepan. Heat over medium-low until hot and the sugar is melted — do not let it boil.",
+      "If your coconut milk is on the thin side, make a slurry of the cornstarch and 4 tbsp water. Add half to the sauce and stir to thicken. The sauce should coat the back of a spoon.",
+      "Pour about 1 cup of the coconut sauce into the hot steamed rice. Stir until the sauce is fully absorbed.",
+      "Let the rice and remaining sauce cool to room temperature or lukewarm before serving.",
+      "To serve: scoop about 1/3 cup of coconut rice onto each plate. Arrange sliced mango alongside. Drizzle a few spoonfuls of the extra coconut sauce over the rice and garnish with toasted sesame seeds.",
+    ],
+  },
+
+  // ─── Picnics & Pies Class (May 25, 2024) ───
+  {
+    id: 65,
+    slug: "strawberry-rhubarb-muffin-tin-pie",
+    name: "Strawberry Rhubarb Pie",
+    subtitle: "Muffin-Tin Size with Streusel Topping",
+    description:
+      "Adorable individual-sized pies baked in a jumbo muffin tin — flaky homemade pie crust filled with a sweet-tart strawberry rhubarb filling and topped with a buttery brown sugar streusel.",
+    image: strawberryPieImg,
+    servings: 3,
+    prepTime: "30 min + 30 min chill",
+    cookTime: "40 min",
+    totalTime: "1 hr 40 min",
+    difficulty: 3,
+    tags: ["Spring 2024"],
+    eventId: "picnics-and-pies-class-may-2024",
+    equipment: ["Jumbo muffin tin (3.5 inch)", "Mixing bowls", "Saucepan", "Rolling pin", "Fork"],
+    ingredients: [
+      {
+        group: "Pie Dough",
+        items: [
+          "1 cup all-purpose flour",
+          "2 tbsp sugar",
+          "1/4 cup unsalted butter, cubed and cold",
+          "5 tbsp ice cold water",
+          "1/2 tsp salt",
+        ],
+      },
+      {
+        group: "Filling",
+        items: [
+          "225g strawberries, quartered",
+          "100g rhubarb, sliced into 1/4-inch pieces",
+          "1/2 cup sugar",
+          "1/2 tbsp cornstarch",
+          "4 tbsp water",
+          "Lemon zest",
+        ],
+      },
+      {
+        group: "Streusel Topping",
+        items: [
+          "1/2 cup all-purpose flour",
+          "1/2 cup brown sugar, packed",
+          "1/2 tsp salt",
+          "1/4 cup unsalted butter, melted",
+        ],
+      },
+    ],
+    instructions: [
+      "Make the dough: combine flour, salt, and sugar in a bowl. Cut in the cold butter using a fork or your fingers until the mixture resembles coarse crumbs.",
+      "Add ice water one tablespoon at a time, mixing until the dough barely starts to come together. Form into a disk, wrap in plastic, and refrigerate for at least 30 minutes.",
+      "Make the filling: quarter the strawberries and slice the rhubarb. Combine in a bowl with the sugar, cornstarch, and water.",
+      "Transfer the fruit mixture to a saucepan. Stir over medium-high heat until the mixture thickens and the cornstarch gelatinizes. Add lemon zest and set aside to cool.",
+      "Make the streusel: mix the flour, brown sugar, and salt in a bowl. Melt the butter until just melted, then pour into the dry mixture while stirring constantly until crumbly.",
+      "Preheat oven to 350°F. Roll out the pie dough and cut into circles large enough to fit into the jumbo muffin tin.",
+      "Gently press the dough into each muffin cup. Prick the bottom with a fork and flute the edges.",
+      "Spoon the cooled fruit filling into each pie shell. Sprinkle the streusel generously on top.",
+      "Bake for 35-45 minutes until the crust is golden and the streusel is crisp. Cool for at least 15 minutes before serving.",
+    ],
+  },
+  {
+    id: 66,
+    slug: "lemon-honey-iced-tea",
+    name: "Lemon Honey Iced Tea",
+    subtitle: "with Fresh Mint",
+    description:
+      "A refreshing honey-sweetened iced black tea brightened with fresh lemon juice and garnished with mint — the perfect picnic drink.",
+    image: lemonHoneyTeaImg,
+    servings: 4,
+    prepTime: "5 min",
+    cookTime: "5 min",
+    totalTime: "10 min",
+    difficulty: 1,
+    tags: ["Spring 2024"],
+    eventId: "picnics-and-pies-class-may-2024",
+    equipment: ["Kettle or pot", "Pitcher"],
+    ingredients: [
+      "1/4 cup honey",
+      "1/4 cup fresh lemon juice (about 2 lemons)",
+      "3 black tea bags",
+      "3 cups water (1 cup boiling + 2 cups cold)",
+      "Fresh mint leaves, for garnish",
+      "Ice",
+    ],
+    instructions: [
+      "Boil 1 cup of water. Pour over the tea bags and steep for 3-4 minutes. Remove the tea bags.",
+      "While the tea is still hot, stir in the honey until fully dissolved.",
+      "Add the lemon juice and stir to combine.",
+      "Pour in 2 cups of cold water, then add plenty of ice.",
+      "Chop a few mint leaves and add to garnish. Serve chilled.",
+    ],
+  },
+  {
+    id: 67,
+    slug: "roasted-tomato-crostini",
+    name: "Roasted Tomato Crostini",
+    subtitle: "with Garlic Aioli",
+    description:
+      "Crispy broiled baguette slices spread with a punchy homemade garlic aioli and topped with herb-tossed cherry tomatoes and fresh basil. A simple, elegant picnic appetizer.",
+    image: crostiniImg,
+    servings: 4,
+    prepTime: "10 min",
+    cookTime: "5 min",
+    totalTime: "15 min",
+    difficulty: 1,
+    tags: ["Spring 2024"],
+    eventId: "picnics-and-pies-class-may-2024",
+    equipment: ["Mixing bowls", "Microplane or garlic press", "Baking tray", "Knife"],
+    ingredients: [
+      {
+        group: "Tomato Topping",
+        items: [
+          "1/2 cup cherry or grape tomatoes, quartered",
+          "1 tbsp olive oil",
+          "1/4 tsp dried oregano",
+          "Few leaves fresh basil, roughly torn",
+          "Salt and pepper, to taste",
+        ],
+      },
+      {
+        group: "Garlic Aioli",
+        items: [
+          "1/3 cup mayonnaise",
+          "2-3 cloves garlic, grated on a microplane",
+          "1/2 tsp Dijon mustard",
+          "1/2 tsp lemon juice",
+          "Salt, to taste",
+        ],
+      },
+      {
+        group: "Crostini",
+        items: [
+          "1/2 baguette, sliced into 4 pieces",
+        ],
+      },
+    ],
+    instructions: [
+      "Quarter the cherry tomatoes and roughly tear the basil. Combine in a bowl with the olive oil, oregano, salt, and pepper. Toss and set aside.",
+      "Make the garlic aioli: grate the garlic with a microplane into a bowl. Add the mayonnaise, Dijon mustard, lemon juice, and salt. Mix well and set aside.",
+      "Slice the end off the baguette and cut into 4 pieces.",
+      "Spread a generous layer of garlic aioli on each baguette slice. Top with the seasoned tomatoes.",
+      "Place on a baking tray and broil on high for about 5 minutes until the bread is golden and crispy on the edges. Serve immediately.",
     ],
   },
 ];
