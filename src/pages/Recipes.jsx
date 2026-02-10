@@ -6,6 +6,8 @@ import RecipeCard from "@components/recipes/RecipeCard";
 import { recipes } from "../data/recipes";
 import { events } from "../data/events";
 
+const getEventIds = (recipe) => (Array.isArray(recipe.eventId) ? recipe.eventId : [recipe.eventId]);
+
 function Recipes() {
   const [searchParams, setSearchParams] = useSearchParams();
 
@@ -58,7 +60,7 @@ function Recipes() {
     allTags.forEach((tag) => {
       const eventIds = new Set();
       recipes.forEach((r) => {
-        if (r.tags.includes(tag)) eventIds.add(r.eventId);
+        if (r.tags.includes(tag)) getEventIds(r).forEach((id) => eventIds.add(id));
       });
       map[tag] = Array.from(eventIds);
     });
@@ -67,10 +69,8 @@ function Recipes() {
 
   // Only show past events that have recipes, newest first
   const eventsWithRecipes = useMemo(() => {
-    const idsWithRecipes = new Set(recipes.map((r) => r.eventId));
-    return events
-      .filter((e) => idsWithRecipes.has(e.id))
-      .sort((a, b) => new Date(b.date) - new Date(a.date));
+    const idsWithRecipes = new Set(recipes.flatMap((r) => getEventIds(r)));
+    return events.filter((e) => idsWithRecipes.has(e.id)).sort((a, b) => new Date(b.date) - new Date(a.date));
   }, []);
 
   const toggleTag = (tag) => {
@@ -118,7 +118,8 @@ function Recipes() {
     return recipes
       .filter((recipe) => {
         const matchesSearch = recipe.name.toLowerCase().includes(search.toLowerCase());
-        const matchesEvent = selectedEvents.length === 0 || selectedEvents.includes(recipe.eventId);
+        const matchesEvent =
+          selectedEvents.length === 0 || getEventIds(recipe).some((id) => selectedEvents.includes(id));
         return matchesSearch && matchesEvent;
       })
       .sort((a, b) => a.name.localeCompare(b.name));

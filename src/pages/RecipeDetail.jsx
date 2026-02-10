@@ -23,7 +23,8 @@ function RecipeDetail() {
     );
   }
 
-  const event = events.find((e) => e.id === recipe.eventId);
+  const recipeEventIds = Array.isArray(recipe.eventId) ? recipe.eventId : [recipe.eventId];
+  const recipeEvents = recipeEventIds.map((id) => events.find((e) => e.id === id)).filter(Boolean);
 
   const hasGroupedIngredients =
     recipe.ingredients.length > 0 && typeof recipe.ingredients[0] === "object" && recipe.ingredients[0].group;
@@ -49,13 +50,18 @@ function RecipeDetail() {
           )}
         </h1>
 
-        {/* From: Event link */}
-        {event && (
+        {/* From: Event link(s) */}
+        {recipeEvents.length > 0 && (
           <p className="font-body text-sm text-gray-dark mb-6">
             From:{" "}
-            <Link to={`/events/${event.slug}`} className="text-primary font-medium hover:underline">
-              {event.name}
-            </Link>
+            {recipeEvents.map((event, i) => (
+              <span key={event.id}>
+                {i > 0 && " & "}
+                <Link to={`/events/${event.slug}`} className="text-primary font-medium hover:underline">
+                  {event.name}
+                </Link>
+              </span>
+            ))}
           </p>
         )}
 
