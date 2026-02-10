@@ -1,6 +1,6 @@
 import { useParams, Link, useLocation } from "react-router-dom";
 import { FaChevronLeft, FaStar, FaRegStar } from "react-icons/fa";
-import { recipes } from "../data/recipes";
+import { recipes, getEventIds } from "../data/recipes";
 import { events } from "../data/events";
 
 function RecipeDetail() {
@@ -23,8 +23,7 @@ function RecipeDetail() {
     );
   }
 
-  const recipeEventIds = Array.isArray(recipe.eventId) ? recipe.eventId : [recipe.eventId];
-  const recipeEvents = recipeEventIds.map((id) => events.find((e) => e.id === id)).filter(Boolean);
+  const recipeEvents = getEventIds(recipe).map((id) => events.find((e) => e.id === id)).filter(Boolean);
 
   const hasGroupedIngredients =
     recipe.ingredients.length > 0 && typeof recipe.ingredients[0] === "object" && recipe.ingredients[0].group;

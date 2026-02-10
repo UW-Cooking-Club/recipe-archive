@@ -11,7 +11,7 @@ function RecipeCard({ name, image, slug }) {
           loading="lazy"
         />
       ) : (
-        <div className="w-full h-56 bg-gray-300 flex items-center justify-center text-gray-500 font-body text-sm">
+        <div role="img" aria-label={name} className="w-full h-56 bg-gray-300 flex items-center justify-center text-gray-500 font-body text-sm">
           Photo coming soon
         </div>
       )}

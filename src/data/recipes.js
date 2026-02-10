@@ -66,6 +66,9 @@ import strawberryPieImg from "@assets/recipes/StrawberryRhubarbMuffinTinPie.webp
 import lemonHoneyTeaImg from "@assets/recipes/LemonHoneyIcedTea.webp";
 import crostiniImg from "@assets/recipes/RoastedTomatoCrostini.webp";
 
+export const getEventIds = (recipe) =>
+  Array.isArray(recipe.eventId) ? recipe.eventId : [recipe.eventId];
+
 export const recipes = [
   // ─── Korean Food Class (Sept 20, 2025) ───
   {

@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from "react";
 import { useParams, Link } from "react-router-dom";
 import { FaChevronLeft, FaChevronRight, FaStar, FaRegStar, FaTimes } from "react-icons/fa";
 import { events } from "../data/events";
-import { recipes } from "../data/recipes";
+import { recipes, getEventIds } from "../data/recipes";
 
 function EventDetail() {
   const { slug } = useParams();
@@ -47,9 +47,7 @@ function EventDetail() {
     );
   }
 
-  const eventRecipes = recipes.filter((r) =>
-    Array.isArray(r.eventId) ? r.eventId.includes(event.id) : r.eventId === event.id
-  );
+  const eventRecipes = recipes.filter((r) => getEventIds(r).includes(event.id));
 
   const formatDate = (dateStr) => {
     const d = new Date(dateStr + "T00:00:00");

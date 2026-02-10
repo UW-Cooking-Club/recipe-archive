@@ -3,10 +3,8 @@ import { useSearchParams } from "react-router-dom";
 import { FaSearch, FaBars } from "react-icons/fa";
 import PageHero from "@components/PageHero";
 import RecipeCard from "@components/recipes/RecipeCard";
-import { recipes } from "../data/recipes";
+import { recipes, getEventIds } from "../data/recipes";
 import { events } from "../data/events";
-
-const getEventIds = (recipe) => (Array.isArray(recipe.eventId) ? recipe.eventId : [recipe.eventId]);
 
 function Recipes() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -54,15 +52,12 @@ function Recipes() {
     });
   }, []);
 
-  // Map each term tag to its event IDs (via recipes)
+  // Map each term to its event IDs
   const tagToEventIds = useMemo(() => {
     const map = {};
-    allTags.forEach((tag) => {
-      const eventIds = new Set();
-      recipes.forEach((r) => {
-        if (r.tags.includes(tag)) getEventIds(r).forEach((id) => eventIds.add(id));
-      });
-      map[tag] = Array.from(eventIds);
+    allTags.forEach((tag) => { map[tag] = []; });
+    events.forEach((event) => {
+      if (map[event.term]) map[event.term].push(event.id);
     });
     return map;
   }, [allTags]);
@@ -77,9 +72,14 @@ function Recipes() {
     const eventIdsForTag = tagToEventIds[tag] || [];
 
     if (selectedTags.includes(tag)) {
-      // Deselecting term — remove the term and its events
+      // Deselecting term — remove the term, but only remove events not needed by other selected terms
       const newTags = selectedTags.filter((t) => t !== tag);
-      const newEvents = selectedEvents.filter((id) => !eventIdsForTag.includes(id));
+      const eventIdsStillNeeded = new Set(
+        newTags.flatMap((t) => tagToEventIds[t] || [])
+      );
+      const newEvents = selectedEvents.filter(
+        (id) => !eventIdsForTag.includes(id) || eventIdsStillNeeded.has(id)
+      );
       updateParams({ tags: newTags, events: newEvents });
     } else {
       // Selecting term — add the term and all its events
