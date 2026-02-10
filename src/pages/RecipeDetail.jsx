@@ -7,7 +7,7 @@ function RecipeDetail() {
   const { slug } = useParams();
   const location = useLocation();
   const fromEvent = location.state?.from === "event";
-  const backLabel = fromEvent ? `Back to ${location.state.eventName}` : "Back to Recipes";
+  const backLabel = fromEvent ? `Back to ${location.state?.eventName || "Event"}` : "Back to Recipes";
   const recipe = recipes.find((r) => r.slug === slug);
 
   if (!recipe) {

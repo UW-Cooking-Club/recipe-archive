@@ -17,6 +17,7 @@ import RecipeDetail from "./pages/RecipeDetail";
 import Events from "./pages/Events";
 import EventDetail from "./pages/EventDetail";
 import About from "./pages/About";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
             <Route path="/events" element={<Events />} />
             <Route path="/events/:slug" element={<EventDetail />} />
             <Route path="/about" element={<About />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
         <Footer />
