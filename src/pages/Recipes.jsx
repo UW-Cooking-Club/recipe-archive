@@ -43,7 +43,13 @@ function Recipes() {
   const allTags = useMemo(() => {
     const tagSet = new Set();
     recipes.forEach((r) => r.tags.forEach((t) => tagSet.add(t)));
-    return Array.from(tagSet).sort();
+    const seasonOrder = { Winter: 0, Spring: 1, Fall: 2 };
+    return Array.from(tagSet).sort((a, b) => {
+      const [seasonA, yearA] = a.split(" ");
+      const [seasonB, yearB] = b.split(" ");
+      if (yearA !== yearB) return Number(yearB) - Number(yearA);
+      return seasonOrder[seasonB] - seasonOrder[seasonA];
+    });
   }, []);
 
   // Map each term tag to its event IDs (via recipes)
@@ -59,10 +65,12 @@ function Recipes() {
     return map;
   }, [allTags]);
 
-  // Only show past events that have recipes
+  // Only show past events that have recipes, newest first
   const eventsWithRecipes = useMemo(() => {
     const idsWithRecipes = new Set(recipes.map((r) => r.eventId));
-    return events.filter((e) => idsWithRecipes.has(e.id));
+    return events
+      .filter((e) => idsWithRecipes.has(e.id))
+      .sort((a, b) => new Date(b.date) - new Date(a.date));
   }, []);
 
   const toggleTag = (tag) => {
