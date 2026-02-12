@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from "react";
 import { useParams, Link } from "react-router-dom";
 import { FaChevronLeft, FaChevronRight, FaStar, FaRegStar, FaTimes } from "react-icons/fa";
 import { events } from "../data/events";
-import { recipes } from "../data/recipes";
+import { recipes, getEventIds } from "../data/recipes";
 
 function EventDetail() {
   const { slug } = useParams();
@@ -47,7 +47,7 @@ function EventDetail() {
     );
   }
 
-  const eventRecipes = recipes.filter((r) => r.eventId === event.id);
+  const eventRecipes = recipes.filter((r) => getEventIds(r).includes(event.id));
 
   const formatDate = (dateStr) => {
     const d = new Date(dateStr + "T00:00:00");
@@ -111,6 +111,7 @@ function EventDetail() {
                   <Link
                     key={recipe.id}
                     to={`/recipes/${recipe.slug}`}
+                    state={{ from: "event", eventName: event.name, eventSlug: event.slug }}
                     className="block hover:bg-white/50 rounded-lg transition-colors"
                   >
                     <div className="flex flex-col md:flex-row gap-4 p-2">

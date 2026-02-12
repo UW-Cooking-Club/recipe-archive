@@ -1,10 +1,13 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useLocation } from "react-router-dom";
 import { FaChevronLeft, FaStar, FaRegStar } from "react-icons/fa";
-import { recipes } from "../data/recipes";
+import { recipes, getEventIds } from "../data/recipes";
 import { events } from "../data/events";
 
 function RecipeDetail() {
   const { slug } = useParams();
+  const location = useLocation();
+  const fromEvent = location.state?.from === "event";
+  const backLabel = fromEvent ? `Back to ${location.state?.eventName || "Event"}` : "Back to Recipes";
   const recipe = recipes.find((r) => r.slug === slug);
 
   if (!recipe) {
@@ -20,7 +23,7 @@ function RecipeDetail() {
     );
   }
 
-  const event = events.find((e) => e.id === recipe.eventId);
+  const recipeEvents = getEventIds(recipe).map((id) => events.find((e) => e.id === id)).filter(Boolean);
 
   const hasGroupedIngredients =
     recipe.ingredients.length > 0 && typeof recipe.ingredients[0] === "object" && recipe.ingredients[0].group;
@@ -32,11 +35,11 @@ function RecipeDetail() {
       <div className="max-w-3xl mx-auto px-6 md:px-8 py-8">
         {/* Back button */}
         <Link
-          to="/recipes"
+          to={fromEvent && location.state?.eventSlug ? `/events/${location.state.eventSlug}` : "/recipes"}
           className="inline-flex items-center gap-2 font-body text-sm text-gray-dark hover:text-primary transition-colors mb-4"
         >
           <FaChevronLeft className="text-xs" />
-          Back to Recipes
+          {backLabel}
         </Link>
 
         <h1 className="font-heading text-4xl md:text-5xl text-gray-dark leading-tight">
@@ -46,24 +49,35 @@ function RecipeDetail() {
           )}
         </h1>
 
-        {/* From: Event link */}
-        {event && (
+        {/* From: Event link(s) */}
+        {recipeEvents.length > 0 && (
           <p className="font-body text-sm text-gray-dark mb-6">
             From:{" "}
-            <Link to={`/events/${event.slug}`} className="text-primary font-medium hover:underline">
-              {event.name}
-            </Link>
+            {recipeEvents.map((event, i) => (
+              <span key={event.id}>
+                {i > 0 && " & "}
+                <Link to={`/events/${event.slug}`} className="text-primary font-medium hover:underline">
+                  {event.name}
+                </Link>
+              </span>
+            ))}
           </p>
         )}
 
         {/* Photo + Description row */}
         <div className="flex flex-col md:flex-row gap-6 mb-6 bg-white border border-gray-200 rounded-lg p-4">
-          <img
-            src={recipe.image}
-            alt={recipe.name}
-            className="w-full md:w-56 h-48 md:h-auto object-cover rounded"
-            loading="lazy"
-          />
+          {recipe.image ? (
+            <img
+              src={recipe.image}
+              alt={recipe.name}
+              className="w-full md:w-56 h-48 md:h-auto object-cover rounded"
+              loading="lazy"
+            />
+          ) : (
+            <div className="w-full md:w-56 h-48 bg-gray-300 flex items-center justify-center text-gray-500 font-body text-sm rounded">
+              Photo coming soon
+            </div>
+          )}
           <div className="flex-1">
             <h3 className="font-heading text-lg text-gray-dark mb-2">Description</h3>
             <p className="font-body text-sm text-gray-dark leading-relaxed">{recipe.description}</p>
