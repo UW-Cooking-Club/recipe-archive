@@ -23,7 +23,7 @@ function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <div className="min-h-dvh flex flex-col overflow-x-hidden">
+      <div className="min-h-dvh flex flex-col">
         <Navbar />
         <main className="flex-1 pt-14 md:pt-0">
           <Routes>

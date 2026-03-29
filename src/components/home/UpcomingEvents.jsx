@@ -65,10 +65,10 @@ function UpcomingEvents() {
         </div>
 
         {/* Info */}
-        <div className="text-left">
+        <div className="text-center">
           <h3 className="font-heading text-5xl text-white mb-1">{upcomingEvent.name}</h3>
           <p className="font-body text-sm text-white font-bold mb-3">{formatDate(upcomingEvent.date)}</p>
-          <p className="font-body text-sm text-gray-300 max-w-2xl mb-4 whitespace-pre-line">{upcomingEvent.description}</p>
+          <p className="font-body text-sm text-gray-300 max-w-2xl mx-auto mb-4 whitespace-pre-line">{upcomingEvent.description}</p>
 
           <div className="flex flex-wrap justify-center gap-3">
             {upcomingEvent.ticketsUrl && (

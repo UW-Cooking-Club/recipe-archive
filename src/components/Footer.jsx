@@ -4,8 +4,8 @@ import bowlSticker from "@assets/bowl_sticker.png";
 
 function Footer() {
   return (
-    <footer className="relative bg-primary px-6 py-10 flex items-center justify-between md:px-10 md:py-8">
-      <img src={bowlSticker} alt="" className="hidden md:block absolute -top-44 left-2/3 -translate-x-1/2 h-[27rem] z-10" />
+    <footer className="relative bg-primary px-6 py-4 flex items-center justify-between md:px-10 md:py-4">
+      <img src={bowlSticker} alt="" className="hidden md:block absolute bottom-0 left-2/3 -translate-x-1/2 h-[12rem] z-10" />
       <p className="text-white text-sm font-body">© UWCC 2026</p>
       <div className="flex items-center gap-2">
         <p className="text-white text-sm font-body hidden sm:block">Our Socials:</p>
