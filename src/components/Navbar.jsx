@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { HiMenu, HiX } from "react-icons/hi";
-import logo from "@assets/Logo1.webp";
+import logo from "@assets/Logo1_White.webp";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
