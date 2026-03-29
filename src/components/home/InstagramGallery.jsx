@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import sandPSticker from "@assets/SandP_sticker.svg";
 import ig1 from "@assets/instagram/IG1.webp";
 import ig2 from "@assets/instagram/IG2.webp";
 import ig3 from "@assets/instagram/IG3.webp";
@@ -16,19 +17,35 @@ const posts = [
   { image: ig6, url: "https://www.instagram.com/p/DTgwejTjDti" },
 ];
 
-const PAGE_SIZE = 3;
+function usePageSize() {
+  const getSize = () => (window.innerWidth >= 768 ? 3 : 1);
+  const [size, setSize] = useState(getSize);
+  useEffect(() => {
+    const onResize = () => setSize(getSize());
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+  return size;
+}
 
 function InstagramGallery() {
+  const pageSize = usePageSize();
   const [page, setPage] = useState(0);
-  const totalPages = Math.ceil(posts.length / PAGE_SIZE);
-  const visible = posts.slice(page * PAGE_SIZE, page * PAGE_SIZE + PAGE_SIZE);
+  const totalPages = Math.ceil(posts.length / pageSize);
+  const clampedPage = Math.min(page, totalPages - 1);
+  const visible = posts.slice(clampedPage * pageSize, clampedPage * pageSize + pageSize);
 
   const goPrev = () => setPage((p) => Math.max(0, p - 1));
   const goNext = () => setPage((p) => Math.min(totalPages - 1, p + 1));
+  // Reset page when pageSize changes to avoid being stuck past the end
+  useEffect(() => {
+    setPage((p) => Math.min(p, totalPages - 1));
+  }, [totalPages]);
 
   return (
-    <section className="bg-cream py-12 px-8">
-      <h2 className="font-heading text-3xl text-primary text-center mb-8">Instagram Gallery</h2>
+    <section className="relative bg-cream pt-24 pb-8 px-8">
+      <img src={sandPSticker} alt="" className="absolute -top-28 -left-12 w-72 z-10" />
+      <h2 className="font-heading text-5xl text-primary text-center mb-8">Instagram Gallery</h2>
 
       <div className="max-w-4xl mx-auto flex items-center gap-4">
         {page > 0 ? (
@@ -43,10 +60,10 @@ function InstagramGallery() {
           <div className="w-6 shrink-0" />
         )}
 
-        <div className="grid grid-cols-3 gap-3 flex-1">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 flex-1">
           {visible.map((post, i) => (
             <a
-              key={page * PAGE_SIZE + i}
+              key={clampedPage * pageSize + i}
               href={post.url}
               target="_blank"
               rel="noopener noreferrer"
@@ -54,7 +71,7 @@ function InstagramGallery() {
             >
               <img
                 src={post.image}
-                alt={`Instagram post ${page * PAGE_SIZE + i + 1}`}
+                alt={`Instagram post ${clampedPage * pageSize + i + 1}`}
                 className="w-full h-64 object-cover group-hover:scale-105 transition-transform"
                 loading="lazy"
               />
@@ -74,6 +91,7 @@ function InstagramGallery() {
           <div className="w-6 shrink-0" />
         )}
       </div>
+
     </section>
   );
 }

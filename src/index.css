@@ -21,3 +21,8 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+html, body {
+  background-color: var(--color-primary);
+  overflow-x: hidden;
+}
