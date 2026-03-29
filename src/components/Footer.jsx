@@ -4,12 +4,11 @@ import bowlSticker from "@assets/bowl_sticker.png";
 
 function Footer() {
   return (
-    <footer className="relative bg-primary px-10 py-10 flex items-center justify-between">
-      <img src={bowlSticker} alt="" className="absolute -top-44 left-2/3 -translate-x-1/2 h-[27rem] z-10" />
+    <footer className="relative bg-primary px-6 py-10 flex items-center justify-between md:px-10 md:py-8">
+      <img src={bowlSticker} alt="" className="hidden md:block absolute -top-44 left-2/3 -translate-x-1/2 h-[27rem] z-10" />
       <p className="text-white text-sm font-body">© UWCC 2026</p>
       <div className="flex items-center gap-2">
-        <p className="text-white text-sm font-body">Our Socials:</p>
-        <br />
+        <p className="text-white text-sm font-body hidden sm:block">Our Socials:</p>
         <a
           href="https://www.instagram.com/uwcookingclub/"
           target="_blank"
@@ -17,7 +16,7 @@ function Footer() {
           aria-label="Instagram"
           className="hover:opacity-80"
         >
-          <img src={instagramIcon} alt="Instagram" className="h-10" />
+          <img src={instagramIcon} alt="Instagram" className="h-8 md:h-10" />
         </a>
         <a
           href="https://discord.gg/Gacu9hZ6sy"
@@ -26,7 +25,7 @@ function Footer() {
           aria-label="Discord"
           className="hover:opacity-80"
         >
-          <img src={discordIcon} alt="Discord" className="h-14" />
+          <img src={discordIcon} alt="Discord" className="h-10 md:h-14" />
         </a>
       </div>
     </footer>
