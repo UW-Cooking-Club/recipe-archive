@@ -1,4 +1,4 @@
-import bannerImg from "@assets/landingPage_banner.png";
+import bannerImg from "@assets/landingPage_banner.jpg";
 
 function Hero() {
   return (

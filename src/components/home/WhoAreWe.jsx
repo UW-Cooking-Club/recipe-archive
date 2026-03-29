@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import ccHomeImg from "@assets/cc_home_img.png";
-import ccSticker from "@assets/CC_sticker.png";
+import ccSticker from "@assets/CC_sticker.svg";
 
 function WhoAreWe() {
   return (

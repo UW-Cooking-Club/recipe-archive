@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { FaChevronLeft, FaChevronRight, FaTimes } from "react-icons/fa";
 import { events } from "../../data/events";
-import panSticker from "@assets/pan_sticker.png";
+import panSticker from "@assets/pan_sticker.svg";
 
 function UpcomingEvents() {
   const upcomingEvent = events.find((e) => e.status === "upcoming");

@@ -1,6 +1,6 @@
 import instagramIcon from "@assets/Instagram_Icon.webp";
 import discordIcon from "@assets/Discord_Icon.webp";
-import bowlSticker from "@assets/bowl_sticker.png";
+import bowlSticker from "@assets/bowl_sticker.svg";
 
 function Footer() {
   return (

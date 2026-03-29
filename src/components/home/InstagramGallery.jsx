@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import sandPSticker from "@assets/SandP_sticker.png";
+import sandPSticker from "@assets/SandP_sticker.svg";
 import ig1 from "@assets/instagram/IG1.webp";
 import ig2 from "@assets/instagram/IG2.webp";
 import ig3 from "@assets/instagram/IG3.webp";
