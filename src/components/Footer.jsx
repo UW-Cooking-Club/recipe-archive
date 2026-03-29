@@ -1,9 +1,11 @@
 import instagramIcon from "@assets/Instagram_Icon.webp";
 import discordIcon from "@assets/Discord_Icon.webp";
+import bowlSticker from "@assets/bowl_sticker.png";
 
 function Footer() {
   return (
-    <footer className="bg-primary px-10 py-4 flex items-center justify-between">
+    <footer className="relative bg-primary px-10 py-10 flex items-center justify-between">
+      <img src={bowlSticker} alt="" className="absolute -top-44 left-2/3 -translate-x-1/2 h-[27rem] z-10" />
       <p className="text-white text-sm font-body">© UWCC 2026</p>
       <div className="flex items-center gap-2">
         <p className="text-white text-sm font-body">Our Socials:</p>

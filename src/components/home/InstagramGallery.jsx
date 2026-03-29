@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import sandPSticker from "@assets/SandP_sticker.png";
 import ig1 from "@assets/instagram/IG1.webp";
 import ig2 from "@assets/instagram/IG2.webp";
 import ig3 from "@assets/instagram/IG3.webp";
@@ -27,8 +28,9 @@ function InstagramGallery() {
   const goNext = () => setPage((p) => Math.min(totalPages - 1, p + 1));
 
   return (
-    <section className="bg-cream py-12 px-8">
-      <h2 className="font-heading text-3xl text-primary text-center mb-8">Instagram Gallery</h2>
+    <section className="relative bg-cream pt-24 pb-32 px-8">
+      <img src={sandPSticker} alt="" className="absolute -top-28 -left-12 w-72 z-10" />
+      <h2 className="font-heading text-5xl text-primary text-center mb-8">Instagram Gallery</h2>
 
       <div className="max-w-4xl mx-auto flex items-center gap-4">
         {page > 0 ? (
@@ -74,6 +76,8 @@ function InstagramGallery() {
           <div className="w-6 shrink-0" />
         )}
       </div>
+
+      <div className="max-w-xl mx-auto mt-8 border-b-4 border-primary opacity-40" />
     </section>
   );
 }

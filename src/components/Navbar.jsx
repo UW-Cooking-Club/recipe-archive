@@ -3,7 +3,7 @@ import logo from "@assets/Logo1.webp";
 
 function Navbar() {
   return (
-    <nav className="bg-primary flex items-center justify-between px-8 py-3">
+    <nav className="bg-primary flex items-center justify-between px-8 py-3 fixed top-4 left-4 right-4 z-50 rounded-full">
       <Link to="/">
         <img src={logo} alt="UW Cooking Club" className="h-16" />
       </Link>

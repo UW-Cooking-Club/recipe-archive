@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { FaChevronLeft, FaChevronRight, FaTimes } from "react-icons/fa";
 import { events } from "../../data/events";
+import panSticker from "@assets/pan_sticker.png";
 
 function UpcomingEvents() {
   const upcomingEvent = events.find((e) => e.status === "upcoming");
@@ -36,17 +37,17 @@ function UpcomingEvents() {
 
   const formatDate = (dateStr) => {
     const d = new Date(dateStr + "T00:00:00");
-    return d.toLocaleDateString("en-US", {
-      weekday: "long",
-      month: "long",
-      day: "numeric",
-      year: "numeric",
-    });
+    const weekday = d.toLocaleDateString("en-US", { weekday: "long" });
+    const month = d.toLocaleDateString("en-US", { month: "long" });
+    const day = d.getDate();
+    const suffix = ["th", "st", "nd", "rd"][([11, 12, 13].includes(day % 100) ? 0 : Math.min(day % 10, 4))] || "th";
+    return `${weekday}, ${month} ${day}${suffix}`;
   };
 
   return (
-    <section className="bg-dark py-12 px-8">
-      <h2 className="font-heading text-3xl text-white text-center mb-8 underline">Check Out Our Upcoming Event!</h2>
+    <section className="relative bg-dark py-12 px-8">
+      <img src={panSticker} alt="" className="absolute -top-28 -right-8 w-72 z-10" />
+      <h2 className="font-fun text-6xl text-white text-center mb-8 underline">Check Out Our<br />Upcoming Event!</h2>
 
       <div className="max-w-4xl mx-auto">
         {/* Photos */}
@@ -64,10 +65,10 @@ function UpcomingEvents() {
         </div>
 
         {/* Info */}
-        <div className="text-center">
-          <h3 className="font-heading text-2xl text-white mb-2">{upcomingEvent.name}</h3>
-          <p className="font-body text-sm text-gray-300 mb-1">{formatDate(upcomingEvent.date)}</p>
-          <p className="font-body text-sm text-gray-300 max-w-2xl mx-auto mb-4 whitespace-pre-line">{upcomingEvent.description}</p>
+        <div className="text-left">
+          <h3 className="font-heading text-5xl text-white mb-1">{upcomingEvent.name}</h3>
+          <p className="font-body text-sm text-white font-bold mb-3">{formatDate(upcomingEvent.date)}</p>
+          <p className="font-body text-sm text-gray-300 max-w-2xl mb-4 whitespace-pre-line">{upcomingEvent.description}</p>
 
           <div className="flex flex-wrap justify-center gap-3">
             {upcomingEvent.ticketsUrl && (
@@ -75,17 +76,11 @@ function UpcomingEvents() {
                 href={upcomingEvent.ticketsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-primary text-white font-body font-semibold px-6 py-3 rounded-lg hover:opacity-90 transition-opacity"
+                className="inline-block bg-primary text-white font-body font-semibold px-6 py-3 rounded-full hover:opacity-90 transition-opacity"
               >
                 Get Tickets
               </a>
             )}
-            <Link
-              to="/events"
-              className="inline-block border border-white text-white font-body font-semibold px-6 py-3 rounded-lg hover:bg-white/10 transition-colors"
-            >
-              View All Events
-            </Link>
           </div>
         </div>
       </div>
