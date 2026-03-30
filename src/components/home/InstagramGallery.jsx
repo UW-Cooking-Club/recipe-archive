@@ -44,7 +44,7 @@ function InstagramGallery() {
       <h2 className="font-heading text-5xl text-primary text-center mb-8">Instagram Gallery</h2>
 
       <div className="max-w-6xl mx-auto flex items-center gap-4">
-        {page > 0 ? (
+        {clampedPage > 0 ? (
           <button
             onClick={goPrev}
             className="text-gray-dark text-2xl hover:text-primary transition-colors shrink-0"
@@ -75,7 +75,7 @@ function InstagramGallery() {
           ))}
         </div>
 
-        {page < totalPages - 1 ? (
+        {clampedPage < totalPages - 1 ? (
           <button
             onClick={goNext}
             className="text-gray-dark text-2xl hover:text-primary transition-colors shrink-0"

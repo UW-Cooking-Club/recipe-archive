@@ -39,7 +39,7 @@ function Lightbox({ photos, index, onClose, onNext, onPrev, alt = "Photo" }) {
     <div className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center" onClick={onClose}>
       <button
         className="absolute top-4 right-4 text-white text-2xl hover:opacity-70 transition-opacity"
-        onClick={onClose}
+        onClick={(e) => { e.stopPropagation(); onClose(); }}
         aria-label="Close"
       >
         <FaTimes />
@@ -55,7 +55,7 @@ function Lightbox({ photos, index, onClose, onNext, onPrev, alt = "Photo" }) {
       )}
       <img
         src={photos[index]}
-        alt={`${alt} ${index + 1}`}
+        alt={`${alt} photo ${index + 1}`}
         className="max-h-[85vh] max-w-[90vw] object-contain rounded-lg"
         onClick={(e) => e.stopPropagation()}
       />
