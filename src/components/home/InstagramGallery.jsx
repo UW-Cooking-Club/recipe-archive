@@ -35,12 +35,8 @@ function InstagramGallery() {
   const clampedPage = Math.min(page, totalPages - 1);
   const visible = posts.slice(clampedPage * pageSize, clampedPage * pageSize + pageSize);
 
-  const goPrev = () => setPage((p) => Math.max(0, p - 1));
-  const goNext = () => setPage((p) => Math.min(totalPages - 1, p + 1));
-  // Reset page when pageSize changes to avoid being stuck past the end
-  useEffect(() => {
-    setPage((p) => Math.min(p, totalPages - 1));
-  }, [totalPages]);
+  const goPrev = () => setPage(Math.max(0, clampedPage - 1));
+  const goNext = () => setPage(Math.min(totalPages - 1, clampedPage + 1));
 
   return (
     <section className="relative bg-cream pt-24 pb-8 px-8">
