@@ -60,7 +60,7 @@ function EventDetail() {
 
   return (
     <div className="bg-cream min-h-screen">
-      <div className="max-w-3xl mx-auto px-6 md:px-8 py-8">
+      <div className="max-w-3xl mx-auto px-6 md:px-8 py-8 md:pt-24">
         {/* Back button */}
         <Link
           to="/events"
