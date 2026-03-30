@@ -132,7 +132,7 @@ function Recipes() {
 
       <section className="bg-cream py-8 px-8">
         {/* Search bar */}
-        <div className="max-w-4xl mx-auto flex items-center bg-gray-300 rounded-lg overflow-hidden mb-4">
+        <div className="max-w-6xl mx-auto flex items-center bg-gray-300 rounded-lg overflow-hidden mb-4">
           <FaSearch className="text-gray-600 ml-4" />
           <input
             type="text"
@@ -152,7 +152,7 @@ function Recipes() {
 
         {/* Filters */}
         {showFilters && (
-          <div className="max-w-4xl mx-auto mb-6 p-4 bg-white rounded-lg space-y-4">
+          <div className="max-w-6xl mx-auto mb-6 p-4 bg-white rounded-lg space-y-4">
             {/* Term filter */}
             <div>
               <h3 className="font-heading text-sm text-gray-dark mb-2">Term</h3>
@@ -205,7 +205,7 @@ function Recipes() {
         )}
 
         {/* Recipe grid */}
-        <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {filteredRecipes.length > 0 ? (
             filteredRecipes.map((recipe) => (
               <RecipeCard key={recipe.id} name={recipe.name} image={recipe.image} slug={recipe.slug} />
