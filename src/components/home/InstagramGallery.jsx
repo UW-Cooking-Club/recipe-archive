@@ -47,7 +47,7 @@ function InstagramGallery() {
       <img src={sandPSticker} alt="" className="absolute -top-28 -left-12 w-72 z-10" />
       <h2 className="font-heading text-5xl text-primary text-center mb-8">Instagram Gallery</h2>
 
-      <div className="max-w-4xl mx-auto flex items-center gap-4">
+      <div className="max-w-6xl mx-auto flex items-center gap-4">
         {page > 0 ? (
           <button
             onClick={goPrev}

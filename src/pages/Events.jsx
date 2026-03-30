@@ -1,7 +1,7 @@
-import { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
-import { FaChevronLeft, FaChevronRight, FaTimes, FaImages } from "react-icons/fa";
+import { FaImages } from "react-icons/fa";
 import PageHero from "@components/PageHero";
+import Lightbox, { useLightbox } from "@components/Lightbox";
 import eventsBanner from "@assets/events_banner.jpg";
 import instagramIcon from "@assets/Instagram_Icon.webp";
 import { events } from "../data/events";
@@ -12,32 +12,9 @@ function Events() {
     .filter((e) => e.status === "past")
     .sort((a, b) => new Date(b.date) - new Date(a.date));
 
-  const [lightboxIndex, setLightboxIndex] = useState(null);
-
-  const closeLightbox = useCallback(() => setLightboxIndex(null), []);
-  const goNext = useCallback(() => {
-    if (!upcomingEvent) return;
-    setLightboxIndex((prev) => (prev + 1) % upcomingEvent.photos.length);
-  }, [upcomingEvent]);
-  const goPrev = useCallback(() => {
-    if (!upcomingEvent) return;
-    setLightboxIndex((prev) => (prev - 1 + upcomingEvent.photos.length) % upcomingEvent.photos.length);
-  }, [upcomingEvent]);
-
-  useEffect(() => {
-    if (lightboxIndex === null) return;
-    const handleKey = (e) => {
-      if (e.key === "Escape") closeLightbox();
-      if (e.key === "ArrowRight") goNext();
-      if (e.key === "ArrowLeft") goPrev();
-    };
-    document.body.style.overflow = "hidden";
-    window.addEventListener("keydown", handleKey);
-    return () => {
-      document.body.style.overflow = "";
-      window.removeEventListener("keydown", handleKey);
-    };
-  }, [lightboxIndex, closeLightbox, goNext, goPrev]);
+  const { lightboxIndex, setLightboxIndex, close, goNext, goPrev } = useLightbox(
+    upcomingEvent?.photos
+  );
 
   const formatDate = (dateStr) => {
     const d = new Date(dateStr + "T00:00:00");
@@ -51,13 +28,13 @@ function Events() {
 
   return (
     <>
-      <PageHero image={eventsBanner} alt="Our Events" />
+      <PageHero image={eventsBanner} alt="Our Events" title="Our Events" />
 
       {/* Upcoming Event */}
       <section className="bg-cream py-10 px-8">
         <h2 className="font-heading text-3xl text-primary text-center mb-8">Upcoming Event</h2>
 
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           {upcomingEvent ? (
             <div>
               {/* Event photos grid */}
@@ -187,45 +164,14 @@ function Events() {
         </div>
       </section>
 
-      {/* Lightbox */}
-      {lightboxIndex !== null && upcomingEvent && (
-        <div className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center" onClick={closeLightbox}>
-          <button
-            className="absolute top-4 right-4 text-white text-2xl hover:opacity-70 transition-opacity"
-            onClick={closeLightbox}
-            aria-label="Close"
-          >
-            <FaTimes />
-          </button>
-          {upcomingEvent.photos.length > 1 && (
-            <button
-              className="absolute left-4 text-white text-3xl hover:opacity-70 transition-opacity"
-              onClick={(e) => { e.stopPropagation(); goPrev(); }}
-              aria-label="Previous photo"
-            >
-              <FaChevronLeft />
-            </button>
-          )}
-          <img
-            src={upcomingEvent.photos[lightboxIndex]}
-            alt={`${upcomingEvent.name} photo ${lightboxIndex + 1}`}
-            className="max-h-[85vh] max-w-[90vw] object-contain rounded-lg"
-            onClick={(e) => e.stopPropagation()}
-          />
-          {upcomingEvent.photos.length > 1 && (
-            <button
-              className="absolute right-4 text-white text-3xl hover:opacity-70 transition-opacity"
-              onClick={(e) => { e.stopPropagation(); goNext(); }}
-              aria-label="Next photo"
-            >
-              <FaChevronRight />
-            </button>
-          )}
-          <p className="absolute bottom-4 text-white font-body text-sm">
-            {lightboxIndex + 1} / {upcomingEvent.photos.length}
-          </p>
-        </div>
-      )}
+      <Lightbox
+        photos={upcomingEvent?.photos}
+        index={lightboxIndex}
+        onClose={close}
+        onNext={goNext}
+        onPrev={goPrev}
+        alt={upcomingEvent?.name}
+      />
     </>
   );
 }

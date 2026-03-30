@@ -68,7 +68,7 @@ const teamData = [
 function About() {
   return (
     <>
-      <PageHero image={aboutBanner} alt="About Us" />
+      <PageHero image={aboutBanner} alt="About Us" title="About Us" />
 
       {/* Who Are We + Our Cooking Philosophy */}
       <section className="bg-cream py-10 px-8">

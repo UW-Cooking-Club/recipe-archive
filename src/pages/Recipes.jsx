@@ -128,7 +128,7 @@ function Recipes() {
 
   return (
     <>
-      <PageHero image={recipesBanner} alt="Recipe Archive" />
+      <PageHero image={recipesBanner} alt="Recipe Archive" title="Recipe Archive" />
 
       <section className="bg-cream py-8 px-8">
         {/* Search bar */}
