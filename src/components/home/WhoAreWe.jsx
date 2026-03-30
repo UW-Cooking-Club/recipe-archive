@@ -5,7 +5,7 @@ import ccSticker from "@assets/CC_sticker.svg";
 function WhoAreWe() {
   return (
     <section className="relative bg-white py-16 px-4 sm:px-8">
-      <div className="max-w-4xl mx-auto flex flex-col md:flex-row gap-10 items-stretch">
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-10 items-stretch">
         <div className="relative w-full md:w-2/5 h-[420px] md:h-[500px]">
           {/* Image wrapper (handles rounding + cropping) */}
           <div className="w-full h-full overflow-hidden rounded-lg">

@@ -1,38 +1,15 @@
-import { useState, useEffect, useCallback } from "react";
 import { useParams, Link } from "react-router-dom";
-import { FaChevronLeft, FaChevronRight, FaStar, FaRegStar, FaTimes } from "react-icons/fa";
+import { FaChevronLeft, FaStar, FaRegStar } from "react-icons/fa";
+import Lightbox, { useLightbox } from "@components/Lightbox";
 import { events } from "../data/events";
 import { recipes, getEventIds } from "../data/recipes";
 
 function EventDetail() {
   const { slug } = useParams();
   const event = events.find((e) => e.slug === slug);
-  const [lightboxIndex, setLightboxIndex] = useState(null);
-
-  const closeLightbox = useCallback(() => setLightboxIndex(null), []);
-  const goNext = useCallback(() => {
-    if (!event) return;
-    setLightboxIndex((prev) => (prev + 1) % event.photos.length);
-  }, [event]);
-  const goPrev = useCallback(() => {
-    if (!event) return;
-    setLightboxIndex((prev) => (prev - 1 + event.photos.length) % event.photos.length);
-  }, [event]);
-
-  useEffect(() => {
-    if (lightboxIndex === null) return;
-    const handleKey = (e) => {
-      if (e.key === "Escape") closeLightbox();
-      if (e.key === "ArrowRight") goNext();
-      if (e.key === "ArrowLeft") goPrev();
-    };
-    document.body.style.overflow = "hidden";
-    window.addEventListener("keydown", handleKey);
-    return () => {
-      document.body.style.overflow = "";
-      window.removeEventListener("keydown", handleKey);
-    };
-  }, [lightboxIndex, closeLightbox, goNext, goPrev]);
+  const { lightboxIndex, setLightboxIndex, close, goNext, goPrev } = useLightbox(
+    event?.photos
+  );
 
   if (!event) {
     return (
@@ -60,7 +37,7 @@ function EventDetail() {
 
   return (
     <div className="bg-cream min-h-screen">
-      <div className="max-w-3xl mx-auto px-6 md:px-8 py-8">
+      <div className="max-w-3xl mx-auto px-6 md:px-8 py-8 md:pt-24">
         {/* Back button */}
         <Link
           to="/events"
@@ -190,60 +167,14 @@ function EventDetail() {
         )}
       </div>
 
-      {/* Lightbox Modal */}
-      {lightboxIndex !== null && (
-        <div className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center" onClick={closeLightbox}>
-          {/* Close button */}
-          <button
-            className="absolute top-4 right-4 text-white text-2xl hover:opacity-70 transition-opacity"
-            onClick={closeLightbox}
-            aria-label="Close"
-          >
-            <FaTimes />
-          </button>
-
-          {/* Previous arrow */}
-          {event.photos.length > 1 && (
-            <button
-              className="absolute left-4 text-white text-3xl hover:opacity-70 transition-opacity"
-              onClick={(e) => {
-                e.stopPropagation();
-                goPrev();
-              }}
-              aria-label="Previous photo"
-            >
-              <FaChevronLeft />
-            </button>
-          )}
-
-          {/* Image */}
-          <img
-            src={event.photos[lightboxIndex]}
-            alt={`${event.name} photo ${lightboxIndex + 1}`}
-            className="max-h-[85vh] max-w-[90vw] object-contain rounded-lg"
-            onClick={(e) => e.stopPropagation()}
-          />
-
-          {/* Next arrow */}
-          {event.photos.length > 1 && (
-            <button
-              className="absolute right-4 text-white text-3xl hover:opacity-70 transition-opacity"
-              onClick={(e) => {
-                e.stopPropagation();
-                goNext();
-              }}
-              aria-label="Next photo"
-            >
-              <FaChevronRight />
-            </button>
-          )}
-
-          {/* Photo counter */}
-          <p className="absolute bottom-4 text-white font-body text-sm">
-            {lightboxIndex + 1} / {event.photos.length}
-          </p>
-        </div>
-      )}
+      <Lightbox
+        photos={event.photos}
+        index={lightboxIndex}
+        onClose={close}
+        onNext={goNext}
+        onPrev={goPrev}
+        alt={event.name}
+      />
     </div>
   );
 }
