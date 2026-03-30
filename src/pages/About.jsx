@@ -1,6 +1,10 @@
 import PageHero from "@components/PageHero";
 import TeamSection from "@components/about/TeamSection";
 import aboutBanner from "@assets/aboutUs_banner.jpg";
+import aboutImage from "@assets/aboutUs_image.jpg";
+import mteSticker from "@assets/MTE_sticker.svg";
+import panSticker from "@assets/pan_sticker.svg";
+import whiteLogo from "@assets/whiteLogo_sticker.svg";
 
 const member = (id, name, role) => ({
   id,
@@ -70,83 +74,62 @@ function About() {
     <>
       <PageHero image={aboutBanner} alt="About Us" title="About Us" />
 
-      {/* Who Are We + Our Cooking Philosophy */}
-      <section className="bg-cream py-10 px-8">
-        <div className="max-w-4xl mx-auto flex flex-col gap-8">
-          <div className="bg-primary rounded-lg overflow-hidden flex flex-col md:flex-row">
-            <img
-              src="https://placehold.co/300x250/e2e8f0/475569?text=Who+Are+We"
-              alt="Who are we"
-              className="w-full md:w-1/3 object-cover"
-            />
-            <div className="p-8 text-white">
-              <h2 className="font-heading text-3xl mb-4">Who Are We?</h2>
-              <p className="font-body text-sm leading-relaxed">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                incididunt ut labore et dolore magna aliqua.
-              </p>
-            </div>
-          </div>
-
-          <div className="bg-primary rounded-lg overflow-hidden flex flex-col md:flex-row">
-            <img
-              src="https://placehold.co/300x250/e2e8f0/475569?text=Philosophy"
-              alt="Our cooking philosophy"
-              className="w-full md:w-1/3 object-cover"
-            />
-            <div className="p-8 text-white">
-              <h2 className="font-heading text-3xl mb-4">Our Cooking Philosophy</h2>
-              <p className="font-body text-sm leading-relaxed">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                incididunt ut labore et dolore magna aliqua.
-              </p>
+      {/* About Us group photo + info card */}
+      <section className="relative pb-8 px-8 pt-8">
+        <img
+          src={aboutImage}
+          alt="Cooking Club group photo"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-cream/70" />
+        <div className="max-w-6xl mx-auto relative z-10 flex justify-center">
+          <div className="bg-primary rounded-lg overflow-visible p-8 md:p-10 text-white max-w-[56rem]">
+            <h2 className="font-heading text-3xl md:text-4xl mb-4">Our Cooking Philosophy</h2>
+            <p className="font-body text-sm md:text-base leading-relaxed mb-2">
+              &ldquo;Anyone can cook, but on the fearless can become great.&rdquo; (Ratatouille, 2007)
+            </p>
+            <p className="font-body text-sm md:text-base leading-relaxed mb-6">
+              You&rsquo;ve heard how food brings people together, but the act of cooking, sharing a kitchen with a
+              stranger or someone you love, is one of the greatest acts of fearlessness. At Cooking Club, we give
+              people a place to connect over the shared joy of cooking. In the kitchen with us, you can let go of
+              all fears, and become great!
+            </p>
+            <h2 className="font-heading text-3xl md:text-4xl mb-4">How To Get Involved</h2>
+            <p className="font-body text-sm md:text-base leading-relaxed">
+              We are a club that welcomes all! Whether you&rsquo;re a pro chef or just learning how to cook,
+              cooking club is the place for you. We host a variety of events outside of cooking classes, such as
+              bake sales and movie eat-alongs for example! Want to get even more involved? Our exec team re-hires
+              every term!
+            </p>
+            <div className="flex justify-center mt-6">
+              <img src={whiteLogo} alt="UWCC Logo" className="h-10 md:h-12 opacity-80" />
             </div>
           </div>
         </div>
+
+        {/* Divider line */}
+        <div className="max-w-xl mx-auto mt-8 relative z-10">
+          <hr className="border-primary border-t-2" />
+        </div>
       </section>
 
-      {/* Meet The Team */}
-      <section className="bg-cream pb-4">
-        <h2 className="font-heading text-4xl text-gray-dark text-center py-6">Meet The Team</h2>
+      {/* Meet The Execs - TODO: implement next term */}
+      {/* <section className="bg-dark pt-10 pb-6 px-8 relative overflow-hidden">
+        <img
+          src={panSticker}
+          alt=""
+          className="hidden md:block absolute -left-8 top-1/2 -translate-y-1/2 w-48 lg:w-56 opacity-90"
+        />
+        <div className="flex justify-center">
+          <img src={mteSticker} alt="Meet The Execs" className="w-64 md:w-80 lg:w-96" />
+        </div>
       </section>
 
-      <section className="bg-dark py-8 px-8">
+      <section className="bg-dark py-8 px-8 relative overflow-hidden">
         {teamData.map((section) => (
           <TeamSection key={section.title} title={section.title} members={section.members} columns={section.columns} />
         ))}
-      </section>
-
-      {/* Join The Club */}
-      <section className="bg-cream py-10 px-8">
-        <h2 className="font-heading text-4xl text-gray-dark text-center mb-6">Join The Club</h2>
-        <div className="max-w-4xl mx-auto bg-primary rounded-lg overflow-hidden flex flex-col md:flex-row">
-          <div className="p-8 text-white flex-1">
-            <p className="font-body text-sm leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-              dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-              ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Have Questions */}
-      <section className="bg-cream py-10 px-8">
-        <h2 className="font-heading text-4xl text-gray-dark text-center mb-6">Have Questions?</h2>
-        <div className="max-w-4xl mx-auto bg-primary rounded-lg p-8">
-          <p className="font-body text-sm text-white leading-relaxed text-center">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua.
-          </p>
-        </div>
-      </section>
+      </section> */}
     </>
   );
 }
