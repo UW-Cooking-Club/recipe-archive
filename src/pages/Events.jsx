@@ -1,8 +1,9 @@
 import { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
-import { FaChevronLeft, FaChevronRight, FaTimes } from "react-icons/fa";
+import { FaChevronLeft, FaChevronRight, FaTimes, FaImages } from "react-icons/fa";
 import PageHero from "@components/PageHero";
 import eventsBanner from "@assets/events_banner.jpg";
+import instagramIcon from "@assets/Instagram_Icon.webp";
 import { events } from "../data/events";
 
 function Events() {
@@ -115,14 +116,26 @@ function Events() {
           )}
         </div>
 
-        <hr className="max-w-4xl mx-auto border-primary border-t-2 mt-10 mb-8" />
+      </section>
 
-        {/* Past Events */}
-        <h2 className="font-heading text-3xl text-gray-dark text-center mb-0">Past Events</h2>
+      {/* Past Events banner bar */}
+      <section className="bg-primary px-8 py-4">
+        <div className="max-w-6xl mx-auto flex items-center justify-between">
+          <h2 className="font-heading text-3xl text-white italic">Past Events</h2>
+          <a
+            href="https://docs.google.com/document/d/1zsh7RrDI0WKiW7BtNzg9S-hFcpxBy_LEXkuJGpTfDIA/edit?tab=t.0#heading=h.wyxw4y7t9pw6"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-white text-gray-dark font-body font-semibold text-sm px-5 py-2 rounded-full hover:opacity-90 transition-opacity"
+          >
+            <FaImages className="text-base" />
+            See Gallery
+          </a>
+        </div>
       </section>
 
       <section className="bg-dark py-6 px-8">
-        <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {pastEvents.map((event) => (
             <Link key={event.id} to={`/events/${event.slug}`} className="group relative overflow-hidden rounded h-72">
               {event.coverImage ? (
@@ -149,6 +162,28 @@ function Events() {
               </div>
             </Link>
           ))}
+        </div>
+      </section>
+
+      {/* Stay updated / Instagram CTA */}
+      <section className="bg-cream py-12 px-8">
+        <div className="flex flex-col items-center gap-4">
+          <a
+            href="https://www.instagram.com/uwcookingclub/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:opacity-80 transition-opacity"
+          >
+            <img src={instagramIcon} alt="Instagram" className="h-16 md:h-20" />
+          </a>
+          <a
+            href="https://www.instagram.com/uwcookingclub/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-fun text-2xl md:text-3xl text-primary hover:opacity-80 transition-opacity text-center"
+          >
+            Stay updated on our<br />next event!
+          </a>
         </div>
       </section>
 
