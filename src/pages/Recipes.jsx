@@ -3,6 +3,7 @@ import { useSearchParams } from "react-router-dom";
 import { FaSearch, FaBars } from "react-icons/fa";
 import PageHero from "@components/PageHero";
 import RecipeCard from "@components/recipes/RecipeCard";
+import recipesBanner from "@assets/recipes_banner.jpg";
 import { recipes, getEventIds } from "../data/recipes";
 import { events } from "../data/events";
 
@@ -127,7 +128,7 @@ function Recipes() {
 
   return (
     <>
-      <PageHero title="Recipe Archive" />
+      <PageHero image={recipesBanner} alt="Recipe Archive" />
 
       <section className="bg-cream py-8 px-8">
         {/* Search bar */}

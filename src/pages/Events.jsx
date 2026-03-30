@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { FaChevronLeft, FaChevronRight, FaTimes } from "react-icons/fa";
 import PageHero from "@components/PageHero";
+import eventsBanner from "@assets/events_banner.jpg";
 import { events } from "../data/events";
 
 function Events() {
@@ -49,7 +50,7 @@ function Events() {
 
   return (
     <>
-      <PageHero title="Our Events" />
+      <PageHero image={eventsBanner} alt="Our Events" />
 
       {/* Upcoming Event */}
       <section className="bg-cream py-10 px-8">

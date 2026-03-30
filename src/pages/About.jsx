@@ -1,5 +1,6 @@
 import PageHero from "@components/PageHero";
 import TeamSection from "@components/about/TeamSection";
+import aboutBanner from "@assets/aboutUs_banner.jpg";
 
 const member = (id, name, role) => ({
   id,
@@ -67,7 +68,7 @@ const teamData = [
 function About() {
   return (
     <>
-      <PageHero title="About Us - Clearly a work in progress" />
+      <PageHero image={aboutBanner} alt="About Us" />
 
       {/* Who Are We + Our Cooking Philosophy */}
       <section className="bg-cream py-10 px-8">
