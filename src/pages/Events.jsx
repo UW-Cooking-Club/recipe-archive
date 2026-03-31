@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import { useMemo, useCallback } from "react";
+import { Link, useSearchParams } from "react-router-dom";
 import { FaImages } from "react-icons/fa";
 import PageHero from "@components/PageHero";
 import Lightbox, { useLightbox } from "@components/Lightbox";
@@ -7,10 +8,65 @@ import instagramIcon from "@assets/Instagram_Icon.webp";
 import { events } from "../data/events";
 
 function Events() {
+  const [searchParams, setSearchParams] = useSearchParams();
+
   const upcomingEvent = events.find((e) => e.status === "upcoming");
-  const pastEvents = events
-    .filter((e) => e.status === "past")
-    .sort((a, b) => new Date(b.date) - new Date(a.date));
+  const allPastEvents = useMemo(
+    () => events.filter((e) => e.status === "past").sort((a, b) => new Date(b.date) - new Date(a.date)),
+    []
+  );
+
+  const selectedTerms = useMemo(() => {
+    const raw = searchParams.get("terms");
+    return raw ? raw.split(",") : [];
+  }, [searchParams]);
+
+  const allTerms = useMemo(() => {
+    const termSet = new Set();
+    allPastEvents.forEach((e) => { if (e.term) termSet.add(e.term); });
+    const seasonOrder = { Winter: 0, Spring: 1, Fall: 2 };
+    return Array.from(termSet).sort((a, b) => {
+      const [seasonA, yearA] = a.split(" ");
+      const [seasonB, yearB] = b.split(" ");
+      if (yearA !== yearB) return Number(yearB) - Number(yearA);
+      return seasonOrder[seasonB] - seasonOrder[seasonA];
+    });
+  }, [allPastEvents]);
+
+  const updateParams = useCallback(
+    (updates) => {
+      setSearchParams(
+        (prev) => {
+          const next = new URLSearchParams(prev);
+          Object.entries(updates).forEach(([key, value]) => {
+            if (value === null || value === "" || (Array.isArray(value) && value.length === 0)) {
+              next.delete(key);
+            } else {
+              next.set(key, Array.isArray(value) ? value.join(",") : value);
+            }
+          });
+          return next;
+        },
+        { replace: true }
+      );
+    },
+    [setSearchParams]
+  );
+
+  const toggleTerm = (term) => {
+    const next = selectedTerms.includes(term)
+      ? selectedTerms.filter((t) => t !== term)
+      : [...selectedTerms, term];
+    updateParams({ terms: next });
+  };
+
+  const pastEvents = useMemo(
+    () =>
+      selectedTerms.length === 0
+        ? allPastEvents
+        : allPastEvents.filter((e) => selectedTerms.includes(e.term)),
+    [selectedTerms, allPastEvents]
+  );
 
   const { lightboxIndex, setLightboxIndex, close, goNext, goPrev } = useLightbox(
     upcomingEvent?.photos
@@ -112,6 +168,31 @@ function Events() {
       </section>
 
       <section className="bg-dark py-6 px-8">
+        {/* Term filter */}
+        <div className="max-w-6xl mx-auto flex flex-wrap items-center gap-2 mb-5">
+          {allTerms.map((term) => (
+            <button
+              key={term}
+              onClick={() => toggleTerm(term)}
+              className={`px-3 py-1 rounded-full font-body text-sm transition-colors ${
+                selectedTerms.includes(term)
+                  ? "bg-primary text-white"
+                  : "bg-gray-600 text-gray-200 hover:bg-gray-500"
+              }`}
+            >
+              {term}
+            </button>
+          ))}
+          {selectedTerms.length > 0 && (
+            <button
+              onClick={() => updateParams({ terms: [] })}
+              className="text-sm font-body text-primary hover:underline ml-1"
+            >
+              Clear
+            </button>
+          )}
+        </div>
+
         <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {pastEvents.map((event) => (
             <Link key={event.id} to={`/events/${event.slug}`} className="group relative overflow-hidden rounded h-72">

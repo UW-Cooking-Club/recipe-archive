@@ -4,7 +4,7 @@ import { FaSearch, FaBars } from "react-icons/fa";
 import PageHero from "@components/PageHero";
 import RecipeCard from "@components/recipes/RecipeCard";
 import recipesBanner from "@assets/recipes_banner.jpg";
-import { recipes, getEventIds } from "../data/recipes";
+import { recipes, getEventIds, getSearchableText } from "../data/recipes";
 import { events } from "../data/events";
 
 function Recipes() {
@@ -18,6 +18,10 @@ function Recipes() {
   }, [searchParams]);
   const selectedEvents = useMemo(() => {
     const raw = searchParams.get("events");
+    return raw ? raw.split(",") : [];
+  }, [searchParams]);
+  const selectedCuisines = useMemo(() => {
+    const raw = searchParams.get("cuisines");
     return raw ? raw.split(",") : [];
   }, [searchParams]);
 
@@ -69,6 +73,26 @@ function Recipes() {
     return events.filter((e) => idsWithRecipes.has(e.id)).sort((a, b) => new Date(b.date) - new Date(a.date));
   }, []);
 
+  const searchIndex = useMemo(() => {
+    return recipes.map((recipe) => ({
+      recipe,
+      text: getSearchableText(recipe),
+    }));
+  }, []);
+
+  const allCuisines = useMemo(() => {
+    const cuisineSet = new Set();
+    recipes.forEach((r) => { if (r.cuisine) cuisineSet.add(r.cuisine); });
+    return Array.from(cuisineSet).sort();
+  }, []);
+
+  const toggleCuisine = (cuisine) => {
+    const next = selectedCuisines.includes(cuisine)
+      ? selectedCuisines.filter((c) => c !== cuisine)
+      : [...selectedCuisines, cuisine];
+    updateParams({ cuisines: next });
+  };
+
   const toggleTag = (tag) => {
     const eventIdsForTag = tagToEventIds[tag] || [];
 
@@ -116,15 +140,19 @@ function Recipes() {
   };
 
   const filteredRecipes = useMemo(() => {
-    return recipes
-      .filter((recipe) => {
-        const matchesSearch = recipe.name.toLowerCase().includes(search.toLowerCase());
+    const lowerSearch = search.toLowerCase();
+    return searchIndex
+      .filter(({ recipe, text }) => {
+        const matchesSearch = !search || text.includes(lowerSearch);
         const matchesEvent =
           selectedEvents.length === 0 || getEventIds(recipe).some((id) => selectedEvents.includes(id));
-        return matchesSearch && matchesEvent;
+        const matchesCuisine =
+          selectedCuisines.length === 0 || selectedCuisines.includes(recipe.cuisine);
+        return matchesSearch && matchesEvent && matchesCuisine;
       })
+      .map(({ recipe }) => recipe)
       .sort((a, b) => a.name.localeCompare(b.name));
-  }, [search, selectedEvents]);
+  }, [search, selectedEvents, selectedCuisines, searchIndex]);
 
   return (
     <>
@@ -193,9 +221,29 @@ function Recipes() {
               </div>
             </div>
 
-            {(selectedTags.length > 0 || selectedEvents.length > 0) && (
+            {/* Cuisine filter */}
+            <div>
+              <h3 className="font-heading text-sm text-gray-dark mb-2">Cuisine</h3>
+              <div className="flex flex-wrap gap-2">
+                {allCuisines.map((cuisine) => (
+                  <button
+                    key={cuisine}
+                    onClick={() => toggleCuisine(cuisine)}
+                    className={`px-3 py-1 rounded-full font-body text-sm transition-colors ${
+                      selectedCuisines.includes(cuisine)
+                        ? "bg-sage text-white"
+                        : "bg-gray-200 text-gray-dark hover:bg-gray-300"
+                    }`}
+                  >
+                    {cuisine}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {(selectedTags.length > 0 || selectedEvents.length > 0 || selectedCuisines.length > 0) && (
               <button
-                onClick={() => updateParams({ tags: [], events: [] })}
+                onClick={() => updateParams({ tags: [], events: [], cuisines: [] })}
                 className="text-sm font-body text-primary hover:underline"
               >
                 Clear all filters
