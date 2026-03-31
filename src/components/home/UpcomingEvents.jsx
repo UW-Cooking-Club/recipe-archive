@@ -22,7 +22,7 @@ function UpcomingEvents() {
 
   return (
     <section className="relative bg-dark py-12 px-8">
-      <img src={panSticker} alt="" className="absolute -top-28 -right-8 w-72" />
+      <img src={panSticker} alt="" className="absolute -top-28 -right-8 w-72 hidden md:block" />
       <h2 className="relative font-fun text-6xl text-white text-center mb-8 underline">Check Out Our<br />Upcoming Event!</h2>
 
       <div className="max-w-6xl mx-auto">
