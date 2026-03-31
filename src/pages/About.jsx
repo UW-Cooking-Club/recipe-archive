@@ -86,7 +86,7 @@ function About() {
           <div className="bg-primary rounded-lg overflow-visible p-8 md:p-10 text-white max-w-[56rem]">
             <h2 className="font-heading text-3xl md:text-4xl mb-4">Our Cooking Philosophy</h2>
             <p className="font-body text-sm md:text-base leading-relaxed mb-2">
-              &ldquo;Anyone can cook, but on the fearless can become great.&rdquo; (Ratatouille, 2007)
+              &ldquo;Anyone can cook, but only the fearless can become great.&rdquo; (Ratatouille, 2007)
             </p>
             <p className="font-body text-sm md:text-base leading-relaxed mb-6">
               You&rsquo;ve heard how food brings people together, but the act of cooking, sharing a kitchen with a

@@ -50,7 +50,7 @@ function WhoAreWe() {
             </a>{" "}
             to keep up with our events and become a part of the community!
           </p>
-          <div className="flex gap-4">
+          <div className="relative z-20 flex gap-4">
             <a
               href="https://discord.gg/Gacu9hZ6sy"
               target="_blank"
