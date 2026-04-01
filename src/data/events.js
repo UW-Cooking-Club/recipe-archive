@@ -83,10 +83,16 @@ import mex7 from "@assets/events/mexican-cooking/MexicanCooking7.webp";
 import mex8 from "@assets/events/mexican-cooking/MexicanCooking8.webp";
 import mex9 from "@assets/events/mexican-cooking/MexicanCooking9.webp";
 
-import upcoming1 from "@assets/events/upcoming/Upcoming1.webp";
-import upcoming2 from "@assets/events/upcoming/Upcoming2.webp";
-import upcoming3 from "@assets/events/upcoming/Upcoming3.webp";
-import upcoming4 from "@assets/events/upcoming/Upcoming4.webp";
+import tolCover from "@assets/events/taste-of-love/TasteOfLove_Cover.webp";
+import tol1 from "@assets/events/taste-of-love/TasteOfLove1.webp";
+import tol2 from "@assets/events/taste-of-love/TasteOfLove2.webp";
+import tol3 from "@assets/events/taste-of-love/TasteOfLove3.webp";
+import tol4 from "@assets/events/taste-of-love/TasteOfLove4.webp";
+import tol5 from "@assets/events/taste-of-love/TasteOfLove5.webp";
+import tol6 from "@assets/events/taste-of-love/TasteOfLove6.webp";
+import tol7 from "@assets/events/taste-of-love/TasteOfLove7.webp";
+import tol8 from "@assets/events/taste-of-love/TasteOfLove8.webp";
+import tol9 from "@assets/events/taste-of-love/TasteOfLove9.webp";
 
 import mochiCover from "@assets/events/mochi-delights/Mochi_Cover.webp";
 import mochi1 from "@assets/events/mochi-delights/Mochi1.webp";
@@ -546,24 +552,18 @@ export const events = [
     googlePhotos: "https://photos.google.com/share/AF1QipP9rw59SviwCRUFqWOgG5QHFMCi4wgJItj7fTFZIQaKKuXojja4XyrbA_gqPQTOsg?key=SWlvMDJTLTZBa2dVQ2xkYmR6Q2pjUWY3VGNydlZB",
   },
 
-  // ─── Upcoming ───
   {
     id: "taste-of-love-feb-2026",
     slug: "taste-of-love",
     name: "Taste of Love",
     term: "Winter 2026",
     date: "2026-02-07",
-    description:
-      "Hey Warriors 📣 When people are telling me love is in the air… But all I can smell is food 🤔🥘\n\nWith Valentine's around the corner, celebrate your love for food with our Taste of Love cooking class 😋 ❤️ ! This February 7th, you'll be learning and enjoying a delicious meal of some soy garlic honey salmon with asparagus and potatoes, chili chocolate mousse and a pineapple mojito mocktail! Whether you are a seasoned chef or new to the kitchen, everyone is welcomed to come and have a blast with fellow food lovers 🔥\n\nTickets are 25.00 per person! Spots are limited! If you have any questions or dietary restrictions, shoot us a dm :)\n\nReminders: Tie up long hair and wear closed-toed shoes. Bring a reusable container for any leftovers you want to bring your meals home!",
+    description: "A Valentine's themed cooking class celebrating your love for food — featuring soy garlic honey salmon with roasted potatoes, chili chocolate mousse, and a pineapple mojito mocktail.",
     collab: null,
     taughtBy: null,
-    status: "upcoming",
-    coverImage: upcoming1,
-    photos: [upcoming1, upcoming2, upcoming3, upcoming4],
+    status: "past",
+    coverImage: tolCover,
+    photos: [tol1, tol2, tol3, tol4, tol5, tol6, tol7, tol8, tol9],
     googlePhotos: null,
-    ticketsUrl: "https://wusa.ca/event/taste-of-love/?utm_source=ig&utm_medium=social&utm_content=link_in_bio",
-    price: "$25.00",
-    location: "19-105 Lexington Rd, Waterloo ON N2J 4R7 — Culinary Studio",
-    times: ["11:00AM - 1:30PM", "2:30PM - 5:00PM", "6:00PM - 8:30PM"],
   },
 ];

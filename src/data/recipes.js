@@ -70,6 +70,10 @@ import salsaRojaImg from "@assets/recipes/SalsaRoja.webp";
 import quesadillasAztecaImg from "@assets/recipes/QuesadillasAzteca.webp";
 import guacamoleImg from "@assets/recipes/Guacamole.webp";
 import bunuelosImg from "@assets/recipes/Bunuellos.webp";
+import pineappleMojitoImg from "@assets/recipes/PineappleMojitoMocktail.webp";
+import chiliChocMousseImg from "@assets/recipes/ChiliChocolateMousse.webp";
+import honeySalmonImg from "@assets/recipes/HoneySoyGarlicSalmon.webp";
+import roastedPotatoesImg from "@assets/recipes/RoastedPotatoes.webp";
 
 export const getEventIds = (recipe) =>
   Array.isArray(recipe.eventId) ? recipe.eventId : [recipe.eventId];
@@ -304,6 +308,147 @@ export const recipes = [
       "Pierce each round several times with a knife to prevent large air pockets during frying.",
       "Heat oil to 350–375°F (175–190°C) in a deep pot. Fry each buñuelo for about 30–60 seconds total, flipping once, until golden and crispy.",
       "Drain on paper towels and immediately sprinkle with cinnamon sugar. Drizzle with honey or dust with powdered sugar before serving.",
+    ],
+  },
+
+  // ─── Taste of Love Class (Feb 7, 2026) ───
+  {
+    id: 73,
+    slug: "honey-soy-garlic-salmon",
+    name: "Honey Soy Garlic Salmon",
+    subtitle: "with Roasted Vegetables",
+    description:
+      "Pan-seared salmon with crispy skin, glazed in a rich honey soy garlic butter sauce and served with blistered seasonal vegetables — a show-stopping main course that's simpler than it looks.",
+    image: honeySalmonImg,
+    servings: 2,
+    prepTime: "10 min",
+    cookTime: "15 min",
+    totalTime: "25 min",
+    difficulty: 2,
+    cuisine: "Fusion",
+    tags: ["Winter 2026"],
+    eventId: "taste-of-love-feb-2026",
+    equipment: ["Large skillet or frying pan", "Spatula", "Instant read thermometer (optional)"],
+    ingredients: [
+      "2 salmon fillets (skin-on)",
+      "2 tsp oil per 200g of salmon",
+      "Salt and black pepper, to taste",
+      "Vegetables of choice (asparagus, broccolini, etc.)",
+      "2 tbsp soy sauce",
+      "2 tbsp honey",
+      "2 cloves garlic, minced",
+      "1 tbsp butter",
+      "Starch water (optional, for thickening)",
+    ],
+    instructions: [
+      "Get the pan really hot over high heat. Add oil (about 2 tsp per 200g of salmon).",
+      "Place the salmon skin-side down and season the flesh with salt and pepper. After 30 seconds, turn the heat to medium-low — the skin should already be golden.",
+      "Pan fry until the flesh turns opaque and flaky, and the middle is no longer soft (internal temp 63°C / 145°F). Flip the salmon when the flesh on the side appears about halfway cooked.",
+      "Remove the salmon from the pan. Add the vegetables and pan fry until cooked and blistered. Remove and set aside.",
+      "Let the pan cool down to warm (not hot). Add the soy sauce, minced garlic, honey, and butter. Cook gently until the glaze reaches your desired thickness. You can add a splash of starch water to thicken it faster.",
+      "Return the vegetables and salmon to the pan to heat through and coat in the glaze. Plate and enjoy.",
+    ],
+  },
+  {
+    id: 74,
+    slug: "roasted-potatoes",
+    name: "Roasted Potatoes",
+    subtitle: null,
+    description:
+      "Perfectly crispy roasted Yukon Gold potatoes with a rough, crunchy exterior and fluffy interior — par-boiled with baking soda for extra crispiness, then roasted in a screaming hot pan.",
+    image: roastedPotatoesImg,
+    servings: 4,
+    prepTime: "15 min",
+    cookTime: "25 min",
+    totalTime: "40 min",
+    difficulty: 2,
+    cuisine: "International",
+    tags: ["Winter 2026"],
+    eventId: "taste-of-love-feb-2026",
+    equipment: ["Large oven-safe pan or baking sheet", "Large pot", "Bowl"],
+    ingredients: [
+      "400–500g Yukon Gold potatoes",
+      "¼ cup oil (for the pan)",
+      "2 tbsp oil (for tossing)",
+      "1 tsp baking soda",
+      "Salt, to taste",
+      "Seasoning of choice (onion powder, parsley, rosemary, 2–3 cloves minced garlic)",
+    ],
+    instructions: [
+      "Pour ¼ cup of oil into a large oven-safe pan and place it in a 400°F (200°C) oven to preheat.",
+      "Peel the potatoes and chop into 1-inch chunks.",
+      "Bring a pot of water to a boil. Add salt, baking soda, and the potatoes. Boil until a fork slides through easily.",
+      "Drain the potatoes and transfer to a large bowl. Add 2 tablespoons of oil and your desired seasonings. Toss until well coated — rough up the edges for extra crispiness.",
+      "Carefully remove the hot pan from the oven. Spread the potatoes in a single layer in the sizzling oil.",
+      "Return to the oven and roast for 20–25 minutes until golden brown and crispy.",
+    ],
+  },
+  {
+    id: 75,
+    slug: "chili-chocolate-mousse",
+    name: "Chili Chocolate Mousse",
+    subtitle: null,
+    description:
+      "A rich, velvety chocolate mousse with a subtle chili kick — dark chocolate melted with cocoa and chili powder, lightened with fluffy whipped egg whites. Decadent and surprisingly easy.",
+    image: chiliChocMousseImg,
+    servings: 4,
+    prepTime: "15 min",
+    cookTime: "10 min",
+    totalTime: "25 min + chilling",
+    difficulty: 3,
+    cuisine: "French-Mexican Fusion",
+    tags: ["Winter 2026"],
+    eventId: "taste-of-love-feb-2026",
+    equipment: ["Heatproof bowl", "Pot (for double boiler)", "Whisk or electric mixer", "4 ramekins or bowls"],
+    ingredients: [
+      "150g dark chocolate, broken into pieces",
+      "2 tbsp milk",
+      "1 tbsp cocoa powder",
+      "½ tsp chili powder, plus more to taste",
+      "2 large eggs, separated",
+      "2 tbsp sugar",
+      "Chocolate chips, for garnish",
+    ],
+    instructions: [
+      "Place the chocolate pieces in a heatproof bowl set over a pot of gently simmering water. Stir constantly until melted and smooth.",
+      "In a small bowl, blend the milk with the cocoa powder and chili powder until smooth. Add this to the melted chocolate and mix well.",
+      "Beat the egg yolks and stir them into the chocolate mixture. Set the bowl back over the simmering water and cook gently for 5–7 minutes, stirring constantly, until the mixture has thickened. Taste and add more chili powder if desired.",
+      "In a separate clean bowl, whisk the egg whites until stiff peaks form. Add the sugar and continue whisking until glossy.",
+      "Gently fold the egg whites into the chocolate mixture with a metal spoon — work in thirds to keep the mousse light and airy.",
+      "Divide between 4 ramekins or bowls. Scatter chocolate chips and a light dusting of chili powder on top. Chill in the fridge until set (at least 2 hours) before serving.",
+    ],
+  },
+  {
+    id: 76,
+    slug: "pineapple-mojito-mocktail",
+    name: "Pineapple Mojito Mocktail",
+    subtitle: null,
+    description:
+      "A refreshing non-alcoholic twist on the classic mojito — muddled mint and lime with tropical pineapple juice, topped with fizzy club soda. Perfect for any occasion.",
+    image: pineappleMojitoImg,
+    servings: 1,
+    prepTime: "5 min",
+    cookTime: null,
+    totalTime: "5 min",
+    difficulty: 1,
+    cuisine: "Beverage",
+    tags: ["Winter 2026"],
+    eventId: "taste-of-love-feb-2026",
+    equipment: ["Glass", "Muddler or spoon"],
+    ingredients: [
+      "6–8 fresh mint leaves",
+      "Juice of 1 lime",
+      "½ cup pineapple juice",
+      "1 tbsp agave nectar (or simple syrup)",
+      "Ice",
+      "Club soda, to top",
+      "Sprig of mint, for garnish",
+    ],
+    instructions: [
+      "Combine the mint leaves and lime juice in the bottom of a glass. Gently muddle with a muddler or the back of a spoon to release the mint oils — don't over-crush.",
+      "Add the pineapple juice and agave nectar. Stir to combine.",
+      "Fill the glass with ice and top off with club soda.",
+      "Garnish with a fresh sprig of mint and serve immediately.",
     ],
   },
 
