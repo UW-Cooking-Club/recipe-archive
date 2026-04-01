@@ -83,6 +83,14 @@ import mex7 from "@assets/events/mexican-cooking/MexicanCooking7.webp";
 import mex8 from "@assets/events/mexican-cooking/MexicanCooking8.webp";
 import mex9 from "@assets/events/mexican-cooking/MexicanCooking9.webp";
 
+import cozyCover from "@assets/events/cozy-night/CozyNight_Cover.webp";
+import cozy1 from "@assets/events/cozy-night/CozyNight1.webp";
+import cozy2 from "@assets/events/cozy-night/CozyNight2.webp";
+import cozy3 from "@assets/events/cozy-night/CozyNight3.webp";
+import cozy4 from "@assets/events/cozy-night/CozyNight4.webp";
+import cozy5 from "@assets/events/cozy-night/CozyNight5.webp";
+import cozy6 from "@assets/events/cozy-night/CozyNight6.webp";
+
 import tolCover from "@assets/events/taste-of-love/TasteOfLove_Cover.webp";
 import tol1 from "@assets/events/taste-of-love/TasteOfLove1.webp";
 import tol2 from "@assets/events/taste-of-love/TasteOfLove2.webp";
@@ -552,6 +560,20 @@ export const events = [
     googlePhotos: "https://photos.google.com/share/AF1QipP9rw59SviwCRUFqWOgG5QHFMCi4wgJItj7fTFZIQaKKuXojja4XyrbA_gqPQTOsg?key=SWlvMDJTLTZBa2dVQ2xkYmR6Q2pjUWY3VGNydlZB",
   },
 
+  {
+    id: "cozy-night-in-class-feb-2026",
+    slug: "a-cozy-night-in-class",
+    name: "A Cozy Night In Cooking Class",
+    term: "Winter 2026",
+    date: "2026-02-28",
+    description: "A cozy, comfort-food themed cooking class featuring rich cajun gumbo and decadent dark chocolate orange sea salt fudge — the perfect warm-up for a cold winter night.",
+    collab: null,
+    taughtBy: null,
+    status: "past",
+    coverImage: cozyCover,
+    photos: [cozy1, cozy2, cozy3, cozy4, cozy5, cozy6],
+    googlePhotos: null,
+  },
   {
     id: "taste-of-love-feb-2026",
     slug: "taste-of-love",

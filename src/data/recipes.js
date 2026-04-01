@@ -74,6 +74,8 @@ import pineappleMojitoImg from "@assets/recipes/PineappleMojitoMocktail.webp";
 import chiliChocMousseImg from "@assets/recipes/ChiliChocolateMousse.webp";
 import honeySalmonImg from "@assets/recipes/HoneySoyGarlicSalmon.webp";
 import roastedPotatoesImg from "@assets/recipes/RoastedPotatoes.webp";
+import darkChocFudgeImg from "@assets/recipes/DarkChocolateOrangeFudge.webp";
+import cajunGumboImg from "@assets/recipes/CajunGumbo.webp";
 
 export const getEventIds = (recipe) =>
   Array.isArray(recipe.eventId) ? recipe.eventId : [recipe.eventId];
@@ -308,6 +310,104 @@ export const recipes = [
       "Pierce each round several times with a knife to prevent large air pockets during frying.",
       "Heat oil to 350–375°F (175–190°C) in a deep pot. Fry each buñuelo for about 30–60 seconds total, flipping once, until golden and crispy.",
       "Drain on paper towels and immediately sprinkle with cinnamon sugar. Drizzle with honey or dust with powdered sugar before serving.",
+    ],
+  },
+
+  // ─── A Cozy Night In Cooking Class (Feb 28, 2026) ───
+  {
+    id: 77,
+    slug: "dark-chocolate-orange-sea-salt-fudge",
+    name: "Dark Chocolate Orange Sea Salt Fudge",
+    subtitle: null,
+    description:
+      "Rich, melt-in-your-mouth fudge made with dark chocolate, sweetened condensed milk, and a hint of orange zest, finished with flaky sea salt. Only a handful of ingredients and no baking required.",
+    image: darkChocFudgeImg,
+    servings: 8,
+    prepTime: "10 min",
+    cookTime: "10 min",
+    totalTime: "20 min + 2 hrs chilling",
+    difficulty: 2,
+    cuisine: "Dessert",
+    tags: ["Winter 2026"],
+    eventId: "cozy-night-in-class-feb-2026",
+    equipment: ["Pot", "Heatproof bowl (for double boiler)", "Spatula", "Knife", "Cutting board", "Zester or fine grater", "Container", "Parchment paper"],
+    ingredients: [
+      "3 generous tbsp (45ml) sweetened condensed milk",
+      "50g dark chocolate, finely chopped",
+      "1 tsp (4.5g) unsalted butter",
+      "Zest of half an orange (adjust to taste)",
+      "¼ tsp sea salt, plus more for topping",
+    ],
+    instructions: [
+      "Zest the orange and finely chop the chocolate into small, even pieces. Line your container with parchment paper.",
+      "Fill a pot with enough water so there is a comfortable gap between the water and the bowl above it. Bring to a boil over high heat.",
+      "Combine the condensed milk, chopped chocolate, butter, and sea salt in the heatproof bowl.",
+      "Once the water is boiling, reduce heat to medium and set the bowl on top. Stir occasionally with a spatula, ensuring the mixture melts evenly and doesn't burn.",
+      "When the mixture is mostly smooth, add the orange zest (save some for topping if desired) and stir until completely combined and glossy.",
+      "Remove from heat. Pour or ladle the mixture into your lined container. Tap it against the counter a few times to spread evenly.",
+      "Sprinkle the top with extra sea salt and reserved orange zest. Refrigerate for at least 2 hours until set. Cut into pieces and enjoy.",
+    ],
+  },
+  {
+    id: 78,
+    slug: "cajun-gumbo",
+    name: "Cajun Gumbo",
+    subtitle: null,
+    description:
+      "A hearty, deeply flavoured Southern stew built on a slow-cooked dark roux, loaded with smoked sausage, shrimp, okra, and Cajun spices — served over hot rice. The patience to build the roux is what makes this dish special.",
+    image: cajunGumboImg,
+    servings: 4,
+    prepTime: "20 min",
+    cookTime: "1 hr 30 min",
+    totalTime: "1 hr 50 min",
+    difficulty: 4,
+    cuisine: "American (Southern)",
+    tags: ["Winter 2026"],
+    eventId: "cozy-night-in-class-feb-2026",
+    equipment: ["Large pot", "Spatula", "Knife", "Cutting board"],
+    ingredients: [
+      {
+        group: "Roux",
+        items: [
+          "40g all-purpose flour",
+          "40g oil (vegetable, canola, or avocado — high smoke point)",
+        ],
+      },
+      {
+        group: "Gumbo",
+        items: [
+          "~200g smoked sausage (2 links, preferably beef), sliced",
+          "100g shrimp (fresh or frozen)",
+          "¼ can beans (red or black)",
+          "½ cup okra, sliced (frozen or fresh)",
+          "1 bell pepper, diced",
+          "1 large stalk celery, diced",
+          "½ onion (yellow or white), diced",
+          "3 cloves garlic, minced",
+          "4 cups chicken stock",
+          "2 tbsp Cajun seasoning (or to taste)",
+          "1 tbsp paprika",
+          "1 tsp cayenne pepper (optional, adjust to heat preference)",
+          "1 tbsp dried oregano",
+          "1 tbsp dried thyme",
+          "2 bay leaves",
+          "Salt, to taste",
+          "Green onions and parsley, for garnish",
+          "Cooked rice, for serving",
+        ],
+      },
+    ],
+    instructions: [
+      "Prep all ingredients first: mince the garlic, slice the sausage and okra into bite-sized pieces, and dice the bell pepper, celery, and onion.",
+      "Make the roux: combine the oil and flour in a large pot over low heat. Stir constantly and steadily (not aggressively) for 30–45 minutes, scraping the bottom so nothing sticks. The roux is ready when it reaches a deep chocolate brown color.",
+      "Add the diced onion, celery, and bell pepper to the roux. Cook for about 5 minutes, stirring, until softened.",
+      "Add the minced garlic and stir for 1 minute until fragrant.",
+      "Add the sliced sausage and cook for 2–3 minutes to brown slightly.",
+      "Pour in the chicken stock and stir well, deglazing any bits from the bottom of the pot.",
+      "Add the Cajun seasoning, paprika, cayenne, oregano, thyme, bay leaves, and beans. Bring to a simmer.",
+      "After about 10 minutes of simmering, add the okra. Keep at a gentle simmer (not a hard boil) to prevent sticking.",
+      "Simmer for another 30 minutes, then add the shrimp. Cook for 7 more minutes or until the shrimp are pink and cooked through.",
+      "Remove the bay leaves. Adjust seasoning to taste. Serve over hot rice, garnished with sliced green onions and parsley.",
     ],
   },
 
