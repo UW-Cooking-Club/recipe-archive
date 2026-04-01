@@ -56,7 +56,7 @@ function EventDetail() {
           </div>
         )}
 
-        {/* Date + Taught By */}
+        {/* Date + optional Collab */}
         <div className="flex flex-wrap gap-x-8 gap-y-1 mb-6 font-body text-sm text-gray-dark">
           <p>
             <span className="font-bold">Date:</span> {formatDate(event.date)}
