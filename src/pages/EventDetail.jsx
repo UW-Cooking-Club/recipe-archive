@@ -61,11 +61,6 @@ function EventDetail() {
           <p>
             <span className="font-bold">Date:</span> {formatDate(event.date)}
           </p>
-          {event.taughtBy && (
-            <p>
-              <span className="font-bold">Taught By:</span> {event.taughtBy}
-            </p>
-          )}
           {event.collab && (
             <p>
               <span className="font-bold">Collab:</span> {event.collab}

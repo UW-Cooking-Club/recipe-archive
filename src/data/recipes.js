@@ -69,7 +69,7 @@ import carneAsadaImg from "@assets/recipes/CarneAsadaTacos.webp";
 import salsaRojaImg from "@assets/recipes/SalsaRoja.webp";
 import quesadillasAztecaImg from "@assets/recipes/QuesadillasAzteca.webp";
 import guacamoleImg from "@assets/recipes/Guacamole.webp";
-import bunuelosImg from "@assets/recipes/Bunuellos.webp";
+import bunuelosImg from "@assets/recipes/Bunuelos.webp";
 import pineappleMojitoImg from "@assets/recipes/PineappleMojitoMocktail.webp";
 import chiliChocMousseImg from "@assets/recipes/ChiliChocolateMousse.webp";
 import honeySalmonImg from "@assets/recipes/HoneySoyGarlicSalmon.webp";
