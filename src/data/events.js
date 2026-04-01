@@ -72,6 +72,17 @@ import op7 from "@assets/events/one-piece-class/OP7.webp";
 import op8 from "@assets/events/one-piece-class/OP8.webp";
 import op9 from "@assets/events/one-piece-class/OP9.webp";
 
+import mexCover from "@assets/events/mexican-cooking/MexicanCooking_Cover.webp";
+import mex1 from "@assets/events/mexican-cooking/MexicanCooking1.webp";
+import mex2 from "@assets/events/mexican-cooking/MexicanCooking2.webp";
+import mex3 from "@assets/events/mexican-cooking/MexicanCooking3.webp";
+import mex4 from "@assets/events/mexican-cooking/MexicanCooking4.webp";
+import mex5 from "@assets/events/mexican-cooking/MexicanCooking5.webp";
+import mex6 from "@assets/events/mexican-cooking/MexicanCooking6.webp";
+import mex7 from "@assets/events/mexican-cooking/MexicanCooking7.webp";
+import mex8 from "@assets/events/mexican-cooking/MexicanCooking8.webp";
+import mex9 from "@assets/events/mexican-cooking/MexicanCooking9.webp";
+
 import upcoming1 from "@assets/events/upcoming/Upcoming1.webp";
 import upcoming2 from "@assets/events/upcoming/Upcoming2.webp";
 import upcoming3 from "@assets/events/upcoming/Upcoming3.webp";
@@ -517,6 +528,22 @@ export const events = [
     coverImage: pastaCover,
     photos: [pasta1, pasta2, pasta3, pasta4, pasta5, pasta6, pasta7, pasta8, pasta9],
     googlePhotos: "https://photos.app.goo.gl/mo7imLqtPr6yss2j7",
+  },
+
+  // ─── Winter 2026 ───
+  {
+    id: "mexican-cooking-class-jan-2026",
+    slug: "mexican-cooking-class",
+    name: "Mexican Cooking Class",
+    term: "Winter 2026",
+    date: "2026-01-24",
+    description: "A class exploring authentic Mexican cuisine — from carne asada tacos and salsa roja to quesadillas azteca, guacamole, and buñuelos.",
+    collab: null,
+    taughtBy: null,
+    status: "past",
+    coverImage: mexCover,
+    photos: [mex1, mex2, mex3, mex4, mex5, mex6, mex7, mex8, mex9],
+    googlePhotos: "https://photos.google.com/share/AF1QipP9rw59SviwCRUFqWOgG5QHFMCi4wgJItj7fTFZIQaKKuXojja4XyrbA_gqPQTOsg?key=SWlvMDJTLTZBa2dVQ2xkYmR6Q2pjUWY3VGNydlZB",
   },
 
   // ─── Upcoming ───

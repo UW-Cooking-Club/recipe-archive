@@ -65,6 +65,11 @@ import mangoStickyRiceImg from "@assets/recipes/MangoStickyRice.webp";
 import strawberryPieImg from "@assets/recipes/StrawberryRhubarbMuffinTinPie.webp";
 import lemonHoneyTeaImg from "@assets/recipes/LemonHoneyIcedTea.webp";
 import crostiniImg from "@assets/recipes/RoastedTomatoCrostini.webp";
+import carneAsadaImg from "@assets/recipes/CarneAsadaTacos.webp";
+import salsaRojaImg from "@assets/recipes/SalsaRoja.webp";
+import quesadillasAztecaImg from "@assets/recipes/QuesadillasAzteca.webp";
+import guacamoleImg from "@assets/recipes/Guacamole.webp";
+import bunuelosImg from "@assets/recipes/Bunuellos.webp";
 
 export const getEventIds = (recipe) =>
   Array.isArray(recipe.eventId) ? recipe.eventId : [recipe.eventId];
@@ -84,6 +89,224 @@ export const getSearchableText = (recipe) => {
 };
 
 export const recipes = [
+  // ─── Mexican Cooking Class (Jan 24, 2026) ───
+  {
+    id: 68,
+    slug: "carne-asada-tacos",
+    name: "Carne Asada Tacos",
+    subtitle: null,
+    description:
+      "Juicy citrus-and-beer-marinated steak grilled to perfection, chopped and served on warm corn tortillas with fresh cilantro, onion, and salsa — authentic Mexican street tacos.",
+    image: carneAsadaImg,
+    servings: 12,
+    prepTime: "20 min",
+    cookTime: "15 min",
+    totalTime: "35 min + marinating",
+    difficulty: 3,
+    cuisine: "Mexican",
+    tags: ["Winter 2026"],
+    eventId: "mexican-cooking-class-jan-2026",
+    equipment: ["Grill or cast iron skillet", "Ziplock bag", "Knife", "Cutting board", "Instant read thermometer"],
+    ingredients: [
+      {
+        group: "Steak & Marinade",
+        items: [
+          "2 lb (907g) steak, thinly sliced (ribeye, sirloin, flank, or skirt)",
+          "Juice of 2 limes",
+          "Juice of 1 orange",
+          "1 tbsp soy sauce",
+          "½ cup cilantro, chopped",
+          "2 tsp salt",
+          "½ white onion, thinly sliced",
+          "3 cloves garlic, minced",
+          "1 tsp cumin",
+          "1 jalapeño, chopped",
+          "1 tsp oregano",
+          "⅓ cup vegetable oil",
+          "¼ cup dark beer (e.g. Modelo Negra)",
+        ],
+      },
+      {
+        group: "For Serving",
+        items: [
+          "12 corn tortillas",
+          "Cilantro, chopped",
+          "White onion, diced",
+          "Salsa roja",
+          "Limes, quartered",
+          "Refried beans (optional)",
+          "Oaxaca cheese or other melty cheese (optional)",
+          "Pickled red onions (optional)",
+        ],
+      },
+    ],
+    instructions: [
+      "Combine lime juice, orange juice, soy sauce, cilantro, salt, onion, garlic, cumin, jalapeño, oregano, vegetable oil, and beer in a large ziplock bag. Add the steak and massage to coat evenly. Refrigerate for 1–2 hours.",
+      "Preheat a grill to medium-high heat (or heat a cast iron skillet on the stovetop until very hot). If using a grill, preheat about 30 minutes before cooking.",
+      "Remove steak from the fridge and scrape off any large pieces of marinade. Place the meat on the hottest part of the grill or pan. Sear until dark marks appear underneath, about 1–2 minutes per side. If cooking on a stove, baste with a small amount of lard or butter.",
+      "Move the steak to a cooler part of the grill and flip every minute until you reach your desired doneness. Use an instant read thermometer — aim for 145°F (65°C) for medium.",
+      "Rest the steak for a few minutes, then chop into small pieces.",
+      "Warm the corn tortillas on the grill or in a dry skillet. Assemble tacos with the chopped meat, cilantro, diced onion, salsa roja, and a squeeze of lime. Add optional toppings like refried beans, melty cheese, or pickled red onions.",
+    ],
+  },
+  {
+    id: 69,
+    slug: "salsa-roja",
+    name: "Salsa Roja",
+    subtitle: null,
+    description:
+      "A smoky, deeply flavoured Mexican red salsa made from charred Roma tomatoes, serrano chiles, and cilantro — perfect for tacos, chips, or anything that needs a kick.",
+    image: salsaRojaImg,
+    servings: 8,
+    prepTime: "10 min",
+    cookTime: "40 min",
+    totalTime: "50 min",
+    difficulty: 2,
+    cuisine: "Mexican",
+    tags: ["Winter 2026"],
+    eventId: "mexican-cooking-class-jan-2026",
+    equipment: ["Cast iron skillet or baking sheet", "Large pot", "Blender"],
+    ingredients: [
+      "5 plump Roma tomatoes, wedged",
+      "1 medium white onion, wedged",
+      "2 serrano chiles (or jalapeños), stems and seeds removed",
+      "2 cloves garlic",
+      "12 stalks cilantro",
+      "1 tsp salt, plus more to taste",
+      "2 tbsp cooking oil",
+      "4 cups water",
+    ],
+    instructions: [
+      "Remove stems and seeds from the serrano chiles. Wedge the tomatoes, onion, and serranos.",
+      "Char the tomatoes, onion, and serranos in a dry cast iron skillet or under a broiler until blackened in spots.",
+      "Transfer the charred vegetables to a pot with the garlic and 4 cups of water. Bring to a boil, then reduce heat and simmer for 15–20 minutes until softened.",
+      "Transfer the softened mixture to a blender. Add the cilantro and blend until smooth.",
+      "Heat 2 tablespoons of oil in a pot over medium-high heat. Carefully pour in the blended salsa (watch for splashing and chili fumes). Stir well.",
+      "Simmer for 15–20 minutes, stirring occasionally, until the salsa reaches your desired consistency. Season with salt to taste.",
+    ],
+  },
+  {
+    id: 70,
+    slug: "quesadillas-azteca",
+    name: "Quesadillas Azteca",
+    subtitle: "with Chicken",
+    description:
+      "Crispy tortilla quesadillas loaded with grilled chicken, sautéed peppers, mushrooms, and melted Oaxaca cheese — served with salsa, guacamole, and crema fresca.",
+    image: quesadillasAztecaImg,
+    servings: 4,
+    prepTime: "15 min",
+    cookTime: "20 min",
+    totalTime: "35 min",
+    difficulty: 2,
+    cuisine: "Mexican",
+    tags: ["Winter 2026"],
+    eventId: "mexican-cooking-class-jan-2026",
+    equipment: ["Large skillet or griddle", "Knife", "Cutting board"],
+    ingredients: [
+      "200g chicken breast or thigh",
+      "Red onion, diced",
+      "Bell peppers (at least 2 varieties), diced",
+      "Mushrooms, diced",
+      "2 cloves garlic, minced",
+      "Lard, bacon grease, or oil for cooking",
+      "Oaxaca cheese or Monterey Jack, shredded",
+      "Corn or flour tortillas",
+      "Salsa, guacamole, and crema fresca or sour cream, for serving",
+    ],
+    instructions: [
+      "Grill or pan-sear the chicken until cooked through (165°F / 74°C internal). Let it rest briefly, then cube or shred.",
+      "Dice the red onion, bell peppers, mushrooms, and garlic. Sauté in your fat of choice (lard, bacon grease, or oil) over medium-high heat until softened but still slightly crunchy. Remove and set aside.",
+      "In the same skillet, place one tortilla and spread a layer of shredded cheese over it. Let the cheese begin to melt.",
+      "Add the sautéed vegetables and chicken on top, then add another layer of cheese and a second tortilla.",
+      "Once the bottom tortilla is golden and crispy, carefully flip the quesadilla. Cook until the other side is crispy and the cheese is fully melted.",
+      "Slice like a pizza and serve with salsa, guacamole, and crema fresca or sour cream.",
+    ],
+  },
+  {
+    id: 71,
+    slug: "guacamole",
+    name: "Guacamole",
+    subtitle: null,
+    description:
+      "Simple, classic guacamole — creamy mashed avocado with fresh lime, garlic, and salt. Best served immediately with tortilla chips or as a taco topping.",
+    image: guacamoleImg,
+    servings: 4,
+    prepTime: "5 min",
+    cookTime: null,
+    totalTime: "5 min",
+    difficulty: 1,
+    cuisine: "Mexican",
+    tags: ["Winter 2026"],
+    eventId: "mexican-cooking-class-jan-2026",
+    equipment: ["Bowl", "Fork"],
+    ingredients: [
+      "2–3 ripe avocados",
+      "Salt, to taste",
+      "Juice of 1 lime",
+      "1 clove garlic, minced",
+    ],
+    instructions: [
+      "Halve the avocados, remove the pits, and scoop the flesh into a bowl.",
+      "Add the minced garlic, a generous squeeze of lime juice, and salt to taste.",
+      "Mash with a fork to your desired consistency — leave it slightly chunky for the best texture.",
+      "Taste and adjust seasoning. Serve immediately with tortilla chips or alongside tacos.",
+    ],
+  },
+  {
+    id: 72,
+    slug: "bunuelos",
+    name: "Buñuelos",
+    subtitle: null,
+    description:
+      "Crispy, golden Mexican fried dough dusted with cinnamon sugar and drizzled with honey — a traditional sweet treat that's crunchy on the outside and pillowy inside.",
+    image: bunuelosImg,
+    servings: 12,
+    prepTime: "20 min + resting",
+    cookTime: "15 min",
+    totalTime: "1 hr 35 min",
+    difficulty: 3,
+    cuisine: "Mexican",
+    tags: ["Winter 2026"],
+    eventId: "mexican-cooking-class-jan-2026",
+    equipment: ["Large bowl", "Rolling pin", "Deep pot or fryer", "Thermometer"],
+    ingredients: [
+      {
+        group: "Starter (prepare first)",
+        items: [
+          "1 cup warm water",
+          "1 tbsp dry active yeast",
+          "1 tsp sugar",
+        ],
+      },
+      {
+        group: "Dough",
+        items: [
+          "3 cups all-purpose flour",
+          "2 tbsp lard (or shortening)",
+          "4 large eggs",
+          "Oil for frying",
+        ],
+      },
+      {
+        group: "Topping",
+        items: [
+          "Cinnamon sugar",
+          "Honey or powdered sugar",
+        ],
+      },
+    ],
+    instructions: [
+      "Make the starter: combine the warm water, yeast, and sugar in a small bowl. Let it rest for about 40 minutes at room temperature (or overnight in the fridge) until it is bubbling and active.",
+      "In a large bowl, combine the flour and lard. Pour in the yeast starter and mix to form a shaggy dough.",
+      "Add the eggs one at a time, mixing and kneading after each addition. Continue kneading until the dough is smooth and no longer sticks to your hands — add more flour as needed.",
+      "Cover the bowl and let the dough rest for at least 1 hour.",
+      "Divide the dough into 2 oz portions. Roll each one out as thin as possible. Gently drape over an inverted bowl to stretch further.",
+      "Pierce each round several times with a knife to prevent large air pockets during frying.",
+      "Heat oil to 350–375°F (175–190°C) in a deep pot. Fry each buñuelo for about 30–60 seconds total, flipping once, until golden and crispy.",
+      "Drain on paper towels and immediately sprinkle with cinnamon sugar. Drizzle with honey or dust with powdered sugar before serving.",
+    ],
+  },
+
   // ─── Korean Food Class (Sept 20, 2025) ───
   {
     id: 1,
