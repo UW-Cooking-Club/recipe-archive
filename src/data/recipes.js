@@ -76,6 +76,10 @@ import honeySalmonImg from "@assets/recipes/HoneySoyGarlicSalmon.webp";
 import roastedPotatoesImg from "@assets/recipes/RoastedPotatoes.webp";
 import darkChocFudgeImg from "@assets/recipes/DarkChocolateOrangeFudge.webp";
 import cajunGumboImg from "@assets/recipes/CajunGumbo.webp";
+import chimichurriChickenImg from "@assets/recipes/ChimichurriChickenThighs.webp";
+import chimichurriImg from "@assets/recipes/Chimichurri.webp";
+import springSaladImg from "@assets/recipes/SpringSalad.webp";
+import iceCreamMochiImg from "@assets/recipes/IceCreamMochi.webp";
 
 export const getEventIds = (recipe) =>
   Array.isArray(recipe.eventId) ? recipe.eventId : [recipe.eventId];
@@ -310,6 +314,181 @@ export const recipes = [
       "Pierce each round several times with a knife to prevent large air pockets during frying.",
       "Heat oil to 350–375°F (175–190°C) in a deep pot. Fry each buñuelo for about 30–60 seconds total, flipping once, until golden and crispy.",
       "Drain on paper towels and immediately sprinkle with cinnamon sugar. Drizzle with honey or dust with powdered sugar before serving.",
+    ],
+  },
+
+  // ─── Spring Fling Cooking Class (Mar 21, 2026) ───
+  {
+    id: 79,
+    slug: "grilled-chicken-thighs-chimichurri",
+    name: "Grilled Chicken Thighs with Chimichurri",
+    subtitle: null,
+    description:
+      "Juicy, tender grilled boneless chicken thighs marinated in a vibrant chimichurri sauce, then served with extra chimichurri on the side. Fresh herbs, garlic, and a kick of jalapeño make this a crowd-pleaser.",
+    image: chimichurriChickenImg,
+    servings: 4,
+    prepTime: "10 min",
+    cookTime: "10 min",
+    totalTime: "20 min + 20 min marinating",
+    difficulty: 2,
+    cuisine: "Argentinian",
+    tags: ["Winter 2026"],
+    eventId: "spring-fling-class-mar-2026",
+    equipment: ["Grill or grill pan", "Food processor", "Baking dish"],
+    ingredients: [
+      {
+        group: "Chimichurri",
+        items: [
+          "½ cup fresh cilantro, chopped",
+          "½ cup fresh Italian parsley, chopped",
+          "1 tbsp fresh oregano (or 1 tsp dried)",
+          "1 small shallot, peeled",
+          "2 cloves garlic, peeled",
+          "½ jalapeño, seeded",
+          "1 tbsp fresh lemon juice",
+          "1 tbsp red wine vinegar",
+          "½ cup olive oil",
+          "1 tsp kosher salt",
+          "Fresh ground black pepper",
+        ],
+      },
+      {
+        group: "Chicken",
+        items: [
+          "2 lb boneless skinless chicken thighs",
+          "Salt and pepper, for seasoning",
+        ],
+      },
+    ],
+    instructions: [
+      "In a food processor, combine the cilantro, parsley, oregano, shallot, garlic, and jalapeño. Pulse until finely chopped.",
+      "Add the lemon juice, red wine vinegar, olive oil, salt, and pepper. Pulse until well combined but still slightly chunky.",
+      "Place the chicken thighs in a baking dish and season with salt and pepper. Spoon about ¼ cup of the chimichurri over the chicken and turn to coat evenly. Reserve the rest. Marinate in the fridge for at least 20 minutes (up to 24 hours).",
+      "Heat the grill to medium-high. Remove the chicken from the fridge and let it warm up slightly.",
+      "Grill the chicken for 5–6 minutes per side until the juices run clear and the internal temperature reaches 165°F (74°C).",
+      "Serve with the reserved chimichurri on the side.",
+    ],
+  },
+  {
+    id: 80,
+    slug: "chimichurri-sauce",
+    name: "Chimichurri Sauce",
+    subtitle: null,
+    description:
+      "A fresh, tangy, and garlicky Argentinian herb sauce that comes together in minutes — perfect as a marinade, dipping sauce, or finishing drizzle for grilled meats, vegetables, and more.",
+    image: chimichurriImg,
+    servings: 8,
+    prepTime: "5 min",
+    cookTime: null,
+    totalTime: "5 min + 15 min resting",
+    difficulty: 1,
+    cuisine: "Argentinian",
+    tags: ["Winter 2026"],
+    eventId: "spring-fling-class-mar-2026",
+    equipment: ["Knife", "Cutting board", "Bowl (or food processor)"],
+    ingredients: [
+      "½ cup flat-leaf parsley, finely chopped",
+      "4 cloves garlic, minced",
+      "1 small shallot, finely minced (optional)",
+      "1 tsp dried oregano",
+      "1 small red chile, seeded and diced (or 2 tsp red pepper flakes)",
+      "3 tbsp red wine vinegar",
+      "1 tsp salt",
+      "½ tsp fresh ground black pepper",
+      "⅔ cup extra-virgin olive oil",
+    ],
+    instructions: [
+      "Finely chop the parsley and mince the garlic (and shallot, if using).",
+      "Add the parsley, garlic, oregano, red chile (or red pepper flakes), vinegar, salt, and pepper to a medium bowl.",
+      "Pour in the olive oil and stir until everything is evenly mixed and the sauce looks spoonable and glossy.",
+      "Let the chimichurri rest at room temperature for 15 minutes so the flavours meld. Stir again before serving.",
+    ],
+  },
+  {
+    id: 81,
+    slug: "bright-spring-salad",
+    name: "Bright Spring Salad",
+    subtitle: "with Lemon-Mint Vinaigrette",
+    description:
+      "A vibrant, seasonal salad of peppery arugula, blanched English peas, crisp radishes, cucumber, and roasted asparagus topped with herbed goat cheese and a bright lemon-mint dressing.",
+    image: springSaladImg,
+    servings: 4,
+    prepTime: "15 min",
+    cookTime: "12 min",
+    totalTime: "27 min",
+    difficulty: 2,
+    cuisine: "International",
+    tags: ["Winter 2026"],
+    eventId: "spring-fling-class-mar-2026",
+    equipment: ["Baking sheet", "Small pot", "Bowl", "Blender"],
+    ingredients: [
+      {
+        group: "Lemon-Mint Vinaigrette",
+        items: [
+          "¼ cup extra-virgin olive oil",
+          "¼ cup lemon juice",
+          "⅛ cup mint leaves, chopped",
+          "1½ tbsp honey",
+          "1 tsp Dijon mustard",
+          "1 clove garlic, minced",
+          "Salt and pepper, to taste",
+        ],
+      },
+      {
+        group: "Salad",
+        items: [
+          "4 cups arugula",
+          "1 cup fresh English peas, shelled",
+          "3–4 radishes, thinly sliced",
+          "½ English cucumber, sliced",
+          "½ lb asparagus, tough ends removed",
+          "2 oz herbed goat cheese",
+          "½ tbsp extra-virgin olive oil",
+          "Salt and pepper, to taste",
+        ],
+      },
+    ],
+    instructions: [
+      "Make the vinaigrette: combine the olive oil, lemon juice, mint, honey, Dijon mustard, and garlic in a blender. Blend until emulsified. Season with salt and pepper and set aside.",
+      "Preheat oven to 400°F (200°C). Place the asparagus on a baking sheet, drizzle with olive oil, and season with salt and pepper. Roast for about 10 minutes until just tender.",
+      "Meanwhile, bring a small pot of water to a boil. Prepare a bowl of ice water. Add the peas to the boiling water and cook for 2 minutes, then transfer to the ice water with a slotted spoon. Let sit for 3 minutes, then drain.",
+      "Arrange the arugula on a large serving platter. Top with the blanched peas, sliced radishes, cucumber, and roasted asparagus.",
+      "Scatter dollops of goat cheese over the salad. Drizzle generously with the lemon-mint vinaigrette and serve immediately.",
+    ],
+  },
+  {
+    id: 82,
+    slug: "mochi-ice-cream",
+    name: "Mochi Ice Cream",
+    subtitle: null,
+    description:
+      "Creamy ice cream wrapped in sweet, chewy rice dough — a beloved Japanese dessert that's easier to make at home than you'd think. Choose any ice cream flavour you like.",
+    image: iceCreamMochiImg,
+    servings: 12,
+    prepTime: "1 hr",
+    cookTime: "3 min",
+    totalTime: "1 hr 3 min + 4 hrs freezing",
+    difficulty: 3,
+    cuisine: "Japanese",
+    tags: ["Winter 2026"],
+    eventId: "spring-fling-class-mar-2026",
+    equipment: ["Microwave or steamer", "Heatproof bowl", "Rolling pin", "3.5-inch cookie cutter or round glass", "Cupcake liners", "Baking sheet", "Plastic wrap"],
+    ingredients: [
+      "¾ cup shiratamako (glutinous rice flour/sweet rice flour)",
+      "¾ cup water",
+      "¼ cup sugar",
+      "½ cup potato starch or cornstarch (for dusting)",
+      "Ice cream of your choice",
+    ],
+    instructions: [
+      "Using a cookie scoop, portion ice cream into cupcake liners. Freeze for at least a few hours until completely solid.",
+      "Make the mochi dough: whisk together the shiratamako and water in a microwave-safe bowl until smooth. Add the sugar and mix until combined.",
+      "Microwave method: cover the bowl loosely with plastic wrap. Microwave on high for 1 minute, stir with a wet spatula, cover, microwave 1 more minute, stir, then microwave 30 seconds more. The dough should be translucent, not white. (Steamer method: steam covered for 15 minutes, stirring halfway.)",
+      "Generously dust a parchment-lined surface with potato starch. Turn out the hot mochi onto it. Dust the top with more starch.",
+      "Once cool enough to handle, roll the mochi out to about ⅛ inch (3mm) thick using a starch-dusted rolling pin. Refrigerate on a baking sheet for 15 minutes until set.",
+      "Cut out circles with a 3.5-inch cookie cutter. Re-roll scraps to get about 12 wrappers total. Dust off excess starch with a brush.",
+      "Working quickly with one wrapper at a time, place a frozen ice cream ball in the center. Pinch the edges of the mochi together to seal around the ice cream. Wrap in plastic wrap and twist to close. Return to the freezer immediately.",
+      "Freeze for at least 2–3 hours before serving. Let sit at room temperature for a couple of minutes to soften slightly before eating.",
     ],
   },
 

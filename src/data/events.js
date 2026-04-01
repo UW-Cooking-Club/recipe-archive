@@ -83,6 +83,14 @@ import mex7 from "@assets/events/mexican-cooking/MexicanCooking7.webp";
 import mex8 from "@assets/events/mexican-cooking/MexicanCooking8.webp";
 import mex9 from "@assets/events/mexican-cooking/MexicanCooking9.webp";
 
+import sfCover from "@assets/events/spring-fling/SpringFling_Cover.webp";
+import sf1 from "@assets/events/spring-fling/SpringFling1.webp";
+import sf2 from "@assets/events/spring-fling/SpringFling2.webp";
+import sf3 from "@assets/events/spring-fling/SpringFling3.webp";
+import sf4 from "@assets/events/spring-fling/SpringFling4.webp";
+import sf5 from "@assets/events/spring-fling/SpringFling5.webp";
+import sf6 from "@assets/events/spring-fling/SpringFling6.webp";
+
 import cozyCover from "@assets/events/cozy-night/CozyNight_Cover.webp";
 import cozy1 from "@assets/events/cozy-night/CozyNight1.webp";
 import cozy2 from "@assets/events/cozy-night/CozyNight2.webp";
@@ -561,6 +569,20 @@ export const events = [
   },
 
   {
+    id: "spring-fling-class-mar-2026",
+    slug: "spring-fling-class",
+    name: "Spring Fling Cooking Class",
+    term: "Winter 2026",
+    date: "2026-03-21",
+    description: "A fresh, spring-inspired cooking class featuring grilled chicken thighs with chimichurri, a bright spring salad with lemon-mint vinaigrette, and mochi ice cream for dessert.",
+    collab: null,
+    taughtBy: null,
+    status: "past",
+    coverImage: sfCover,
+    photos: [sf1, sf2, sf3, sf4, sf5, sf6],
+    googlePhotos: "https://photos.google.com/share/AF1QipOhUXiXt6ME5XwUoZY8_s0Q18YgrUksb30W7xjRQ_-fN85x9iqpN5wgN-3WCgCT8g?key=NlR0Tm1RaXVETzhXZ29MbnBHQW1weW5PdUsxdkln",
+  },
+  {
     id: "cozy-night-in-class-feb-2026",
     slug: "a-cozy-night-in-class",
     name: "A Cozy Night In Cooking Class",
@@ -572,7 +594,7 @@ export const events = [
     status: "past",
     coverImage: cozyCover,
     photos: [cozy1, cozy2, cozy3, cozy4, cozy5, cozy6],
-    googlePhotos: null,
+    googlePhotos: "https://photos.google.com/share/AF1QipPxlf2XzUERAL0vAEhvAFHjQGuJXYma1yYIjcCbK4F-e18pG-wwq9QAotKl0DdA5w?key=UTl4WlhxeWlqZWZvSndRZzFWU3Q3U3loa3ZkY1BB",
   },
   {
     id: "taste-of-love-feb-2026",
