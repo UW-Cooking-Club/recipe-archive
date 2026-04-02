@@ -2,8 +2,10 @@ import { useState } from "react";
 
 /**
  * Image with neutral placeholder and fade-in on load (reduces “pop-in” feel on slow networks).
+ * On load error, still fades in so the broken image / alt is visible instead of a permanent gray box.
+ * Remounts when `src` changes (via `key`) so carousels / route reuse get a proper fade-in per image.
  */
-function FadeInImage({
+function FadeInImageInner({
   src,
   alt,
   className = "",
@@ -11,6 +13,7 @@ function FadeInImage({
   fetchPriority,
   loading = "lazy",
   onLoad: consumerOnLoad,
+  onError: consumerOnError,
   ...imgProps
 }) {
   const [loaded, setLoaded] = useState(false);
@@ -30,10 +33,18 @@ function FadeInImage({
           setLoaded(true);
           consumerOnLoad?.(e);
         }}
+        onError={(e) => {
+          setLoaded(true);
+          consumerOnError?.(e);
+        }}
         {...imgProps}
       />
     </div>
   );
+}
+
+function FadeInImage(props) {
+  return <FadeInImageInner key={props.src} {...props} />;
 }
 
 export default FadeInImage;
