@@ -8,7 +8,7 @@ function HeroBannerImage({ src, alt, fetchPriority = "high" }) {
   const [loaded, setLoaded] = useState(false);
 
   return (
-    <div className="relative w-full overflow-hidden bg-cream aspect-21/9">
+    <div className="relative w-full overflow-hidden bg-cream aspect-[21/9]">
       <img
         src={src}
         alt={alt}

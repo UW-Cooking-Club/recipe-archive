@@ -10,6 +10,7 @@ function FadeInImage({
   wrapperClassName = "",
   fetchPriority,
   loading = "lazy",
+  onLoad: consumerOnLoad,
   ...imgProps
 }) {
   const [loaded, setLoaded] = useState(false);
@@ -25,7 +26,10 @@ function FadeInImage({
         fetchPriority={fetchPriority}
         decoding="async"
         loading={loading}
-        onLoad={() => setLoaded(true)}
+        onLoad={(e) => {
+          setLoaded(true);
+          consumerOnLoad?.(e);
+        }}
         {...imgProps}
       />
     </div>
