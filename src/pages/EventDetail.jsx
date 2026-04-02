@@ -1,5 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { FaChevronLeft, FaStar, FaRegStar } from "react-icons/fa";
+import FadeInImage from "@components/FadeInImage";
 import Lightbox, { useLightbox } from "@components/Lightbox";
 import { events } from "../data/events";
 import { recipes, getEventIds } from "../data/recipes";
@@ -7,9 +8,7 @@ import { recipes, getEventIds } from "../data/recipes";
 function EventDetail() {
   const { slug } = useParams();
   const event = events.find((e) => e.slug === slug);
-  const { lightboxIndex, setLightboxIndex, close, goNext, goPrev } = useLightbox(
-    event?.photos
-  );
+  const { lightboxIndex, setLightboxIndex, close, goNext, goPrev } = useLightbox(event?.photos);
 
   if (!event) {
     return (
@@ -52,7 +51,14 @@ function EventDetail() {
         {/* Cover photo */}
         {event.coverImage && (
           <div className="mb-4">
-            <img src={event.coverImage} alt={event.name} className="w-full rounded-lg" />
+            <FadeInImage
+              src={event.coverImage}
+              alt={event.name}
+              wrapperClassName="w-full aspect-video rounded-lg"
+              className="absolute inset-0 h-full w-full object-cover rounded-lg"
+              fetchPriority="high"
+              loading="eager"
+            />
           </div>
         )}
 
@@ -114,7 +120,7 @@ function EventDetail() {
                                 <FaStar key={i} className="text-yellow text-xs" />
                               ) : (
                                 <FaRegStar key={i} className="text-yellow text-xs" />
-                              )
+                              ),
                             )}
                           </div>
                         </div>

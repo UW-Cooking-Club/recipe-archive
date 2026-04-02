@@ -1,5 +1,6 @@
 import { useParams, Link, useLocation } from "react-router-dom";
 import { FaChevronLeft, FaStar, FaRegStar } from "react-icons/fa";
+import FadeInImage from "@components/FadeInImage";
 import { recipes, getEventIds } from "../data/recipes";
 import { events } from "../data/events";
 
@@ -23,7 +24,9 @@ function RecipeDetail() {
     );
   }
 
-  const recipeEvents = getEventIds(recipe).map((id) => events.find((e) => e.id === id)).filter(Boolean);
+  const recipeEvents = getEventIds(recipe)
+    .map((id) => events.find((e) => e.id === id))
+    .filter(Boolean);
 
   const hasGroupedIngredients =
     recipe.ingredients.length > 0 && typeof recipe.ingredients[0] === "object" && recipe.ingredients[0].group;
@@ -67,11 +70,13 @@ function RecipeDetail() {
         {/* Photo + Description row */}
         <div className="flex flex-col md:flex-row gap-6 mb-6 bg-white border border-gray-200 rounded-lg p-4">
           {recipe.image ? (
-            <img
+            <FadeInImage
               src={recipe.image}
               alt={recipe.name}
-              className="w-full md:w-56 h-48 md:h-auto object-cover rounded"
-              loading="lazy"
+              wrapperClassName="w-full md:w-56 h-48 shrink-0 rounded"
+              className="absolute inset-0 h-full w-full object-cover rounded"
+              fetchPriority="high"
+              loading="eager"
             />
           ) : (
             <div className="w-full md:w-56 h-48 bg-gray-300 flex items-center justify-center text-gray-500 font-body text-sm rounded">
@@ -93,7 +98,7 @@ function RecipeDetail() {
                 <FaStar key={i} className="text-yellow text-sm" />
               ) : (
                 <FaRegStar key={i} className="text-yellow text-sm" />
-              )
+              ),
             )}
           </div>
         </div>
