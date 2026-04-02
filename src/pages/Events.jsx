@@ -2,18 +2,24 @@ import { useMemo, useCallback } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { FaImages } from "react-icons/fa";
 import PageHero from "@components/PageHero";
-import Lightbox, { useLightbox } from "@components/Lightbox";
+import Lightbox from "@components/Lightbox";
+import { useLightbox } from "../hooks/useLightbox";
 import eventsBanner from "@assets/events_banner.jpg";
 import instagramIcon from "@assets/Instagram_Icon.webp";
 import { events } from "../data/events";
+import usePageMetadata from "../hooks/usePageMetadata";
 
 function Events() {
+  usePageMetadata({
+    title: "Events",
+    description: "UW Cooking Club events — upcoming classes, past workshops, photos, and links to recipes we cooked.",
+  });
   const [searchParams, setSearchParams] = useSearchParams();
 
   const upcomingEvent = events.find((e) => e.status === "upcoming");
   const allPastEvents = useMemo(
     () => events.filter((e) => e.status === "past").sort((a, b) => new Date(b.date) - new Date(a.date)),
-    []
+    [],
   );
 
   const selectedTerms = useMemo(() => {
@@ -23,7 +29,9 @@ function Events() {
 
   const allTerms = useMemo(() => {
     const termSet = new Set();
-    allPastEvents.forEach((e) => { if (e.term) termSet.add(e.term); });
+    allPastEvents.forEach((e) => {
+      if (e.term) termSet.add(e.term);
+    });
     const seasonOrder = { Winter: 0, Spring: 1, Fall: 2 };
     return Array.from(termSet).sort((a, b) => {
       const [seasonA, yearA] = a.split(" ");
@@ -47,30 +55,23 @@ function Events() {
           });
           return next;
         },
-        { replace: true }
+        { replace: true },
       );
     },
-    [setSearchParams]
+    [setSearchParams],
   );
 
   const toggleTerm = (term) => {
-    const next = selectedTerms.includes(term)
-      ? selectedTerms.filter((t) => t !== term)
-      : [...selectedTerms, term];
+    const next = selectedTerms.includes(term) ? selectedTerms.filter((t) => t !== term) : [...selectedTerms, term];
     updateParams({ terms: next });
   };
 
   const pastEvents = useMemo(
-    () =>
-      selectedTerms.length === 0
-        ? allPastEvents
-        : allPastEvents.filter((e) => selectedTerms.includes(e.term)),
-    [selectedTerms, allPastEvents]
+    () => (selectedTerms.length === 0 ? allPastEvents : allPastEvents.filter((e) => selectedTerms.includes(e.term))),
+    [selectedTerms, allPastEvents],
   );
 
-  const { lightboxIndex, setLightboxIndex, close, goNext, goPrev } = useLightbox(
-    upcomingEvent?.photos
-  );
+  const { lightboxIndex, setLightboxIndex, close, goNext, goPrev } = useLightbox(upcomingEvent?.photos);
 
   const formatDate = (dateStr) => {
     const d = new Date(dateStr + "T00:00:00");
@@ -148,7 +149,6 @@ function Events() {
             <p className="font-body text-gray-dark text-center">No upcoming events — stay tuned!</p>
           )}
         </div>
-
       </section>
 
       {/* Past Events banner bar */}
@@ -175,9 +175,7 @@ function Events() {
               key={term}
               onClick={() => toggleTerm(term)}
               className={`px-3 py-1 rounded-full font-body text-sm transition-colors ${
-                selectedTerms.includes(term)
-                  ? "bg-primary text-white"
-                  : "bg-gray-600 text-gray-200 hover:bg-gray-500"
+                selectedTerms.includes(term) ? "bg-primary text-white" : "bg-gray-600 text-gray-200 hover:bg-gray-500"
               }`}
             >
               {term}
@@ -240,7 +238,9 @@ function Events() {
             rel="noopener noreferrer"
             className="font-fun text-2xl md:text-3xl text-primary hover:opacity-80 transition-opacity text-center"
           >
-            Stay updated on our<br />next event!
+            Stay updated on our
+            <br />
+            next event!
           </a>
         </div>
       </section>

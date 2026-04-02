@@ -1,13 +1,12 @@
 import { Link } from "react-router-dom";
-import Lightbox, { useLightbox } from "@components/Lightbox";
+import Lightbox from "@components/Lightbox";
+import { useLightbox } from "../../hooks/useLightbox";
 import { events } from "../../data/events";
 import panSticker from "@assets/pan_sticker.svg";
 
 function UpcomingEvents() {
   const upcomingEvent = events.find((e) => e.status === "upcoming");
-  const { lightboxIndex, setLightboxIndex, close, goNext, goPrev } = useLightbox(
-    upcomingEvent?.photos
-  );
+  const { lightboxIndex, setLightboxIndex, close, goNext, goPrev } = useLightbox(upcomingEvent?.photos);
 
   if (!upcomingEvent) return null;
 
@@ -16,14 +15,18 @@ function UpcomingEvents() {
     const weekday = d.toLocaleDateString("en-US", { weekday: "long" });
     const month = d.toLocaleDateString("en-US", { month: "long" });
     const day = d.getDate();
-    const suffix = ["th", "st", "nd", "rd"][([11, 12, 13].includes(day % 100) ? 0 : Math.min(day % 10, 4))] || "th";
+    const suffix = ["th", "st", "nd", "rd"][[11, 12, 13].includes(day % 100) ? 0 : Math.min(day % 10, 4)] || "th";
     return `${weekday}, ${month} ${day}${suffix}`;
   };
 
   return (
     <section className="relative bg-dark py-12 px-8">
       <img src={panSticker} alt="" className="absolute -top-28 -right-8 w-72 hidden md:block" />
-      <h2 className="relative font-fun text-6xl text-white text-center mb-8 underline">Check Out Our<br />Upcoming Event!</h2>
+      <h2 className="relative font-fun text-6xl text-white text-center mb-8 underline">
+        Check Out Our
+        <br />
+        Upcoming Event!
+      </h2>
 
       <div className="max-w-6xl mx-auto">
         {/* Photos */}
@@ -44,7 +47,9 @@ function UpcomingEvents() {
         <div className="text-center">
           <h3 className="font-heading text-5xl text-white mb-1">{upcomingEvent.name}</h3>
           <p className="font-body text-sm text-white font-bold mb-3">{formatDate(upcomingEvent.date)}</p>
-          <p className="font-body text-sm text-gray-300 max-w-2xl mx-auto mb-4 whitespace-pre-line">{upcomingEvent.description}</p>
+          <p className="font-body text-sm text-gray-300 max-w-2xl mx-auto mb-4 whitespace-pre-line">
+            {upcomingEvent.description}
+          </p>
 
           <div className="flex flex-wrap justify-center gap-3">
             {upcomingEvent.ticketsUrl && (

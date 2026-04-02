@@ -1,14 +1,21 @@
 import { useParams, Link } from "react-router-dom";
 import { FaChevronLeft, FaStar, FaRegStar } from "react-icons/fa";
 import FadeInImage from "@components/FadeInImage";
-import Lightbox, { useLightbox } from "@components/Lightbox";
+import Lightbox from "@components/Lightbox";
+import { useLightbox } from "../hooks/useLightbox";
 import { events } from "../data/events";
 import { recipes, getEventIds } from "../data/recipes";
+import usePageMetadata from "../hooks/usePageMetadata";
 
 function EventDetail() {
   const { slug } = useParams();
   const event = events.find((e) => e.slug === slug);
   const { lightboxIndex, setLightboxIndex, close, goNext, goPrev } = useLightbox(event?.photos);
+
+  usePageMetadata({
+    title: event ? event.name : "Event Not Found",
+    description: event ? event.description : "The requested event is not in the UW Cooking Club archive.",
+  });
 
   if (!event) {
     return (

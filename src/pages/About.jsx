@@ -1,11 +1,14 @@
 import PageHero from "@components/PageHero";
-import TeamSection from "@components/about/TeamSection";
+// Meet The Execs (uncomment when re-enabling sections below)
+// import TeamSection from "@components/about/TeamSection";
 import aboutBanner from "@assets/aboutUs_banner.jpg";
 import aboutImage from "@assets/aboutUs_image.jpg";
-import mteSticker from "@assets/MTE_sticker.svg";
-import panSticker from "@assets/pan_sticker.svg";
+// import mteSticker from "@assets/MTE_sticker.svg";
+// import panSticker from "@assets/pan_sticker.svg";
 import whiteLogo from "@assets/whiteLogo_sticker.svg";
+import usePageMetadata from "../hooks/usePageMetadata";
 
+/*
 const member = (id, name, role) => ({
   id,
   name,
@@ -68,19 +71,22 @@ const teamData = [
     ],
   },
 ];
+*/
 
 function About() {
+  usePageMetadata({
+    title: "About Us",
+    description:
+      "Learn about the University of Waterloo Cooking Club — our philosophy, how to get involved, and who we are.",
+  });
+
   return (
     <>
       <PageHero image={aboutBanner} alt="About Us" title="About Us" />
 
       {/* About Us group photo + info card */}
       <section className="relative pb-8 px-8 pt-8">
-        <img
-          src={aboutImage}
-          alt="Cooking Club group photo"
-          className="absolute inset-0 w-full h-full object-cover"
-        />
+        <img src={aboutImage} alt="Cooking Club group photo" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-cream/70" />
         <div className="max-w-6xl mx-auto relative z-10 flex justify-center">
           <div className="bg-primary rounded-lg overflow-visible p-8 md:p-10 text-white max-w-[56rem]">
@@ -90,16 +96,15 @@ function About() {
             </p>
             <p className="font-body text-sm md:text-base leading-relaxed mb-6">
               You&rsquo;ve heard how food brings people together, but the act of cooking, sharing a kitchen with a
-              stranger or someone you love, is one of the greatest acts of fearlessness. At Cooking Club, we give
-              people a place to connect over the shared joy of cooking. In the kitchen with us, you can let go of
-              all fears, and become great!
+              stranger or someone you love, is one of the greatest acts of fearlessness. At Cooking Club, we give people
+              a place to connect over the shared joy of cooking. In the kitchen with us, you can let go of all fears,
+              and become great!
             </p>
             <h2 className="font-heading text-3xl md:text-4xl mb-4">How To Get Involved</h2>
             <p className="font-body text-sm md:text-base leading-relaxed">
-              We are a club that welcomes all! Whether you&rsquo;re a pro chef or just learning how to cook,
-              cooking club is the place for you. We host a variety of events outside of cooking classes, such as
-              bake sales and movie eat-alongs for example! Want to get even more involved? Our exec team re-hires
-              every term!
+              We are a club that welcomes all! Whether you&rsquo;re a pro chef or just learning how to cook, cooking
+              club is the place for you. We host a variety of events outside of cooking classes, such as bake sales and
+              movie eat-alongs for example! Want to get even more involved? Our exec team re-hires every term!
             </p>
             <div className="flex justify-center mt-6">
               <img src={whiteLogo} alt="UWCC Logo" className="h-10 md:h-12 opacity-80" />
@@ -113,7 +118,7 @@ function About() {
         </div>
       </section>
 
-      {/* Meet The Execs - TODO: implement next term */}
+      {/* Meet The Execs - TODO: implement next term — uncomment imports, teamData, and sections below */}
       {/* <section className="bg-dark pt-10 pb-6 px-8 relative overflow-hidden">
         <img
           src={panSticker}

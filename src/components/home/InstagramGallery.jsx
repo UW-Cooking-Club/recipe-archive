@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import Lightbox, { useLightbox } from "@components/Lightbox";
+import Lightbox from "@components/Lightbox";
+import { useLightbox } from "../../hooks/useLightbox";
 import sandPSticker from "@assets/SandP_sticker.svg";
 import ig1 from "@assets/instagram/IG1.webp";
 import ig2 from "@assets/instagram/IG2.webp";
