@@ -1,36 +1,5 @@
-import { useState, useEffect, useCallback, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { FaChevronLeft, FaChevronRight, FaTimes } from "react-icons/fa";
-
-function useLightbox(photos) {
-  const [lightboxIndex, setLightboxIndex] = useState(null);
-
-  const close = useCallback(() => setLightboxIndex(null), []);
-  const goNext = useCallback(() => {
-    if (!photos?.length) return;
-    setLightboxIndex((prev) => (prev + 1) % photos.length);
-  }, [photos]);
-  const goPrev = useCallback(() => {
-    if (!photos?.length) return;
-    setLightboxIndex((prev) => (prev - 1 + photos.length) % photos.length);
-  }, [photos]);
-
-  useEffect(() => {
-    if (lightboxIndex === null) return;
-    const handleKey = (e) => {
-      if (e.key === "Escape") close();
-      if (e.key === "ArrowRight") goNext();
-      if (e.key === "ArrowLeft") goPrev();
-    };
-    document.body.style.overflow = "hidden";
-    window.addEventListener("keydown", handleKey);
-    return () => {
-      document.body.style.overflow = "";
-      window.removeEventListener("keydown", handleKey);
-    };
-  }, [lightboxIndex, close, goNext, goPrev]);
-
-  return { lightboxIndex, setLightboxIndex, close, goNext, goPrev };
-}
 
 function getFocusableButtons(container) {
   if (!container) return [];
@@ -143,5 +112,4 @@ function Lightbox({ photos, index, onClose, onNext, onPrev, alt = "Photo" }) {
   );
 }
 
-export { useLightbox };
 export default Lightbox;

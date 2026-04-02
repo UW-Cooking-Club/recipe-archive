@@ -1,7 +1,8 @@
 import { useParams, Link } from "react-router-dom";
 import { FaChevronLeft, FaStar, FaRegStar } from "react-icons/fa";
 import FadeInImage from "@components/FadeInImage";
-import Lightbox, { useLightbox } from "@components/Lightbox";
+import Lightbox from "@components/Lightbox";
+import { useLightbox } from "../hooks/useLightbox";
 import { events } from "../data/events";
 import { recipes, getEventIds } from "../data/recipes";
 import usePageMetadata from "../hooks/usePageMetadata";
