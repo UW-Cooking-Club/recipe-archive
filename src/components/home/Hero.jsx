@@ -1,9 +1,10 @@
+import HeroBannerImage from "@components/HeroBannerImage";
 import bannerImg from "@assets/landingPage_banner.jpg";
 
 function Hero() {
   return (
     <section>
-      <img src={bannerImg} alt="UW Cooking Club" className="w-full" />
+      <HeroBannerImage src={bannerImg} alt="UW Cooking Club" fetchPriority="high" />
     </section>
   );
 }

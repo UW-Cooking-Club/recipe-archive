@@ -1,17 +1,23 @@
 import { Link } from "react-router-dom";
+import FadeInImage from "@components/FadeInImage";
 
 function RecipeCard({ name, image, slug }) {
   return (
-    <Link to={`/recipes/${slug}`} className="relative overflow-hidden rounded cursor-pointer group block">
+    <Link to={`/recipes/${slug}`} className="relative overflow-hidden rounded cursor-pointer group block bg-gray-200">
       {image ? (
-        <img
+        <FadeInImage
           src={image}
           alt={name}
-          className="w-full h-56 object-cover group-hover:scale-105 transition-transform"
+          wrapperClassName="h-56 w-full"
+          className="absolute inset-0 h-full w-full object-cover group-hover:scale-105"
           loading="lazy"
         />
       ) : (
-        <div role="img" aria-label={name} className="w-full h-56 bg-gray-300 flex items-center justify-center text-gray-500 font-body text-sm">
+        <div
+          role="img"
+          aria-label={name}
+          className="w-full h-56 bg-gray-300 flex items-center justify-center text-gray-500 font-body text-sm"
+        >
           Photo coming soon
         </div>
       )}
