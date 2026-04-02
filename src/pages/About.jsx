@@ -1,12 +1,14 @@
 import PageHero from "@components/PageHero";
-import TeamSection from "@components/about/TeamSection";
+// Meet The Execs (uncomment when re-enabling sections below)
+// import TeamSection from "@components/about/TeamSection";
 import aboutBanner from "@assets/aboutUs_banner.jpg";
 import aboutImage from "@assets/aboutUs_image.jpg";
-import mteSticker from "@assets/MTE_sticker.svg";
-import panSticker from "@assets/pan_sticker.svg";
+// import mteSticker from "@assets/MTE_sticker.svg";
+// import panSticker from "@assets/pan_sticker.svg";
 import whiteLogo from "@assets/whiteLogo_sticker.svg";
 import usePageMetadata from "../hooks/usePageMetadata";
 
+/*
 const member = (id, name, role) => ({
   id,
   name,
@@ -69,6 +71,7 @@ const teamData = [
     ],
   },
 ];
+*/
 
 function About() {
   usePageMetadata({
@@ -115,7 +118,7 @@ function About() {
         </div>
       </section>
 
-      {/* Meet The Execs - TODO: implement next term */}
+      {/* Meet The Execs - TODO: implement next term — uncomment imports, teamData, and sections below */}
       {/* <section className="bg-dark pt-10 pb-6 px-8 relative overflow-hidden">
         <img
           src={panSticker}
