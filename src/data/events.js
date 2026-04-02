@@ -72,10 +72,43 @@ import op7 from "@assets/events/one-piece-class/OP7.webp";
 import op8 from "@assets/events/one-piece-class/OP8.webp";
 import op9 from "@assets/events/one-piece-class/OP9.webp";
 
-import upcoming1 from "@assets/events/upcoming/Upcoming1.webp";
-import upcoming2 from "@assets/events/upcoming/Upcoming2.webp";
-import upcoming3 from "@assets/events/upcoming/Upcoming3.webp";
-import upcoming4 from "@assets/events/upcoming/Upcoming4.webp";
+import mexCover from "@assets/events/mexican-cooking/MexicanCooking_Cover.webp";
+import mex1 from "@assets/events/mexican-cooking/MexicanCooking1.webp";
+import mex2 from "@assets/events/mexican-cooking/MexicanCooking2.webp";
+import mex3 from "@assets/events/mexican-cooking/MexicanCooking3.webp";
+import mex4 from "@assets/events/mexican-cooking/MexicanCooking4.webp";
+import mex5 from "@assets/events/mexican-cooking/MexicanCooking5.webp";
+import mex6 from "@assets/events/mexican-cooking/MexicanCooking6.webp";
+import mex7 from "@assets/events/mexican-cooking/MexicanCooking7.webp";
+import mex8 from "@assets/events/mexican-cooking/MexicanCooking8.webp";
+import mex9 from "@assets/events/mexican-cooking/MexicanCooking9.webp";
+
+import sfCover from "@assets/events/spring-fling/SpringFling_Cover.webp";
+import sf1 from "@assets/events/spring-fling/SpringFling1.webp";
+import sf2 from "@assets/events/spring-fling/SpringFling2.webp";
+import sf3 from "@assets/events/spring-fling/SpringFling3.webp";
+import sf4 from "@assets/events/spring-fling/SpringFling4.webp";
+import sf5 from "@assets/events/spring-fling/SpringFling5.webp";
+import sf6 from "@assets/events/spring-fling/SpringFling6.webp";
+
+import cozyCover from "@assets/events/cozy-night/CozyNight_Cover.webp";
+import cozy1 from "@assets/events/cozy-night/CozyNight1.webp";
+import cozy2 from "@assets/events/cozy-night/CozyNight2.webp";
+import cozy3 from "@assets/events/cozy-night/CozyNight3.webp";
+import cozy4 from "@assets/events/cozy-night/CozyNight4.webp";
+import cozy5 from "@assets/events/cozy-night/CozyNight5.webp";
+import cozy6 from "@assets/events/cozy-night/CozyNight6.webp";
+
+import tolCover from "@assets/events/taste-of-love/TasteOfLove_Cover.webp";
+import tol1 from "@assets/events/taste-of-love/TasteOfLove1.webp";
+import tol2 from "@assets/events/taste-of-love/TasteOfLove2.webp";
+import tol3 from "@assets/events/taste-of-love/TasteOfLove3.webp";
+import tol4 from "@assets/events/taste-of-love/TasteOfLove4.webp";
+import tol5 from "@assets/events/taste-of-love/TasteOfLove5.webp";
+import tol6 from "@assets/events/taste-of-love/TasteOfLove6.webp";
+import tol7 from "@assets/events/taste-of-love/TasteOfLove7.webp";
+import tol8 from "@assets/events/taste-of-love/TasteOfLove8.webp";
+import tol9 from "@assets/events/taste-of-love/TasteOfLove9.webp";
 
 import mochiCover from "@assets/events/mochi-delights/Mochi_Cover.webp";
 import mochi1 from "@assets/events/mochi-delights/Mochi1.webp";
@@ -220,7 +253,6 @@ export const events = [
     date: "2024-05-25",
     description: "A class all about picnic-perfect dishes and homemade pies.",
     collab: null,
-    taughtBy: "John Doe",
     status: "past",
     coverImage: picnicsCover,
     photos: [picnics1, picnics2, picnics3, picnics4, picnics5, picnics6, picnics7, picnics8, picnics9],
@@ -234,7 +266,6 @@ export const events = [
     date: "2024-06-15",
     description: "Learn to make classic Thai curry and mango sticky rice.",
     collab: null,
-    taughtBy: "John Doe",
     status: "past",
     coverImage: tcmsrCover,
     photos: [tcmsr1, tcmsr2, tcmsr3, tcmsr4, tcmsr5, tcmsr6, tcmsr7, tcmsr8, tcmsr9],
@@ -248,7 +279,6 @@ export const events = [
     date: "2024-07-20",
     description: "Discover the vibrant and diverse flavours of Peruvian cuisine.",
     collab: null,
-    taughtBy: "John Doe",
     status: "past",
     coverImage: peruvianCover,
     photos: [peruvian1, peruvian2, peruvian3, peruvian4, peruvian5, peruvian6],
@@ -262,7 +292,6 @@ export const events = [
     date: "2024-07-27",
     description: "A special cooking class hosted by Jason.",
     collab: null,
-    taughtBy: "John Doe",
     status: "past",
     coverImage: jasonCover,
     photos: [jason1, jason2, jason3, jason4, jason5, jason6],
@@ -278,7 +307,6 @@ export const events = [
     date: "2024-09-21",
     description: "Learn to make authentic Mexican street food favourites.",
     collab: null,
-    taughtBy: "John Doe",
     status: "past",
     coverImage: mexicanCover,
     photos: [mexican1, mexican2, mexican3, mexican4, mexican5, mexican6, mexican7, mexican8, mexican9],
@@ -292,7 +320,6 @@ export const events = [
     date: "2024-10-14",
     description: "A fall-themed cooking class celebrating seasonal ingredients.",
     collab: null,
-    taughtBy: "John Doe",
     status: "past",
     coverImage: fallingCover,
     photos: [falling1, falling2, falling3, falling4, falling5, falling6],
@@ -306,7 +333,6 @@ export const events = [
     date: "2024-11-02",
     description: "A brunch-themed cooking class at the market place.",
     collab: null,
-    taughtBy: "John Doe",
     status: "past",
     coverImage: batmpCover,
     photos: [batmp1, batmp2, batmp3, batmp4, batmp5, batmp6],
@@ -320,7 +346,6 @@ export const events = [
     date: "2024-11-16",
     description: "Exploring the diverse and flavourful cuisine of the Middle East.",
     collab: null,
-    taughtBy: "John Doe",
     status: "past",
     coverImage: middleEastCover,
     photos: [middleEast1, middleEast2, middleEast3, middleEast4, middleEast5, middleEast6, middleEast7, middleEast8, middleEast9],
@@ -334,7 +359,6 @@ export const events = [
     date: "2024-11-23",
     description: "A collaboration cooking class with Women in Computer Science.",
     collab: "WICS",
-    taughtBy: "John Doe",
     status: "past",
     coverImage: wicsCover,
     photos: [wics1, wics2, wics3, wics4, wics5, wics6],
@@ -350,7 +374,6 @@ export const events = [
     date: "2025-02-01",
     description: "Exploring the aromatic and rich cuisine of Iran.",
     collab: null,
-    taughtBy: "John Doe",
     status: "past",
     coverImage: iranCover,
     photos: [iran1, iran2, iran3, iran4, iran5, iran6, iran7, iran8, iran9],
@@ -364,7 +387,6 @@ export const events = [
     date: "2025-02-08",
     description: "A Valentine's themed cooking class — love at first bite!",
     collab: null,
-    taughtBy: "John Doe",
     status: "past",
     coverImage: lafbCover,
     photos: [lafb1, lafb2, lafb3, lafb4, lafb5, lafb6],
@@ -378,7 +400,6 @@ export const events = [
     date: "2025-03-08",
     description: "Discover the rich flavours of Indian cuisine.",
     collab: null,
-    taughtBy: "John Doe",
     status: "past",
     coverImage: indiaCover,
     photos: [india1, india2, india3, india4, india5, india6],
@@ -392,7 +413,6 @@ export const events = [
     date: "2025-03-13",
     description: "Exploring the fifth taste — umami — through a variety of dishes.",
     collab: null,
-    taughtBy: "John Doe",
     status: "past",
     coverImage: umamiCover,
     photos: [umami1, umami2, umami3, umami4, umami5, umami6, umami7, umami8, umami9],
@@ -406,7 +426,6 @@ export const events = [
     date: "2025-03-26",
     description: "A class dedicated to the art of mochi making.",
     collab: null,
-    taughtBy: "John Doe",
     status: "past",
     coverImage: mochiCover,
     photos: [mochi1, mochi2, mochi3, mochi4, mochi5, mochi6, mochi7, mochi8, mochi9],
@@ -422,7 +441,6 @@ export const events = [
     date: "2025-05-17",
     description: "A flight of egg dishes — explore different egg preparations from around the world.",
     collab: null,
-    taughtBy: "John Doe",
     status: "past",
     coverImage: eggCover,
     photos: [egg1, egg2, egg3, egg4, egg5, egg6, egg7, egg8, egg9],
@@ -436,7 +454,6 @@ export const events = [
     date: "2025-05-31",
     description: "Celebrating Asian American and Pacific Islander heritage through food.",
     collab: null,
-    taughtBy: "John Doe",
     status: "past",
     coverImage: aapiCover,
     photos: [aapi1, aapi2, aapi3, aapi4, aapi5, aapi6, aapi7, aapi8, aapi9],
@@ -450,7 +467,6 @@ export const events = [
     date: "2025-06-21",
     description: "An anime-inspired cooking class based on the world of One Piece.",
     collab: null,
-    taughtBy: "John Doe",
     status: "past",
     coverImage: opCover,
     photos: [op1, op2, op3, op4, op5, op6, op7, op8, op9],
@@ -467,7 +483,6 @@ export const events = [
     description:
       "Learn to make classic Korean dishes including army stew, egg rolls, stir fried potatoes, and cinnamon punch.",
     collab: "King Sejong Institute",
-    taughtBy: "John Doe",
     status: "past",
     coverImage: koreanCover,
     photos: [korean1, korean2, korean3, korean4, korean5, korean6, korean7, korean8, korean9],
@@ -482,7 +497,6 @@ export const events = [
     date: "2025-10-25",
     description: "Master the art of making dumplings and wontons from scratch, including crispy dumpling skirts.",
     collab: null,
-    taughtBy: "John Doe",
     status: "past",
     coverImage: wanddCover,
     photos: [wd1, wd2, wd3, wd4, wd5, wd6, wd7, wd8, wd9],
@@ -497,7 +511,6 @@ export const events = [
     date: "2025-11-08",
     description: "Explore authentic Thai cuisine with pad thai, mango salad, and Thai iced tea.",
     collab: null,
-    taughtBy: "John Doe",
     status: "past",
     coverImage: thaiCover,
     photos: [thai1, thai2, thai3, thai4, thai5, thai6],
@@ -512,31 +525,64 @@ export const events = [
     date: "2025-11-29",
     description: "A class for pasta lovers — learn to make delicious pasta dishes from scratch.",
     collab: null,
-    taughtBy: "John Doe",
     status: "past",
     coverImage: pastaCover,
     photos: [pasta1, pasta2, pasta3, pasta4, pasta5, pasta6, pasta7, pasta8, pasta9],
     googlePhotos: "https://photos.app.goo.gl/mo7imLqtPr6yss2j7",
   },
 
-  // ─── Upcoming ───
+  // ─── Winter 2026 ───
+  {
+    id: "mexican-cooking-class-jan-2026",
+    slug: "mexican-cooking-class",
+    name: "Mexican Cooking Class",
+    term: "Winter 2026",
+    date: "2026-01-24",
+    description: "A class exploring authentic Mexican cuisine — from carne asada tacos and salsa roja to quesadillas azteca, guacamole, and buñuelos.",
+    collab: null,
+    status: "past",
+    coverImage: mexCover,
+    photos: [mex1, mex2, mex3, mex4, mex5, mex6, mex7, mex8, mex9],
+    googlePhotos: "https://photos.google.com/share/AF1QipP9rw59SviwCRUFqWOgG5QHFMCi4wgJItj7fTFZIQaKKuXojja4XyrbA_gqPQTOsg?key=SWlvMDJTLTZBa2dVQ2xkYmR6Q2pjUWY3VGNydlZB",
+  },
+
   {
     id: "taste-of-love-feb-2026",
     slug: "taste-of-love",
     name: "Taste of Love",
     term: "Winter 2026",
     date: "2026-02-07",
-    description:
-      "Hey Warriors 📣 When people are telling me love is in the air… But all I can smell is food 🤔🥘\n\nWith Valentine's around the corner, celebrate your love for food with our Taste of Love cooking class 😋 ❤️ ! This February 7th, you'll be learning and enjoying a delicious meal of some soy garlic honey salmon with asparagus and potatoes, chili chocolate mousse and a pineapple mojito mocktail! Whether you are a seasoned chef or new to the kitchen, everyone is welcomed to come and have a blast with fellow food lovers 🔥\n\nTickets are 25.00 per person! Spots are limited! If you have any questions or dietary restrictions, shoot us a dm :)\n\nReminders: Tie up long hair and wear closed-toed shoes. Bring a reusable container for any leftovers you want to bring your meals home!",
+    description: "A Valentine's themed cooking class celebrating your love for food — featuring soy garlic honey salmon with roasted potatoes, chili chocolate mousse, and a pineapple mojito mocktail.",
     collab: null,
-    taughtBy: null,
-    status: "upcoming",
-    coverImage: upcoming1,
-    photos: [upcoming1, upcoming2, upcoming3, upcoming4],
+    status: "past",
+    coverImage: tolCover,
+    photos: [tol1, tol2, tol3, tol4, tol5, tol6, tol7, tol8, tol9],
     googlePhotos: null,
-    ticketsUrl: "https://wusa.ca/event/taste-of-love/?utm_source=ig&utm_medium=social&utm_content=link_in_bio",
-    price: "$25.00",
-    location: "19-105 Lexington Rd, Waterloo ON N2J 4R7 — Culinary Studio",
-    times: ["11:00AM - 1:30PM", "2:30PM - 5:00PM", "6:00PM - 8:30PM"],
+  },
+  {
+    id: "cozy-night-in-class-feb-2026",
+    slug: "a-cozy-night-in-class",
+    name: "A Cozy Night In Cooking Class",
+    term: "Winter 2026",
+    date: "2026-02-28",
+    description: "A cozy, comfort-food themed cooking class featuring rich Cajun gumbo and decadent dark chocolate orange sea salt fudge — the perfect warm-up for a cold winter night.",
+    collab: null,
+    status: "past",
+    coverImage: cozyCover,
+    photos: [cozy1, cozy2, cozy3, cozy4, cozy5, cozy6],
+    googlePhotos: "https://photos.google.com/share/AF1QipPxlf2XzUERAL0vAEhvAFHjQGuJXYma1yYIjcCbK4F-e18pG-wwq9QAotKl0DdA5w?key=UTl4WlhxeWlqZWZvSndRZzFWU3Q3U3loa3ZkY1BB",
+  },
+  {
+    id: "spring-fling-class-mar-2026",
+    slug: "spring-fling-class",
+    name: "Spring Fling Cooking Class",
+    term: "Winter 2026",
+    date: "2026-03-21",
+    description: "A fresh, spring-inspired cooking class featuring grilled chicken thighs with chimichurri, a bright spring salad with lemon-mint vinaigrette, and mochi ice cream for dessert.",
+    collab: null,
+    status: "past",
+    coverImage: sfCover,
+    photos: [sf1, sf2, sf3, sf4, sf5, sf6],
+    googlePhotos: "https://photos.google.com/share/AF1QipOhUXiXt6ME5XwUoZY8_s0Q18YgrUksb30W7xjRQ_-fN85x9iqpN5wgN-3WCgCT8g?key=NlR0Tm1RaXVETzhXZ29MbnBHQW1weW5PdUsxdkln",
   },
 ];
