@@ -1,6 +1,12 @@
 import { Link } from "react-router-dom";
+import usePageMetadata from "../hooks/usePageMetadata";
 
 function NotFound() {
+  usePageMetadata({
+    title: "Page Not Found",
+    description: "The page you requested is not part of the UW Cooking Club site.",
+  });
+
   return (
     <div className="min-h-screen bg-cream flex items-center justify-center">
       <div className="text-center px-6">

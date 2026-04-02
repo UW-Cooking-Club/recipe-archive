@@ -3,6 +3,7 @@ import { FaChevronLeft, FaStar, FaRegStar } from "react-icons/fa";
 import FadeInImage from "@components/FadeInImage";
 import { recipes, getEventIds } from "../data/recipes";
 import { events } from "../data/events";
+import usePageMetadata from "../hooks/usePageMetadata";
 
 function RecipeDetail() {
   const { slug } = useParams();
@@ -10,6 +11,11 @@ function RecipeDetail() {
   const fromEvent = location.state?.from === "event";
   const backLabel = fromEvent ? `Back to ${location.state?.eventName || "Event"}` : "Back to Recipes";
   const recipe = recipes.find((r) => r.slug === slug);
+
+  usePageMetadata({
+    title: recipe ? recipe.name : "Recipe Not Found",
+    description: recipe ? recipe.description : "The requested recipe is not in the UW Cooking Club archive.",
+  });
 
   if (!recipe) {
     return (

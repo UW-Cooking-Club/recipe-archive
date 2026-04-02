@@ -6,8 +6,13 @@ import RecipeCard from "@components/recipes/RecipeCard";
 import recipesBanner from "@assets/recipes_banner.jpg";
 import { recipes, getEventIds, getSearchableText } from "../data/recipes";
 import { events } from "../data/events";
+import usePageMetadata from "../hooks/usePageMetadata";
 
 function Recipes() {
+  usePageMetadata({
+    title: "Recipes",
+    description: "Browse the UW Cooking Club recipe archive — search by term, cuisine, and event.",
+  });
   const [searchParams, setSearchParams] = useSearchParams();
 
   const search = searchParams.get("q") || "";
@@ -39,10 +44,10 @@ function Recipes() {
           });
           return next;
         },
-        { replace: true }
+        { replace: true },
       );
     },
-    [setSearchParams]
+    [setSearchParams],
   );
 
   const allTags = useMemo(() => {
@@ -60,7 +65,9 @@ function Recipes() {
   // Map each term to its event IDs
   const tagToEventIds = useMemo(() => {
     const map = {};
-    allTags.forEach((tag) => { map[tag] = []; });
+    allTags.forEach((tag) => {
+      map[tag] = [];
+    });
     events.forEach((event) => {
       if (map[event.term]) map[event.term].push(event.id);
     });
@@ -82,7 +89,9 @@ function Recipes() {
 
   const allCuisines = useMemo(() => {
     const cuisineSet = new Set();
-    recipes.forEach((r) => { if (r.cuisine) cuisineSet.add(r.cuisine); });
+    recipes.forEach((r) => {
+      if (r.cuisine) cuisineSet.add(r.cuisine);
+    });
     return Array.from(cuisineSet).sort();
   }, []);
 
@@ -99,12 +108,8 @@ function Recipes() {
     if (selectedTags.includes(tag)) {
       // Deselecting term — remove the term, but only remove events not needed by other selected terms
       const newTags = selectedTags.filter((t) => t !== tag);
-      const eventIdsStillNeeded = new Set(
-        newTags.flatMap((t) => tagToEventIds[t] || [])
-      );
-      const newEvents = selectedEvents.filter(
-        (id) => !eventIdsForTag.includes(id) || eventIdsStillNeeded.has(id)
-      );
+      const eventIdsStillNeeded = new Set(newTags.flatMap((t) => tagToEventIds[t] || []));
+      const newEvents = selectedEvents.filter((id) => !eventIdsForTag.includes(id) || eventIdsStillNeeded.has(id));
       updateParams({ tags: newTags, events: newEvents });
     } else {
       // Selecting term — add the term and all its events
@@ -146,8 +151,7 @@ function Recipes() {
         const matchesSearch = !search || text.includes(lowerSearch);
         const matchesEvent =
           selectedEvents.length === 0 || getEventIds(recipe).some((id) => selectedEvents.includes(id));
-        const matchesCuisine =
-          selectedCuisines.length === 0 || selectedCuisines.includes(recipe.cuisine);
+        const matchesCuisine = selectedCuisines.length === 0 || selectedCuisines.includes(recipe.cuisine);
         return matchesSearch && matchesEvent && matchesCuisine;
       })
       .map(({ recipe }) => recipe)

@@ -6,8 +6,13 @@ import Lightbox, { useLightbox } from "@components/Lightbox";
 import eventsBanner from "@assets/events_banner.jpg";
 import instagramIcon from "@assets/Instagram_Icon.webp";
 import { events } from "../data/events";
+import usePageMetadata from "../hooks/usePageMetadata";
 
 function Events() {
+  usePageMetadata({
+    title: "Events",
+    description: "UW Cooking Club events — upcoming classes, past workshops, photos, and links to recipes we cooked.",
+  });
   const [searchParams, setSearchParams] = useSearchParams();
 
   const upcomingEvent = events.find((e) => e.status === "upcoming");
